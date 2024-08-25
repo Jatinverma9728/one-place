@@ -4,62 +4,60 @@ let compScore = 0;
 const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
 
-const genCompChoice = () => {
-  const options = ["rock", "paper", "scissors"];
-  const randomIdx = Math.floor(Math.random() * 3);
-  return options[randomIdx];
-};
-const playGame = (userchoice) => {
-  //   console.log(userchoice);
-  const compChoice = genCompChoice();
-  //   console.log(compChoice);
-  if (userchoice === compChoice) {
-    drawGame();
-  } else {
-    let userWin = true;
-    if (userchoice === "rock") {
-      //comp choice will be paper or scissors
-      userWin = compChoice === "paper" ? false : true;
-    } else if (userchoice === "paper") {
-      //rock or scissors
-      compChoice === "scissors" ? false : true;
-    } else {
-      // rock or paper
-      compChoice === "rock" ? false : true;
-    }
-    showWinner(userWin, userchoice, compChoice);
-  }
-};
 const userScorePara = document.querySelector("#user-score");
-
 const compScorePara = document.querySelector("#comp-score");
 
-const showWinner = (userWin, userchoice, compChoice) => {
+const genCompChoice = () => {
+  const options = ["rock", "paper", "scissors"];
+  const randIdx = Math.floor(Math.random() * 3);
+  return options[randIdx];
+};
+
+const drawGame = () => {
+  msg.innerText = "Game was Draw. Play again.";
+  msg.style.backgroundColor = "#081b31";
+};
+
+const showWinner = (userWin, userChoice, compChoice) => {
   if (userWin) {
     userScore++;
     userScorePara.innerText = userScore;
-    // console.log("you win");
-    msg.innerText = `You win! Your ${userchoice} beats ${compChoice}`;
+    msg.innerText = `You win! Your ${userChoice} beats ${compChoice}`;
     msg.style.backgroundColor = "green";
   } else {
     compScore++;
     compScorePara.innerText = compScore;
-    // console.log("Comp Win");
-    msg.innerText = `You lose. ${compChoice} beats  Your ${userchoice}`;
+    msg.innerText = `You lost. ${compChoice} beats your ${userChoice}`;
     msg.style.backgroundColor = "red";
   }
 };
 
-const drawGame = () => {
-  //   console.log("Game was Draw");
-  msg.innerText = "Game was Draw , play again.";
-  msg.style.backgroundColor = "#081b31";
+const playGame = (userChoice) => {
+  //Generate computer choice
+  const compChoice = genCompChoice();
+
+  if (userChoice === compChoice) {
+    //Draw Game
+    drawGame();
+  } else {
+    let userWin = true;
+    if (userChoice === "rock") {
+      //scissors, paper
+      userWin = compChoice === "paper" ? false : true;
+    } else if (userChoice === "paper") {
+      //rock, scissors
+      userWin = compChoice === "scissors" ? false : true;
+    } else {
+      //rock, paper
+      userWin = compChoice === "rock" ? false : true;
+    }
+    showWinner(userWin, userChoice, compChoice);
+  }
 };
 
 choices.forEach((choice) => {
-  choice;
   choice.addEventListener("click", () => {
-    const userchoice = choice.getAttribute("id");
-    playGame(userchoice);
+    const userChoice = choice.getAttribute("id");
+    playGame(userChoice);
   });
 });
