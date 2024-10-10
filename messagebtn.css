@@ -1,0 +1,65 @@
+#message-button {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  z-index: 10;
+  background: #eae1f5;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  top: 80%;
+  left: 90%;
+ transition: 0.5s linear;
+}
+#message-button:hover {
+  filter: invert(100%);
+  transform: translateY(-10px) scale(1.2);
+  cursor: pointer;
+}
+#chatbox-modal {
+  height: 200px;
+  position: fixed;
+  bottom: -400px; /* Positioned below the screen initially */
+  right: 80px;
+  width: 300px;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    visibility 0s 0.5s; /* Delay visibility */
+}
+.chatbox-header {
+  background-color: #eae1f5;
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+.chatbox-header span {
+  color: black;
+}
+.chatbox-body{
+    padding: 10px;
+}
+.close{
+    line-height: 20px;
+}
+#chatbox-modal.open {
+  bottom: 50px; /* Slide up into view */
+  visibility: visible;
+  opacity: 1;
+  transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#message-button {
+  transition: opacity 0.5s ease-in-out;
+}
+
+#message-button.hidden {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction when hidden */
+}
