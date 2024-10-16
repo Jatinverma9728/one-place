@@ -100,7 +100,6 @@ html {
 }
 .navigation-items {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -108,22 +107,40 @@ html {
   margin-bottom: 78px;
 }
 
-.nav-items-for-small-screen {
-  display: none;
+
+#nav-items-for-small-screen {
+display: none;
 }
 .nav-items-for-small-screen ul {
   list-style: none;
 }
 .nav-items-for-small-screen li {
   list-style: none;
+  font-size: 25px;
+  position: relative;
+  top:9px;
+/* border: 2px solid red; */
+width: fit-content;
+text-align: center;
+
+}
+.icon-text{
+  font-size: 12px;
+  border: none;
+  text-decoration: none ;
+  position: relative;
+  top: -9px;
+font-family:var(--popins-font);
 }
 .nav-items-for-small-screen li a {
-  color: #676767;
+  
+  color: rgb(141, 141, 141);
 }
-.nav-items-for-small-screen .side-items {
-  display: flex;
 
-  gap: 50px;
+.side-items{
+
+  display: flex;
+  gap: 24px;
 }
 #login-btn {
   text-decoration: none;
@@ -398,16 +415,15 @@ html {
   border-radius: 12px;
   display: flex;
   flex: 0 0 auto;
-
   align-items: center;
   justify-content: center;
   flex-direction: column;
   backdrop-filter: blur(30px);
 }
 .card-list .card-item .user-image {
-  width: 223px; /* image control center*/
-  height: 170px; /* image control center*/
-  margin-bottom: 10px; /* image control center*/
+  width: 223px; 
+  height: 170px;
+  margin-bottom: 10px; 
   border-radius: 12px;
   margin-top: 77px;
 }
@@ -429,7 +445,8 @@ html {
 }
 
 .slider-wrapper {
-  display: flex;
+  /* display: flex; */
+  border: 2px solid red;
 }
 .slider-wrapper .swiper-pagination-bullet {
   background: #161616;

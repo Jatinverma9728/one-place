@@ -1,7 +1,7 @@
 // Get the modal element
-var modal = document.getElementById("modal");
-var btn = document.getElementById("Book-A-Professional");
-var closeBtn = document.getElementsByClassName("close")[0];
+let modal = document.getElementById("modal");
+let btn = document.getElementById("Book-A-Professional");
+let closeBtn = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
@@ -19,15 +19,14 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-
 // Get the modal elements
-var womenIconSpaSaloonModal = document.getElementById(
+let womenIconSpaSaloonModal = document.getElementById(
   "modal-for-women-spa-saloon-icon"
 );
-var womenIconSpaSaloonCard = document.getElementById("womem-saloon-spa-modal");
+let womenIconSpaSaloonCard = document.getElementById("womem-saloon-spa-modal");
 
 // Get the close button
-var closeBtnWomenIconSpaSaloon = document.getElementsByClassName(
+let closeBtnWomenIconSpaSaloon = document.getElementsByClassName(
   "close-modal-for-women-spa-saloon-icon"
 )[0];
 
@@ -49,9 +48,9 @@ window.onclick = function (event) {
 };
 
 // Men's Salon Modal
-var mensSalonModal = document.getElementById("modal-for-mens-salon");
-var mensSalonBtn = document.getElementById("mens-salon-modal");
-var closeMensSalon = document.getElementsByClassName("close-modal-mens")[0];
+let mensSalonModal = document.getElementById("modal-for-mens-salon");
+let mensSalonBtn = document.getElementById("mens-salon-modal");
+let closeMensSalon = document.getElementsByClassName("close-modal-mens")[0];
 
 mensSalonBtn.onclick = function () {
   mensSalonModal.style.display = "block";
@@ -68,9 +67,9 @@ window.onclick = function (event) {
 };
 
 // AC Repair Modal
-var messageBtn = document.getElementById("modal-for-ac-repair");
-var acRepairBtn = document.getElementById("ac-repair-modal");
-var closeACRepair = document.getElementsByClassName("close-modal-ac")[0];
+let messageBtn = document.getElementById("modal-for-ac-repair");
+let acRepairBtn = document.getElementById("ac-repair-modal");
+let closeACRepair = document.getElementsByClassName("close-modal-ac")[0];
 
 acRepairBtn.onclick = function () {
   messageBtn.style.display = "block";
@@ -86,11 +85,11 @@ window.onclick = function (event) {
 };
 
 // Painter & waterproofing Modal
-var painterWater = document.getElementById("modal-for-waterproofing");
+let painterWater = document.getElementById("modal-for-waterproofing");
 
-var waterproofing = document.getElementById("painter-modal");
+let waterproofing = document.getElementById("painter-modal");
 
-var closeWaterproofing = document.getElementsByClassName(
+let closeWaterproofing = document.getElementsByClassName(
   "close-modal-waterproofing"
 )[0];
 
@@ -108,11 +107,11 @@ window.onclick = function (event) {
 };
 
 // electrician and plumber Modal
-var elecplumb = document.getElementById("modal-for-electrician");
+let elecplumb = document.getElementById("modal-for-electrician");
 
-var electricianModal = document.getElementById("electrician-modal");
+let electricianModal = document.getElementById("electrician-modal");
 
-var closeElectrician = document.getElementsByClassName(
+let closeElectrician = document.getElementsByClassName(
   "close-modal-electrician"
 )[0];
 
