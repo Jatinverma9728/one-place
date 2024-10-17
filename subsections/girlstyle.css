@@ -61,38 +61,38 @@ body {
   overflow-y: auto;
   border: 2px solid green;
 }
-.promotions{
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 15px;
-    /* display: flex */
+.promotions {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  /* display: flex */
 }
-.promotions h4{
-    margin-bottom: 10px;
+.promotions h4 {
+  margin-bottom: 10px;
 }
-.promotions ul li{
-    list-style: none;
-    font-size: 15px;
-    font-weight: 400;
+.promotions ul li {
+  list-style: none;
+  font-size: 15px;
+  font-weight: 400;
 }
-.promotions ul li i{
-    margin-right: 10px;
+.promotions ul li i {
+  margin-right: 10px;
 }
-#promotions-section{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+#promotions-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.fa-cart-shopping{
-    font-size: 40px;
-filter: opacity(50%);
+.fa-cart-shopping {
+  font-size: 40px;
+  filter: opacity(50%);
 }
-.cart-box{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
+.cart-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .container-col-1 {
