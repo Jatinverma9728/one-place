@@ -107,9 +107,8 @@ html {
   margin-bottom: 78px;
 }
 
-
 #nav-items-for-small-screen {
-display: none;
+  display: none;
 }
 .nav-items-for-small-screen ul {
   list-style: none;
@@ -118,27 +117,24 @@ display: none;
   list-style: none;
   font-size: 25px;
   position: relative;
-  top:9px;
-/* border: 2px solid red; */
-width: fit-content;
-text-align: center;
-
+  top: 9px;
+  /* border: 2px solid red; */
+  width: fit-content;
+  text-align: center;
 }
-.icon-text{
+.icon-text {
   font-size: 12px;
   border: none;
-  text-decoration: none ;
+  text-decoration: none;
   position: relative;
   top: -9px;
-font-family:var(--popins-font);
+  font-family: var(--popins-font);
 }
 .nav-items-for-small-screen li a {
-  
   color: rgb(141, 141, 141);
 }
 
-.side-items{
-
+.side-items {
   display: flex;
   gap: 24px;
 }
@@ -421,9 +417,9 @@ font-family:var(--popins-font);
   backdrop-filter: blur(30px);
 }
 .card-list .card-item .user-image {
-  width: 223px; 
+  width: 223px;
   height: 170px;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   border-radius: 12px;
   margin-top: 77px;
 }
@@ -555,7 +551,7 @@ footer {
   margin-bottom: 20px;
   margin-top: 20px;
 }
-.social-icons{
+.social-icons {
   width: 10px;
   height: 10px;
 }
@@ -568,7 +564,6 @@ footer {
   text-decoration: none;
   transition: all 0.2s linear;
 }
-
 
 .footer-container .app-links img {
   width: 130px;

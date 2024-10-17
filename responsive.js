@@ -1,7 +1,7 @@
 let lastScrollTop = 0;
-const navbar = document.getElementById('navbar');
+const navbar = document.getElementById("navbar");
 
-window.addEventListener('scroll', function() {
+window.addEventListener("scroll", function () {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   if (scrollTop > lastScrollTop) {
@@ -11,6 +11,6 @@ window.addEventListener('scroll', function() {
     // Scroll Up - Show the navbar
     navbar.style.top = "0";
   }
-  
+
   lastScrollTop = scrollTop;
 });

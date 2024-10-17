@@ -22,20 +22,15 @@
 }
 
 /* Close button */
-.close,
+.close-btn-for-pro-book,
 .close-modal-mens,
-.close-modal-ac, .close-modal-waterproofing , .close-modal-electrician{
+.close-modal-ac,
+.close-modal-waterproofing,
+.close-modal-electrician {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
-
-.close, .close-modal-mens, .close-modal-waterproofing, .close-modal-electrician ,
-.close-modal-ac:hover {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 /* Grid for services */
@@ -95,6 +90,37 @@
   text-decoration: none;
   cursor: pointer;
 }
+.close-btn-for-pro-book:hover,
+.close-btn-for-pro-book:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close-modal-mens:hover,
+.close-modal-mens:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close-modal-ac:hover,
+.close-modal-ac:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close-modal-waterproofing:hover,
+.close-modal-waterproofing:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close-modal-electrician:hover,
+.close-modal-electrician:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 .modal-content-1 {
   background-color: #fff;
   margin: 10% auto;
@@ -131,7 +157,7 @@
   max-width: 500px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-#modal-for-waterproofing .modal-content{
+#modal-for-waterproofing .modal-content {
   max-width: 500px;
   background-color: #fff;
   margin: 10% auto;

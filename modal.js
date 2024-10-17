@@ -1,7 +1,7 @@
 // Get the modal element
 let modal = document.getElementById("modal");
 let btn = document.getElementById("Book-A-Professional");
-let closeBtn = document.getElementsByClassName("close")[0];
+let closeBtn = document.getElementsByClassName("close-btn-for-pro-book")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
@@ -128,20 +128,19 @@ window.onclick = function (event) {
   }
 };
 
+// modal for message btn
+const messageButton = document.getElementById("message-button");
+const chatboxModal = document.getElementById("chatbox-modal");
+const closeChatbox = document.getElementById("close-chatbox");
 
-// modal for message btn 
-const messageButton = document.getElementById('message-button');
-const chatboxModal = document.getElementById('chatbox-modal');
-const closeChatbox = document.getElementById('close-chatbox');
-
-messageButton.addEventListener('click', () => {
-  chatboxModal.classList.add('open'); // Show and slide up the chatbox
-  messageButton.classList.add('hidden'); // Fade out the message button
+messageButton.addEventListener("click", () => {
+  chatboxModal.classList.add("open"); // Show and slide up the chatbox
+  messageButton.classList.add("hidden"); // Fade out the message button
 });
 
-closeChatbox.addEventListener('click', () => {
-  chatboxModal.classList.remove('open'); // Hide the chatbox
+closeChatbox.addEventListener("click", () => {
+  chatboxModal.classList.remove("open"); // Hide the chatbox
   setTimeout(() => {
-    messageButton.classList.remove('hidden'); // Fade the message button back in after chatbox is closed
+    messageButton.classList.remove("hidden"); // Fade the message button back in after chatbox is closed
   }, 200); // Delay to allow chatbox animation to finish
 });

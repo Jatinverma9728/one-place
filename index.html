@@ -13,38 +13,37 @@
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="messagebtn.css">
     <script src="https://kit.fontawesome.com/92d5a0c82a.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/92d5a0c82a.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
     </style>
 
 </head>
-<body>
 
+<body>
+<!-- --------------chat button & modal--------------- -->
     <div id="message-button">
         <img src="icons/chat-dots.png" alt="Message me">
-      </div>
-    
-      
-      <div id="chatbox-modal" class="chatbox-modal">
+    </div>
+
+<!-- --------------modal---------------- -->
+    <div id="chatbox-modal" class="chatbox-modal">
         <div class="chatbox-header">
-          <span>Chat with us</span>
-          <span id="close-chatbox" class="close">&times;</span>
+            <span>Chat with us</span>
+            <span id="close-chatbox" class="close">&times;</span>
         </div>
         <div class="chatbox-body">
-          <p>Welcome! How can we help you?</p>
-          <!-- You can add more chat UI elements here -->
-           <a href="https://wa.me/qr/AIVEWBGXII5JF1" target="_blank"  >Message us</a>
+            <p>Welcome! How can we help you?</p>
+            <!-- later add more chat UI elements -->
+            <a href="https://wa.me/qr/AIVEWBGXII5JF1" target="_blank">Message us</a>
         </div>
-      </div>
-      
+    </div>
 
 
-
-
-<!-- ===================================================== -->
     <!-- -----------loader----------- -->
+
     <div id="loader"><img src="css-loader2.gif" alt=""></div>
+
+    
     <!-- ---------notification section-------------- -->
 
     <header id="notification-section">
@@ -101,7 +100,8 @@
 
     <div class="nav-items-for-small-screen">
         <ul id="nav-items-for-small-screen">
-            <li><a href="anouncement.html"><i class="fa-solid fa-person-dress"></i> <br><span class="icon-text"> Beauty</span></a></li>
+            <li><a href="anouncement.html"><i class="fa-solid fa-person-dress"></i> <br><span class="icon-text">
+                        Beauty</span></a></li>
 
             <li><a href="#"><i class="fa-solid fa-wrench"></i> <br><span class="icon-text"> Beauty</span></a>
             </li>
@@ -497,13 +497,13 @@
     <!--  Modal for book a professnal button -->
     <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close-btn-for-pro-book">&times;</span>
             <h2>What are you looking for?</h2>
             <!-- <h3>Appliance repair & service</h3> -->
             <div class="services-grid">
 
                 <div class="service-item">
-                    <a href="https://chatgpt.com/?model=">
+                    <a href="#">
                         <img src="icons/women saloon.png" alt="Men's & Women's Grooming"><br> Men's & Women's Grooming
                     </a>
                 </div>
@@ -577,13 +577,13 @@
             <!-- Content here -->
             <div class="services-grid">
                 <div class="service-item">
-                    <a href="#">
+                    <a href="subsections/girlshair.html">
                         <img src="secondary icons/men sal.png" alt="Saloon for mens"><br>
                         Saloon for kids & mens
                     </a>
                 </div>
                 <div class="service-item">
-                    <a href="#">
+                    <a href="subsections/girlshair.html">
                         <img src="secondary icons/spa fpor mens.png" alt="Spa for mens"><br>
                         Spa for mens
                     </a>
@@ -788,6 +788,10 @@
             <p>&copy; Copyright 2024 One Place. All rights reserved. | CIN: O74140DL2024PTC274413</p>
         </div>
     </footer>
+<!-- --------------------GSAP Script CDN------------------------ -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+
     <!-- image slider js  -->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

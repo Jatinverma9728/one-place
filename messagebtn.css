@@ -11,7 +11,7 @@
   border-radius: 50%;
   top: 80%;
   left: 90%;
- transition: 0.5s linear;
+  transition: all 0.5s ease !important;
 }
 #message-button:hover {
   filter: invert(100%);
@@ -27,26 +27,37 @@
   z-index: 10;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   visibility: hidden;
   opacity: 0;
   transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out,
     visibility 0s 0.5s; /* Delay visibility */
 }
 .chatbox-header {
-  background-color: #eae1f5;
-  color: white;
-  padding: 10px;
-  border-radius: 10px 10px 0 0;
+    background-color: #eae1f5;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 .chatbox-header span {
   color: black;
 }
-.chatbox-body{
-    padding: 10px;
+.chatbox-body {
+  padding: 10px;
 }
-.close{
-    line-height: 20px;
+.close {
+  line-height: 20px;
+  font-size: 24px;
+}
+.close:hover, .close:focus{
+  color: rgb(241, 91, 91);
+  cursor: pointer;
+ 
 }
 #chatbox-modal.open {
   bottom: 50px; /* Slide up into view */
