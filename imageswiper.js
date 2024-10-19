@@ -2,7 +2,7 @@ const swiper = new Swiper(".slider-wrapper", {
   slidesPerView: 3,
   spaceBetween: 30,
   loop: false, // Enable looping
-  watchOverflow: false,
+  watchOverflow: true,
   // grabCursor: true,
 
   pagination: {
@@ -11,18 +11,5 @@ const swiper = new Swiper(".slider-wrapper", {
     dynamicBullets: true,
   },
 
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-    1200: {
-      slidesPerView: 4,
-    },
-  },
+
 });

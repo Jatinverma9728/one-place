@@ -388,10 +388,11 @@ html {
 }
 .container {
   position: relative;
+  /* border: 2px solid blue; */
 }
 .slider-wrapper {
   overflow: hidden;
-  width: 1000px;
+  width: 800px;
   margin: 0 70px 55px;
 }
 .subtitel {
@@ -442,7 +443,7 @@ html {
 
 .slider-wrapper {
   /* display: flex; */
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .slider-wrapper .swiper-pagination-bullet {
   background: #161616;
