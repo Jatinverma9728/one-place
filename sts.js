@@ -63,3 +63,30 @@ rightBtn.addEventListener("click", () => {
   scrollRight();
 });
 
+let currentIndex = {};
+
+function updateCardContainer(id) {
+  const container = document.querySelector(`#${id} .card-container`);
+  container.style.transform = `translateX(-${currentIndex[id] * 100}%)`;
+}
+
+function scrollLeft(id) {
+  currentIndex[id] =
+    currentIndex[id] > 0
+      ? currentIndex[id] - 1
+      : document.querySelectorAll(`#${id} .card`).length - 1;
+  updateCardContainer(id);
+}
+
+function scrollRight(id) {
+  currentIndex[id] =
+    currentIndex[id] < document.querySelectorAll(`#${id} .card`).length - 1
+      ? currentIndex[id] + 1
+      : 0;
+  updateCardContainer(id);
+}
+
+// Initialize indexes for all sliders
+document.querySelectorAll(".slider").forEach((slider) => {
+  currentIndex[slider.id] = 0;
+});
