@@ -4,126 +4,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="imageslider.css">
+    <title>Login/Signup Form</title>
+    <script src="https://kit.fontawesome.com/92d5a0c82a.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            width: 350px;
+        }
+
+        .form-container {
+            display: block;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #fff;
+            color: white;
+            outline: none;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: #aaa;
+            transition: 0.5s;
+        }
+
+        .input-box input:focus~label,
+        .input-box input:valid~label {
+            top: -20px;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .input-box .icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        .checkbox {
+            margin-bottom: 20px;
+        }
+
+        .checkbox input {
+            margin-right: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+        }
+
+        span#login-link,
+        span#register-link {
+            color: #00aaff;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="slider-wrapper">
-        <div class="card-list swiper-wrapper">
-            <div class="card-item swiper-slide">
-                <img src="images/1.jpg" alt="BG Image" class="user-image">
-                <h2 class="user-name">Tic Tac Toe</h2>
-                <p class="user-profession">
-                <div class="read-more-container">
-                    <!-- Card 1 -->
-                    <div class="paracontainer">
-                        <p>I developed a classic Tic Tac Toe game using HTML, CSS, and JavaScript. This game
-                            allows two players to take
-                            <span class="read-more-text">
-                                turns marking their symbols (X or O) on a 3x3 grid. The objective is to be the
-                                first player to align three of their symbols vertically, horizontally, or
-                                diagonally.
-                            </span>
-                        </p>
-                        <span class="read-more-btn">Read More...</span>
-                    </div>
-                    <button class="message-button"><a href="https://jatinverma9728.github.io/tic-tac-toe-game/"
-                            style="text-decoration: none; color: #030728;" target="_blank">View</a></button>
+    <div class="container">
+        <!-- Registration Form -->
+        <div class="form-container" id="register-form">
+            <span class="close-btn" onclick="closeForm()">×</span>
+            <h2>Registration</h2>
+            <form>
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>Username</label>
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
                 </div>
-
-            </div>
-
-            <div class="card-item swiper-slide">
-                <img src="images/car mechnaic 2.jpg" alt="BG Image" class="user-image">
-                <h2 class="user-name">Rock, Paper, Scissors</h2>
-                <p class="user-profession"> <!-- Card 2 -->
-                <div class="paracontainer">
-                    <p>This is a simple yet engaging Rock, Paper, Scissors game built using HTML, CSS, and
-                        JavaScript. In this game
-                        <span class="read-more-text">
-                            , players choose one of three options: rock, paper, or scissors. The computer also
-                            randomly selects one of these options. The game then compares the player's choice
-                            with the computer's choice to determine the winner based on the classic rules
-                        </span>
-                    </p>
-                    <span class="read-more-btn">Read More...</span>
+                <div class="input-box">
+                    <input type="email" required>
+                    <label>Email</label>
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
                 </div>
-                </p>
-                <button class="message-button"><a href="https://jatinverma9728.github.io/rock-papeer-sicorrs/"
-                        style="text-decoration: none; color: #030728;" target="_blank">View</a></button>
-            </div>
-            <div class="card-item swiper-slide">
-                <img src="images/cctv 1.jpg" alt="BG Image" class="user-image">
-                <h2 class="user-name">Under Maintance</h2>
-                <p class="user-profession"> <!-- Card 3 -->
-                <div class="paracontainer">
-                    <p>Short description for card 2.
-                        <span class="read-more-text" style="color: aqua;">
-                            Additional content for card 2 that is hidden initially.
-                        </span>
-                    </p>
-                    <span class="read-more-btn">Read More...</span>
+                <div class="input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
                 </div>
-                </p>
-                <button class="message-button">View</button>
-            </div>
-            <div class="card-item swiper-slide">
-                <img src="images/car mechnaic.jpg" alt="BG Image" class="user-image">
-                <h2 class="user-name">Under Maintance</h2>
-                <p class="user-profession"> <!-- Card 2 -->
-                <div class="paracontainer">
-                    <p>Short description for card 2.
-                        <span class="read-more-text">
-                            Additional content for card 2 that is hidden initially.
-                        </span>
-                    </p>
-                    <span class="read-more-btn">Read More...</span>
+                <div class="checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the terms & conditions</label>
                 </div>
-                </p>
-                <button class="message-button">View</button>
-            </div>
-
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <span id="login-link" onclick="showLogin()">Login</span></p>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-slide-button swiper-button-prev"></div>
-        <div class="swiper-slide-button swiper-button-next"></div>
+
+        <!-- Login Form -->
+        <div class="form-container" id="login-form" style="display:none;">
+            <span class="close-btn" onclick="closeForm()">×</span>
+            <h2>Login</h2>
+            <form>
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>Username</label>
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                </div>
+                <div class="input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <span id="register-link" onclick="showRegister()">Sign Up</span></p>
+        </div>
     </div>
 
+    <script>
+        function showLogin() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        }
 
+        function showRegister() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        }
 
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>const swiper = new Swiper(".slider-wrapper", {
-            // loop: true,
-            grabCursor: true,
-            spaceBetween: 30,
-
-            // If we need pagination
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                dynamicBullets: true,
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            },
-        });
+        function closeForm() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'none';
+        }
 
     </script>
 </body>

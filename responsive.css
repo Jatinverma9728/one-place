@@ -58,18 +58,18 @@
     font-weight: 500;
   }
   .card-section {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-top: -250px;
     transform: scale(0.9);
   }
   .card-section-part-2 {
     margin-left: 20px;
     width: 400px;
-    border:2px solid darkblue;
+    /* border:2px solid darkblue; */
   }
-  .slider-wrapper{
-    /* width: 1100px; */
-    border: 2px solid red;
+  .slider-wrapper {
+    width: 400px;
+    /* border: 2px solid red; */
     overflow: auto;
   }
   .card-section-5 {
@@ -103,7 +103,7 @@
   #waterpurifier-modal {
     width: 170px;
   }
- 
+
   #nav-items-for-small-screen {
     display: flex;
     justify-content: space-around;
@@ -116,10 +116,18 @@
     backdrop-filter: blur(12px) saturate(172%);
     -webkit-backdrop-filter: blur(12px) saturate(172%);
     background-color: rgba(196, 198, 203, 0.59);
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    /* border: 1px solid rgba(255, 255, 255, 0.125); */
   }
 
- 
+  .subtitel-s {
+    /* border: 2px solid red; */
+    margin-left: 10px;
+  }
+
+  .footer-bottom p {
+    position: relative;
+    top: -50px;
+  }
 }
 
 /* Media Queries for responsiveness */
@@ -218,7 +226,7 @@
   #waterpurifier-modal {
     width: 170px;
   }
- 
+
   #notification-section h1 span {
     font-size: 3vw; /* Font size for tablets and smaller */
   }
