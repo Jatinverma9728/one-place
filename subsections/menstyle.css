@@ -15,13 +15,13 @@ body {
   --syne-font: "Syne", system-ui;
 }
 .navbar {
-  border: 2px solid red;
   height: 80px;
   width: 100%;
+  border-bottom: 1px solid #e3e3e3;
   position: fixed;
   top: px;
   z-index: 1;
-  background-color: snow;
+  background-color: rgb(255, 255, 255);
 }
 .nav-items {
   display: flex;
@@ -33,13 +33,12 @@ body {
   width: 78px;
   margin-top: 11px;
 }
-.serchandlocation{
+.serchandlocation {
   display: flex;
   gap: 40px;
   align-items: center;
 }
 /* ---------search box--------- */
-/* From Uiverse.io by LightAndy1 */ 
 .group {
   display: flex;
   line-height: 28px;
@@ -53,9 +52,9 @@ body {
   width: 100%;
   height: 45px;
   padding-left: 2.5rem;
-  box-shadow: 0 0 0 1.5px #2b2c37;
-  border: 0;
-  border-radius: 12px;
+  border: 2px solid #e3e3e3;
+  /* border: 0; */
+  border-radius: 7px;
   background-color: #ffffff;
   outline: none;
   color: #101011;
@@ -66,19 +65,20 @@ body {
 }
 
 .input::placeholder {
-  color: #dd0000;
+  color: #1d1c1c;
 }
 
-.input:hover {
-  box-shadow: 0 0 0 2.5px #000000, 0px 0px 25px -15px #000;
-}
+/* .input:hover {
+  box-shadow: 0 0 0 2.5px #434343;
+} */
 
 .input:active {
   transform: scale(0.95);
+  border: 1.5px solid black;
 }
 
 .input:focus {
-  box-shadow: 0 0 0 2.5px #2f303d;
+  border: 1.5px solid black;
 }
 
 .search-icon {
@@ -91,11 +91,7 @@ body {
   z-index: 1;
 }
 
-
-
 /*  ---------------------*/
-
-
 
 .container {
   display: grid;
@@ -113,6 +109,7 @@ body {
   margin-top: 121px;
   margin-bottom: 40px;
   height: 100%;
+  width: 513px;
   border: 1px solid #e3e3e3;
   border-radius: 10px;
   position: relative;
@@ -130,22 +127,62 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 270px;
+  width: 449px;
+}
+.card:hover {
+  cursor: pointer;
+}
+.price {
+  font-size: 14px;
+  font-family: poppins;
+  font-weight: bold;
+  display: inline;
+}
+
+.fa-circle {
+  font-size: 3px;
+  margin-left: 40px;
+  margin-right: 8px;
+  display: inline;
+}
+
+.time {
+  display: inline;
+  font-size: 12px;
+  font-family: poppins;
+}
+
+.card-contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-button {
+  width: 80px;
+  height: 36px;
+  background-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-color: rgb(197, 180, 245);
+  border-radius: 8px;
+  border-width: 1px;
+  color: #906bff;
 }
 
 /* Right Sidebar */
 .sidebar.right {
   padding: 20px;
+  top: 6px;
+  height: 100%;
+  width: 360px;
   position: sticky;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  top: 6px;
-  margin-right: 72px;
-  margin-left: -31px;
+  margin-left: -120px;
   margin-top: 118px;
   height: 100vh;
   overflow-y: auto;
-  /* border: 1px solid #ce3a3a; */
   border-radius: 10px;
 }
 .promotions {
