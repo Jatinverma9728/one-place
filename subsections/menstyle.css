@@ -14,11 +14,94 @@ body {
   --popins-font: "Poppins", sans-serif;
   --syne-font: "Syne", system-ui;
 }
+.navbar {
+  border: 2px solid red;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: px;
+  z-index: 1;
+  background-color: snow;
+}
+.nav-items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logo img {
+  height: 50px;
+  width: 78px;
+  margin-top: 11px;
+}
+.serchandlocation{
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+/* ---------search box--------- */
+/* From Uiverse.io by LightAndy1 */ 
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+}
+
+.input {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 45px;
+  padding-left: 2.5rem;
+  box-shadow: 0 0 0 1.5px #2b2c37;
+  border: 0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  outline: none;
+  color: #101011;
+  font-weight: 200;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: text;
+  z-index: 0;
+}
+
+.input::placeholder {
+  color: #dd0000;
+}
+
+.input:hover {
+  box-shadow: 0 0 0 2.5px #000000, 0px 0px 25px -15px #000;
+}
+
+.input:active {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2.5px #2f303d;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  fill: #363636;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+
+/*  ---------------------*/
+
+
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr; /* 3 sections: left, middle, right */
   height: 100vh;
-  overflow: hidden; /* Prevent body scroll */
+  /* overflow: hidden; Prevent body scroll */
 }
 
 /* Middle Content Section */
@@ -27,10 +110,11 @@ body {
   overflow-y: scroll;
   scrollbar-width: none;
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 121px;
   margin-bottom: 40px;
   height: 100%;
-  border: 2px solid red;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
   position: relative;
   left: -100px;
 }
@@ -55,14 +139,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  top: 40px;
-  left: -20px !important;
+  top: 6px;
+  margin-right: 72px;
+  margin-left: -31px;
+  margin-top: 118px;
   height: 100vh;
   overflow-y: auto;
-  border: 2px solid green;
+  /* border: 1px solid #ce3a3a; */
+  border-radius: 10px;
 }
 .promotions {
-  border: 1px solid black;
+  border: 1px solid #e3e3e3;
   border-radius: 10px;
   padding: 15px;
   /* display: flex */
@@ -119,9 +206,9 @@ body {
 }
 
 .container-col-2 {
-  width: 650px;
+  width: 509px;
   /* border: 2px solid red; */
-  margin: 70px 0px 0px 90px;
+  margin: 70px 0px 0px 198px;
 }
 .container-col-2 h2 {
   font-family: var(--syne-font);
@@ -129,9 +216,10 @@ body {
 .item-container {
   /* border:3px solid green; */
   height: 450px;
-  width: 480px;
+  width: 317px;
   margin-top: 50px;
   border: 1px solid #e3e3e3;
+  padding: 10px 0;
   border-radius: 10px;
 }
 #item-container-2nd-text {
@@ -143,17 +231,20 @@ body {
   /* border: 3px solid cyan; */
   margin: 24px;
   height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .big-cards {
   /* border: 2px solid red; */
   /* width: 400px; */
-  height: 150px;
+  /* height: 150px; */
   display: flex;
 
   /* transition: 0.5s; */
 }
 
-.main-service-icons-links .big-cards .ser-card .ser-card-images::after {
+.ser-card-images::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -165,13 +256,13 @@ body {
   transform-origin: left;
   transition: transform 0.3s ease;
 }
-.main-service-icons-links .big-cards .ser-card .ser-card-images:hover::after {
+.ser-card-images:hover::after {
   transform: scaleX(1);
 }
 .ser-card {
   /* border: 3px solid sandybrown; */
   position: relative;
-  width: 133px;
+  width: 69px;
   height: 100px;
   margin: 0 18px;
   margin-right: 0;
@@ -196,31 +287,16 @@ body {
   color: #000;
 }
 
-.ser-card-images {
-  /* border: 3px solid rgb(64, 255, 0); */
-  background: #f5f5f5;
-  width: 133px;
-  height: 70px;
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
 .small-cards {
   /* border: 2px solid cyan; */
 
   height: 70px;
 }
-.partion1 {
-  display: flex;
 
-  gap: 18px;
-}
 .ser-2-card {
   /* border: 2px solid rgb(64, 0, 255); */
   height: 70px;
-  width: 210px;
+  width: 133px;
 }
 .ser-2-card-images {
   height: 80px;
@@ -236,15 +312,21 @@ body {
   opacity: 0.8;
   cursor: pointer;
 }
+.ser-card-images img {
+  border-radius: 7px;
+}
 .ser-2-card p {
   font-size: 12px;
   font-family: var(--syne-font);
   text-align: center;
 }
+
+.partion1 {
+  display: flex;
+  margin-top: 30px;
+}
 .partion2 {
   display: flex;
-
-  gap: 18px;
   margin-top: 30px;
 }
 .partion2 a,
