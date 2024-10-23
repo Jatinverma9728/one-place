@@ -6,8 +6,8 @@
 
 body {
   font-family: var(--syne-font);
-     height: 100%;
-    overflow-y: auto;
+  height: 100%;
+  overflow-y: auto;
 }
 :root {
   --main-color: #f2e5b8;
@@ -117,8 +117,8 @@ body {
   border-radius: 10px;
   position: relative;
   left: -100px;
-    height: auto; /* Ensure the height is not fixed */
-    overflow: visible; /* Ensure overflow is handled by the entire page */
+  height: auto; /* Ensure the height is not fixed */
+  overflow: visible; /* Ensure overflow is handled by the entire page */
 }
 
 .card-container {
@@ -128,7 +128,7 @@ body {
 }
 
 .card {
-border-top: 1px solid #e3e3e3;
+  border-top: 1px solid #e3e3e3;
   padding: 20px 0;
   height: 270px;
   width: 449px;
@@ -138,7 +138,7 @@ border-top: 1px solid #e3e3e3;
 }
 .price {
   font-size: 14px;
-   font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   display: inline;
 }
@@ -154,7 +154,6 @@ border-top: 1px solid #e3e3e3;
 .time {
   display: inline;
   font-size: 12px;
-
 }
 
 .card-contents {
@@ -173,73 +172,46 @@ border-top: 1px solid #e3e3e3;
   color: #906bff;
   transition: all 0.3s ease;
 }
-.add-button:hover{
+.add-button:hover {
   cursor: pointer;
   background: rgb(197, 180, 245);
   color: #4a247c;
 }
-.cards-about{
+.cards-about {
   border-top: 1px dashed #e3e3e3;
-margin-top: 20px;
-width: 335px;
+  margin-top: 20px;
+  width: 345px;
   height: 200px;
 }
-.cards-about li{
-  /* border: 1px solid red; */
-}
-.cards-about li::marker{
+
+.cards-about li::marker {
   font-size: 16px;
 }
-.cards-about li a{
-font-size: 12px;
-text-decoration: none;
-color: black;
+.cards-about li a {
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
 }
-.edit-package-btn{
-    font-size: 16px;
-    width: 147px;
-    height: 35px;
-    margin-top: 29px;
-    background: transparent;
-    border: 1px solid #e3e3e3;
-    border-radius: 7px;
-font-family: var(--syne-font);
-transition: all 0.3s ease;
+.edit-package-btn {
+  font-size: 16px;
+  width: 147px;
+  height: 35px;
+  margin-top: 29px;
+  background: transparent;
+  border: 1px solid #e3e3e3;
+  border-radius: 7px;
+  font-family: var(--syne-font);
+  transition: all 0.3s ease;
 }
-.edit-package-btn:hover{
+.edit-package-btn:hover {
   background: rgb(237, 237, 237);
   cursor: pointer;
 }
 
-.edit-package-btn:active{
+.edit-package-btn:active {
   background: #939393;
   transform: scale(0.91);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Right Sidebar */
 .sidebar.right {
