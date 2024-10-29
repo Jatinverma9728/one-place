@@ -347,7 +347,6 @@ body {
 .ser-card-images:hover::after {
   transform: scaleX(1);
 }
-
 .ser-card {
   /* border: 3px solid sandybrown; */
   position: relative;
