@@ -344,6 +344,7 @@ body {
   transform-origin: left;
   transition: transform 0.3s ease;
 }
+
 .ser-card-images:hover::after {
   transform: scaleX(1);
 }
