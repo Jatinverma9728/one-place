@@ -303,12 +303,16 @@ body {
 .item-container {
   /* border:3px solid green; */
   position: fixed;
-  height: 220px;
-  width: 317px;
+  height: 300px;
+  width: 345px;
   margin-top: 50px;
   border: 1px solid #e3e3e3;
-  padding: 10px 0;
+  padding: 10px 10px;
   border-radius: 10px;
+}
+.item-container h1 {
+  font-size: 35px;
+  margin-bottom: 20px;
 }
 #item-container-2nd-text {
   font-family: var(--syne-font);
@@ -381,13 +385,9 @@ body {
   height: 70px;
 }
 
-
 .ser-card-images img {
   border-radius: 7px;
 }
-
-
-
 
 /* -----------------mid section part 2----------- */
 .imgandbtn {
