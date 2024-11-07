@@ -402,6 +402,8 @@ body {
 }
 .ser-card-images img {
   border-radius: 7px;
+  height: 64px;
+  width: 64px;
 }
 .ser-2-card p {
   font-size: 12px;
