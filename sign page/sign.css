@@ -62,32 +62,31 @@ h2 {
   background-color: #444;
 }
 .alt-signin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    height: 58px;
-    width: 100%;
-    font-size: 35px;
-    color: #3b3b3b;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  height: 58px;
+  width: 100%;
+  font-size: 35px;
+  color: #3b3b3b;
+  gap: 10px;
 }
 .alt-signin i {
-      width: 50px;
-    height: 29px;
-    margin: 0 10px;
-    border-radius: 8px;
-    padding: 5px;
-    cursor: pointer;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50px;
+  height: 29px;
+  margin: 0 10px;
+  border-radius: 8px;
+  padding: 5px;
+  cursor: pointer;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.alt-signin i:hover{
-border: 1px solid red;
+.alt-signin i:hover {
+  border: 1px solid red;
 }
 .toggle-link {
   text-align: center;
@@ -99,8 +98,6 @@ border: 1px solid red;
 .toggle-link:hover {
   text-decoration: underline;
 }
-
-
 
 .wave-group {
   position: relative;
