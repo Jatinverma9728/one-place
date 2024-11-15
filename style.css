@@ -117,7 +117,7 @@ html {
   list-style: none;
   font-size: 25px;
   position: relative;
-  top: 9px;
+  /* top: 9px; */
   /* border: 2px solid red; */
   width: fit-content;
   text-align: center;
@@ -343,6 +343,7 @@ html {
 }
 .partion1 {
   display: flex;
+
   gap: 18px;
 }
 .ser-2-card {
@@ -432,6 +433,7 @@ html {
   border-radius: 12px;
   margin-top: 77px;
 }
+
 .card-list .card-item .user-image:hover {
   transform: scale(1.009);
 }

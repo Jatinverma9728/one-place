@@ -62,7 +62,8 @@
     margin-top: -250px;
     /* transform: scale(0.9); */
   }
-  .card-section-6::-webkit-scrollbar {  /* For Chrome, Safari, and Opera */
+  .card-section-6::-webkit-scrollbar {  
+    
     display: none;
 }
   .card-section-part-2 {
@@ -119,11 +120,8 @@
     bottom: 0;
     height: 58px;
     z-index: 10;
-    backdrop-filter: blur(12px) saturate(172%);
-    -webkit-backdrop-filter: blur(12px) saturate(172%);
-    background-color: rgba(196, 198, 203, 0.59);
-    /* border: 1px solid rgba(255, 255, 255, 0.125); */
-}
+  background: #f5f5f5;
+  }
 
   .subtitel-s {
     /* border: 2px solid red; */
