@@ -294,8 +294,7 @@ body {
 
 .container-col-2 {
   width: 509px;
-  /* border: 2px solid red; */
-  margin: 70px 0px 0px 198px;
+  /* border: 2px solid red; */  margin: 70px 0px 0px 198px;
 }
 .container-col-2 h2 {
   font-family: var(--syne-font);

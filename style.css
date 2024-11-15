@@ -343,7 +343,6 @@ html {
 }
 .partion1 {
   display: flex;
-
   gap: 18px;
 }
 .ser-2-card {
@@ -432,13 +431,6 @@ html {
   margin-bottom: 10px;
   border-radius: 12px;
   margin-top: 77px;
-}
-.card-list .card-item .user-image> :first-child{
-    width: 226px;
-  height: 176px;
-  border: 1px solid red !important;
-      margin-top: 57px;
-      border-radius: 10px;
 }
 .card-list .card-item .user-image:hover {
   transform: scale(1.009);
