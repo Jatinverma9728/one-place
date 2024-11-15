@@ -81,8 +81,8 @@
   }
   .card-section-6 {
    overflow-y: scroll;
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
   footer {
     /* border: 2px solid green; */
