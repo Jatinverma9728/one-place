@@ -1,4 +1,4 @@
-Your website is a comprehensive service marketplace designed to connect customers with trusted professionals for a wide range of home services. Inspired by the concept of Urban Company, it acts as a one-stop solution for users seeking high-quality services such as beauty and wellness, home repairs, cleaning, and more. With a user-friendly interface and seamless booking system, customers can easily browse, select, and book services from verified professionals.
+One Place is a comprehensive service marketplace designed to connect customers with trusted professionals for a wide range of home services. It is a one-stop solution for users seeking high-quality services such as beauty and wellness, home repairs, cleaning, and more. With a user-friendly interface and seamless booking system, customers can easily browse, select, and book services from verified professionals.
 
 Core Features:
 
@@ -19,9 +19,7 @@ Instant Booking: Customers can select a time and date that suits their schedule 
 Transparent Pricing: Detailed pricing information for each service helps users make informed decisions without hidden costs.
 Secure Payments: Integrated with multiple payment gateways to offer hassle-free and secure transactions.
 Customer Support:
+Live chat.
 
-Live Chat: A built-in chatbox allows customers to instantly connect with support for inquiries or issues.
-Feedback & Ratings: Customers can rate services and leave reviews to help others make informed choices.
 Promotions & Offers:
-
-Regular discounts and seasonal offers available to attract more users and ensure loyalty.
+Regular discounts and seasonal offers  are available to attract more users and ensure loyalty.
