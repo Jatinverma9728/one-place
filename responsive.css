@@ -73,17 +73,28 @@
   }
   .slider-wrapper {
     width: 400px;
-    /* border: 2px solid red; */
+    border: 2px solid red;
     height: 100%;
-    overflow: auto;
+    overflow-x: scroll;
+    /* overflow: hidden; */
+  }
+  .card-list .card-item .user-image {
+    /* border: 1px solid red; */
+   margin-bottom: 0;
+  }
+  .user-image{
+    width: 190px !important;
+    /* height: 500px !important; */
+    
+    object-fit: cover;
+    /* border: 1px solid red; */
   }
   .card-section-5 {
     /* margin-left: 20px; */
   }
   .card-section-6 {
-   overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+ width: 1000px;
+ overflow-x: scroll;
   }
   footer {
     /* border: 2px solid green; */
