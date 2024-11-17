@@ -45,3 +45,4 @@ document.querySelectorAll(".add-to-cart").forEach((button) => {
 
 // Initialize cart count on page load
 document.addEventListener("DOMContentLoaded", updateCartCount);
+
