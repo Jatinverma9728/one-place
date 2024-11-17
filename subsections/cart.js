@@ -12,7 +12,7 @@ function renderCart() {
     const itemElement = document.createElement("div");
     itemElement.className = "cart-item";
     itemElement.innerHTML = `
-            <p>${item.name} - $${item.price} x ${item.quantity}</p>
+            <p>${item.name} - ₹${item.price} x ${item.quantity}</p>
             <button onclick="removeFromCart(${index})">Remove</button>
             <button onclick="updateQuantity(${index}, 1)">+</button>
             <button onclick="updateQuantity(${index}, -1)">-</button>
