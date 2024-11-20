@@ -43,7 +43,7 @@ main {
     rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 #back-btn {
-  background-color: whitesmoke;
+  background-color: white;
   height: 50px;
 }
 #back-btn img {
@@ -89,7 +89,7 @@ button:hover {
 #checkout-btn:hover,
 #checkout-btn:focus {
   background-color: #70e000;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 #removebtn {
   background-color: rgb(51, 51, 51);
@@ -121,7 +121,8 @@ button:hover {
   transition: all 0.2s ease;
 }
 #addbtn:hover,
-#addbtn:focus {
+#addbtn:focus,
+#addbtn:active {
   background-color: rgb(87, 215, 37);
   color: white;
 }
