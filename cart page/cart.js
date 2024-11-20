@@ -13,9 +13,9 @@ function renderCart() {
     itemElement.className = "cart-item";
     itemElement.innerHTML = `
             <p>${item.name} - ₹${item.price} x ${item.quantity}</p>
-            <button onclick="removeFromCart(${index})">Remove</button>
-            <button onclick="updateQuantity(${index}, 1)">+</button>
-            <button onclick="updateQuantity(${index}, -1)">-</button>
+            <button onclick="removeFromCart(${index})" id="removebtn">Remove</button>
+            <button onclick="updateQuantity(${index}, -1)" id="minubtn">-</button>
+            <button onclick="updateQuantity(${index}, 1)" id="addbtn">+</button>
         `;
     cartItemsContainer.appendChild(itemElement);
 
@@ -46,10 +46,12 @@ function removeFromCart(index) {
   renderCart();
 }
 
-// Save cart to localStorage
+// Save cart to localStorage 
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 // Initialize cart on page load
 document.addEventListener("DOMContentLoaded", renderCart);
+
+// alert('hello')

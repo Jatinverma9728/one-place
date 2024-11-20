@@ -16,19 +16,38 @@ header a {
   text-decoration: none;
   margin-left: 20px;
 }
-
+header a {
+  border: 2px solid #e3e3e3;
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+header a:hover, header a:focus {
+  background-color: white;
+  color: black;
+}
 main {
   padding: 20px;
 }
 
 .cart-item {
-  border: 1px solid #c4c4c4;
+  /* border: 1px solid #c4c4c4; */
   margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
   width: 600px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
-
+#back-btn{
+  background-color: whitesmoke;
+  height: 50px;
+}
+#back-btn img{
+height: 50px;
+}
 button {
   background-color: #28a745;
   border-radius: 19px;
@@ -58,51 +77,82 @@ button:hover {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
-header a {
-  border: 2px solid #e3e3e3;
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  padding: 10px;
-  border-radius: 10px;
-}
+
 #checkout-btn {
-  background-color: #007bff;
+  background-color: #14213d;
+  padding: 10px;
 }
 
-#checkout-btn:hover {
-  background-color: #0056b3;
+#checkout-btn:hover , #checkout-btn:focus {
+  background-color: #70e000;
+   transition: all 0.5s ease;
 }
-
+#removebtn {
+  background-color: rgb(51, 51, 51) ;
+  height: 40px;
+  transition: all 0.2s ease;
+}
+#removebtn:hover,
+#removebtn:focus {
+  background-color: red;
+}
+#minubtn {
+  transition: all 0.2s ease;
+  height: 40px;
+  width: 40px;
+  background-color: whitesmoke;
+  color: black;
+}
+#minubtn:hover,
+#minubtn:focus {
+  background-color: rgb(25, 124, 222);
+  color: white;
+}
+#addbtn {
+  background-color: whitesmoke;
+  color: black;
+  height: 40px;
+  height: 40px;
+  width: 40px;
+  transition: all 0.2s ease;
+}
+#addbtn:hover,
+#addbtn:focus {
+  background-color: rgb(87, 215, 37);
+  color: white;
+}
 @media (min-width: 320px) and (max-width: 480px) {
-    header{
-        width: 96svw;
-        max-width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
+  header {
+    width: 96svw;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   #cart-count {
     position: absolute;
     top: 12px;
     left: 20px;
   }
-  #cart-container{
+  #cart-container {
     /* border: 1px solid red; */
     padding: 10px;
-
   }
   .cart-item {
     width: 350px;
   }
-#cart-summary{
- display: flex;   
- flex-direction: column;
- align-items: center;
-width: 400px;
-bottom: 20px;
-  right: 15px;
+  #cart-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    bottom: 20px;
+    right: 15px;
+
+    position: relative;
+    top: 20px;
   }
 }
