@@ -39,7 +39,7 @@ document.querySelectorAll(".add-to-cart").forEach((button) => {
     const productPrice = parseFloat(productElement.dataset.price);
 
     addToCart(productId, productName, productPrice);
-    // alert(`${productName} added to the cart!`);
+    alert(`${productName} added to the cart!`);
   });
 });
 

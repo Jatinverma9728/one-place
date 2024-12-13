@@ -42,7 +42,7 @@ body {
   font-size: 25px;
   position: relative;
   /* top: 9px; */
-  /* border: 2px solid red; */
+  /* border: 2px solid red;        */
   width: fit-content;
   text-align: center;
 }
