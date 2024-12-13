@@ -128,7 +128,7 @@
     align-items: center;
     position: fixed;
     width: 100%;
-    bottom: 0;
+    bottom: 0px;
     height: 58px;
     z-index: 10;
     background: #f5f5f5;
