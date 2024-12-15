@@ -109,6 +109,11 @@
     /* border: 2px solid red; */
   }
 
+  #cart-count{
+
+      top: -20px;
+  left: 19px;
+  }
   /* ---------modal section------- */
 
   .modal-content-1 {

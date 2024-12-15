@@ -50,25 +50,21 @@ body {
 }
 .nav-items-for-small-screen li a {
   color: rgb(141, 141, 141);
+  text-decoration: none;
 }
 .nav-items-for-small-screen li a:active {
   color: rgb(141, 141, 141);
 }
 #cart-count {
-  font-size: 14px;
-  /* border: 1px solid red; */
+  font-size: 15px;
+  border: 1px solid red;
   background: red;
   position: relative;
   text-align: center;
-  padding: 2px;
-  top: 8px;
-  left: -13px;
+  left: -15px;
   border-radius: 50%;
-  height: 25px;
-  width: 25px;
   color: white;
-  /* border: 1px solid red; */
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .logo img {
