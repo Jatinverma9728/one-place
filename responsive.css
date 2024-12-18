@@ -2,7 +2,7 @@
 
 /* Small devices (phones, up to 480px) */
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   body {
     flex-grow: 1;
     box-sizing: border-box;
@@ -31,26 +31,27 @@
   }
   .main-service-icons-links {
     /* border: 1px solid pink; */
+    width: 90%;
     height: 80%;
   }
   .big-cards {
     /* border: 1px solid rgb(9, 128, 0); */
-    width: 100;
+    width: 100%;
   }
   .ser-card {
     /* border: 1px solid red; */
-    width: 100px;
+    width: 120px;
   }
   .ser-card-images {
     /* border: 1px solid ; */
-    width: 80px !important;
+    width: 100% !important;
   }
   .big-cards p {
     font-size: 9px !important;
   }
   .ser-2-card {
     /* border: 1px solid green; */
-    width: 140px !important;
+    width: 100%;
   }
   .ser-2-card-images {
     /* border: 1px solid red; */
@@ -85,6 +86,7 @@
   }
   .user-image {
     width: 190px !important;
+    margin-top: 29px !important;
     /* height: 500px !important; */
 
     object-fit: cover;
@@ -115,12 +117,32 @@
   /* ---------modal section------- */
 
   .modal-content-1 {
-    border: 1px solid rgb(49, 49, 49);
-    width: 400px;
+    border: 1px solid rgb(122, 122, 122) !important;
+    width: 90% !important;
   }
   .modal-content {
-    width: 400px;
+    width: 90% !important;
+    /* height: 75%; */
+    /* border: 1px solid blue; */
   }
+  .service-item {
+    /* border: 1px solid black; */
+    height: 95%;
+  }
+  .service-item a {
+    font-size: 8px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columns */
+    gap: 10px;
+  }
+  .service-item a img {
+    /* border: 1px solid red; */
+    height: 40px;
+    width: 40px;
+  }
+
   #waterpurifier-modal {
     width: 170px;
   }
@@ -214,25 +236,22 @@
   .subtitel-s {
     font-size: 20px !important;
   }
-.slider-wrapper{
-  /* border: 1px solid; */
-  /* width: 750px; */
-  height: 285px;
-}
-.card-item{
-  width: 200px !important;
-  height: 240px !important;
-}
-.user-name{
-  font-size: 12px;
-  margin-bottom: -15px;
-}
-.user-image{
-  width: 197px !important;
-}
-
-
-
+  .slider-wrapper {
+    /* border: 1px solid; */
+    /* width: 750px; */
+    height: 285px;
+  }
+  .card-item {
+    width: 200px !important;
+    height: 240px !important;
+  }
+  .user-name {
+    font-size: 12px;
+    /* margin-bottom: -15px; */
+  }
+  .user-image {
+    width: 197px !important;
+  }
 
   footer {
     /* border: 2px solid green; */
