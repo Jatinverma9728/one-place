@@ -1,8 +1,8 @@
 @media (max-width: 1024px) {
   /* Adjust the container to have two columns instead of three */
-body{
+  body {
     overflow-x: none !important;
-}
+  }
   .container {
     grid-template-columns: 1fr 2fr;
   }
@@ -78,15 +78,15 @@ body{
     margin: 20px;
     width: 100%;
   }
-.group{
+  .group {
     width: 100px;
     font-size: 10px;
-}
-.carpenterbook{
-  /* border: 2px solid red; */
-  margin-left: 10px;
-  transform: scale(0.98);
-}
+  }
+  .carpenterbook {
+    /* border: 2px solid red; */
+    margin-left: 10px;
+    transform: scale(0.98);
+  }
 }
 
 /* For small screens (e.g., mobile devices) */
@@ -125,7 +125,6 @@ body{
     margin: 20px 0;
     height: auto;
   }
-  
 }
 
 /* Additional adjustments for ultra-small screens (e.g., very small mobile screens) */
