@@ -1,117 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login and Signup</title>
-    <link rel="stylesheet" href="sign.css">
-    <script src="https://kit.fontawesome.com/92d5a0c82a.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="sign.css" />
+  </head>
 
-<body>
-
+  <body>
     <div class="container" id="login-container">
-        <h2>Login</h2>
-        <div class="form-group">
-            <div class="wave-group">
-                <input required="" type="text" class="input">
-                <span class="bar"></span>
-                <label class="label">
-                    <span class="label-char" style="--index: 0">E</span>
-                    <span class="label-char" style="--index: 1">m</span>
-                    <span class="label-char" style="--index: 2">a</span>
-                    <span class="label-char" style="--index: 3">i</span>
-                    <span class="label-char" style="--index: 3">l</span>
-                </label>
-            </div>
+      <h2>Login</h2>
+      <div class="form-group">
+        <div class="wave-group">
+          <input required="" type="text" class="input" />
+          <span class="bar"></span>
+          <label class="label">
+            <span class="label-char" style="--index: 0">E</span>
+            <span class="label-char" style="--index: 1">m</span>
+            <span class="label-char" style="--index: 2">a</span>
+            <span class="label-char" style="--index: 3">i</span>
+            <span class="label-char" style="--index: 3">l</span>
+          </label>
         </div>
-        <div class="form-group">
-            <div class="wave-group">
-                <input required="" type="text" class="input">
-                <span class="bar"></span>
-                <label class="label">
-                    <span class="label-char" style="--index: 0">P</span>
-                    <span class="label-char" style="--index: 1">a</span>
-                    <span class="label-char" style="--index: 2">s</span>
-                    <span class="label-char" style="--index: 3">s</span>
-                    <span class="label-char" style="--index: 3">w</span>
-                    <span class="label-char" style="--index: 3">o</span>
-                    <span class="label-char" style="--index: 3">r</span>
-                    <span class="label-char" style="--index: 3">d</span>
-                </label>
-            </div>
+      </div>
+      <div class="form-group">
+        <div class="wave-group">
+          <input required="" type="text" class="input" />
+          <span class="bar"></span>
+          <label class="label">
+            <span class="label-char" style="--index: 0">P</span>
+            <span class="label-char" style="--index: 1">a</span>
+            <span class="label-char" style="--index: 2">s</span>
+            <span class="label-char" style="--index: 3">s</span>
+            <span class="label-char" style="--index: 3">w</span>
+            <span class="label-char" style="--index: 3">o</span>
+            <span class="label-char" style="--index: 3">r</span>
+            <span class="label-char" style="--index: 3">d</span>
+          </label>
         </div>
-        <div class="form-actions">
-            <div>
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Remember me</label>
-            </div>
-            <a href="#">Forgot password?</a>
+      </div>
+      <div class="form-actions">
+        <div>
+          <input type="checkbox" id="remember-me" />
+          <label for="remember-me">Remember me</label>
         </div>
-        <button class="btn" onclick="toggleForm()">Sign In</button>
-        <div class="toggle-link" onclick="showSignup()">Don't have an account? <b style="color: #007bff;">Sign Up</b>
-        </div>
-        <div class="alt-signin">
-            <i class="fa-brands fa-google"></i>
-            <i class="fa-brands fa-apple"></i>
-        </div>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button class="btn" onclick="toggleForm()">Sign In</button>
+      <div class="toggle-link" onclick="showSignup()">
+        Don't have an account? <b style="color: #007bff">Sign Up</b>
+      </div>
+      <div class="alt-signin">
+        <a href="">
+          <div id="google">
+            <img src="google-symbol.png" alt="" /></div
+        ></a>
+
+        <a href=""
+          ><div id="apple">
+            <img src="apple-logo.png" alt="" /></div
+        ></a>
+      </div>
     </div>
 
-    <div class="container" id="signup-container" style="display: none;">
-        <h2>Sign Up</h2>
-        <div class="form-group">
-            <div class="wave-group">
-                <input required="" type="text" class="input">
-                <span class="bar"></span>
-                <label class="label">
-                    <span class="label-char" style="--index: 0">N</span>
-                    <span class="label-char" style="--index: 1">a</span>
-                    <span class="label-char" style="--index: 2">m</span>
-                    <span class="label-char" style="--index: 3">e</span>
-                </label>
-            </div>
+    <div class="container" id="signup-container" style="display: none">
+      <h2>Sign Up</h2>
+      <div class="form-group">
+        <div class="wave-group">
+          <input required="" type="text" class="input" />
+          <span class="bar"></span>
+          <label class="label">
+            <span class="label-char" style="--index: 0">N</span>
+            <span class="label-char" style="--index: 1">a</span>
+            <span class="label-char" style="--index: 2">m</span>
+            <span class="label-char" style="--index: 3">e</span>
+          </label>
         </div>
-        <div class="form-group">
-            <div class="wave-group">
-                <input required="" type="text" class="input">
-                <span class="bar"></span>
-                <label class="label">
-                    <span class="label-char" style="--index: 0">E</span>
-                    <span class="label-char" style="--index: 1">m</span>
-                    <span class="label-char" style="--index: 2">a</span>
-                    <span class="label-char" style="--index: 3">i</span>
-                    <span class="label-char" style="--index: 3">l</span>
-                </label>
-            </div>
+      </div>
+      <div class="form-group">
+        <div class="wave-group">
+          <input required="" type="text" class="input" />
+          <span class="bar"></span>
+          <label class="label">
+            <span class="label-char" style="--index: 0">E</span>
+            <span class="label-char" style="--index: 1">m</span>
+            <span class="label-char" style="--index: 2">a</span>
+            <span class="label-char" style="--index: 3">i</span>
+            <span class="label-char" style="--index: 3">l</span>
+          </label>
         </div>
-        <div class="form-group">
-            <div class="wave-group">
-                <input required="" type="text" class="input">
-                <span class="bar"></span>
-                <label class="label">
-                    <span class="label-char" style="--index: 0">P</span>
-                    <span class="label-char" style="--index: 1">a</span>
-                    <span class="label-char" style="--index: 2">s</span>
-                    <span class="label-char" style="--index: 3">s</span>
-                    <span class="label-char" style="--index: 3">w</span>
-                    <span class="label-char" style="--index: 3">o</span>
-                    <span class="label-char" style="--index: 3">r</span>
-                    <span class="label-char" style="--index: 3">d</span>
-                </label>
-            </div>
+      </div>
+      <div class="form-group">
+        <div class="wave-group">
+          <input required="" type="text" class="input" />
+          <span class="bar"></span>
+          <label class="label">
+            <span class="label-char" style="--index: 0">P</span>
+            <span class="label-char" style="--index: 1">a</span>
+            <span class="label-char" style="--index: 2">s</span>
+            <span class="label-char" style="--index: 3">s</span>
+            <span class="label-char" style="--index: 3">w</span>
+            <span class="label-char" style="--index: 3">o</span>
+            <span class="label-char" style="--index: 3">r</span>
+            <span class="label-char" style="--index: 3">d</span>
+          </label>
         </div>
-        <button class="btn" onclick="toggleForm()">Sign Up</button>
-        <div class="toggle-link" onclick="showLogin()">Already have an account? <b style="color: #007bff;">Sign In</b>
-        </div>
-        <div class="alt-signin">
-            <i class="fa-brands fa-google"></i>
-            <i class="fa-brands fa-apple"></i>
-        </div>
+      </div>
+      <button class="btn" onclick="toggleForm()">Sign Up</button>
+      <div class="toggle-link" onclick="showLogin()">
+        Already have an account? <b style="color: #007bff">Sign In</b>
+      </div>
+    <div class="alt-signin">
+        <a href="">
+          <div id="google">
+            <img src="google-symbol.png" alt="" /></div
+        ></a>
+
+        <a href=""
+          ><div id="apple">
+            <img src="apple-logo.png" alt="" /></div
+        ></a>
+      </div>
     </div>
 
     <script src="sign.js"></script>
-
-</body>
-
+  </body>
 </html>

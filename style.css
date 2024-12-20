@@ -462,7 +462,7 @@ html {
 }
 
 .card-list .card-item .user-image:hover {
-  transform: scale(1.009);
+  transform: scale(1.035);
 }
 
 .user-name {
