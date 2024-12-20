@@ -148,4 +148,11 @@
   .main-service-icons-links {
     padding: 10px;
   }
+  .details img{
+    width: 400px !important;
+  }
+  .add-button-special{
+  margin-top: 29px !important;
+  left: -82px !important;
+}
 }

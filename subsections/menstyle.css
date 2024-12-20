@@ -172,6 +172,9 @@ body {
   gap: 20px;
   scroll-behavior: smooth !important;
 }
+.card-special{
+  height: 456px !important;
+}
 
 .card {
   border-top: 1px solid #e3e3e3;
@@ -201,12 +204,20 @@ body {
   display: inline;
   font-size: 12px;
 }
-
+.details img{
+  transition: all 0.3s ease;
+}
+.details img:hover{
+  transform: scale(1.009);
+}
 .card-contents {
   display: flex;
   justify-content: space-between;
 }
-
+.add-button-special{
+  top: 297px !important ;
+  left: -82px !important;
+}
 .add-button {
   width: 80px;
   height: 36px;
