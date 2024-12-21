@@ -160,7 +160,7 @@ body {
   border: 1px solid #e3e3e3;
   border-radius: 10px;
   position: relative;
-  left: -100px;
+  left: -10px;
   height: auto; /* Ensure the height is not fixed */
   overflow: visible; /* Ensure overflow is handled by the entire page */
   scroll-behavior: smooth !important;
