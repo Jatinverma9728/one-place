@@ -15,7 +15,7 @@
   transition: all 0.5s ease !important;
 }
 #message-button:hover {
-  filter: invert(100%);
+  /* filter: invert(100%); */
   transform: translateY(-10px) scale(1.2);
   cursor: pointer;
 }

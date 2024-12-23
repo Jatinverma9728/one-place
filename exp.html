@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Search Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9f9f9;
+      margin: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 10px 15px;
+      width: 300px;
+      background-color: #fff;
+    }
+
+    .search-box i {
+      font-size: 18px;
+      margin-right: 10px;
+      color: #888;
+    }
+.search-box i img{
+    height: 25px;
+}
+    .search-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="search-box">
+  <i> <img src="icons/search-button.png" alt=""></i>
+  <input 
+    id="search-input" 
+    type="text" 
+    placeholder="Search for 'Kitchen cleaning'"
+  />
+</div>
+
+<script>
+  const inputField = document.getElementById('search-input');
+  const texts = ['Kitchen cleaning', 'Plumber', 'Hair spa', 'Carpanter', 'AC repair' , 'Electrician' , 'Applinces repair'];
+  let currentTextIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let pauseEnd = false;
+  let isFocused = false; // Tracks input focus state
+
+  function typeAnimation() {
+    if (isFocused) return; // Do nothing if input is focused (user interaction)
+
+    const currentText = texts[currentTextIndex];
+
+    if (!pauseEnd) {
+      // Typing and Deleting Logic
+      if (isDeleting) {
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          pauseEnd = true;
+          currentTextIndex = (currentTextIndex + 1) % texts.length; // Move to next word
+        }
+      } else {
+        charIndex++;
+        if (charIndex === currentText.length) {
+          isDeleting = true;
+          pauseEnd = true;
+        }
+      }
+      inputField.setAttribute('placeholder', `Search for '${currentText.slice(0, charIndex)}'`);
+    } else {
+      // Pause before typing or deleting
+      setTimeout(() => {
+        pauseEnd = false;
+      }, 200); // Pause for 2 seconds
+    }
+
+    // Adjust speed dynamically
+    const typingSpeed = isDeleting ? 100 : 150;
+    const delay = pauseEnd ? 1000 : typingSpeed;
+    setTimeout(typeAnimation, delay);
+  }
+
+  // Event listeners for input focus/blur
+  inputField.addEventListener('focus', () => {
+    isFocused = true; // Stop animation when input is focused
+    inputField.setAttribute('placeholder', ''); // Clear placeholder
+  });
+
+  inputField.addEventListener('blur', () => {
+    isFocused = false; // Resume animation on blur
+    typeAnimation();
+  });
+
+  // Start the animation initially
+  typeAnimation();
+</script>
+
+</body>
+</html>

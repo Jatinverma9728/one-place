@@ -23,7 +23,36 @@ html {
   padding: 0;
   height: 100%;
 }
+.navbar div {
+  position: absolute;
+  right: 50px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px 15px;
+  width: 250px;
+  background-color: #fff;
+}
 
+.search-box i {
+  position: relative;
+  border: 1px solid red;
+  height: 30px;
+  width: 30px;
+}
+.search-box i img {
+  height: 25px;
+  border: 1px solid black;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
 #notification-section {
   width: 100vw;
   height: 35px;
