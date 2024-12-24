@@ -43,10 +43,10 @@ html {
   height: 30px;
   width: 30px;
 }
-.search-box i img {
+/* .search-box i img {
   height: 25px;
   border: 1px solid black;
-}
+} */
 .search-box input {
   border: none;
   outline: none;
