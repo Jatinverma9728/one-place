@@ -39,9 +39,12 @@ html {
 
 .search-box i {
   position: relative;
-  border: 1px solid red;
-  height: 30px;
-  width: 30px;
+  /* border: 1px solid red; */
+  /* height: 30px; */
+  /* width: 30px; */
+  font-size: 1.5rem;
+  opacity: 0.7;
+  margin-right: 1rem;
 }
 /* .search-box i img {
   height: 25px;
