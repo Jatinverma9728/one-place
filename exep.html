@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Modal</title>
+  <style>
+    /* Modal styles */
+    #searchModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      width: 80%;
+      max-width: 400px;
+    }
+    #searchInput {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    #noResultsMessage {
+      color: red;
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="openSearchModal()">Search</button>
+
+  <!-- Search Modal -->
+  <div id="searchModal">
+    <div class="modal-content">
+      <h3>Search</h3>
+      <input type="text" id="searchInput" placeholder="Type something to search...">
+      <button onclick="performSearch()">Search</button>
+      <button onclick="closeSearchModal()">Close</button>
+      <p id="noResultsMessage">No results found!</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>Welcome to OnePlace</h1>
+    <p>Women's Salon & Spa services are the best here.</p>
+    <p>Men's Salon offers premium grooming services.</p>
+    <p>AC & appliance repair is available for all brands.</p>
+    <p>Painting & waterproofing services ensure quality work.</p>
+    <p>Electrician, plumber, and carpenter services are just a click away.</p>
+    <p>Water purifier installations are available here.</p>
+  </div>
+
+  <script>
+    // Function to open the search modal
+    function openSearchModal() {
+      document.getElementById("searchModal").style.display = "flex";
+    }
+
+    // Function to close the search modal
+    function closeSearchModal() {
+      document.getElementById("searchModal").style.display = "none";
+    }
+
+    // Function to perform the search
+    function performSearch() {
+      const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+      const content = document.querySelectorAll(".content p, .content h1");
+      let found = false;
+
+      content.forEach((element) => {
+        const text = element.textContent.toLowerCase();
+
+        if (text.includes(searchQuery) && searchQuery.trim() !== "") {
+          element.style.display = "block"; // Show matching elements
+          found = true;
+        } else {
+          element.style.display = "none"; // Hide non-matching elements
+        }
+      });
+
+      const noResultsMessage = document.getElementById("noResultsMessage");
+      noResultsMessage.style.display = found ? "none" : "block";
+
+      // Automatically hide the modal after performing the search
+      closeSearchModal();
+    }
+
+    // Add event listener for the Enter key in the search box
+    document.getElementById("searchInput").addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default form submission behavior
+        performSearch(); // Trigger the search function
+      }
+    });
+  </script>
+</body>
+</html>
