@@ -14,7 +14,7 @@ locationPin.addEventListener("click", () => {
         selectedLocation = { latitude, longitude };
 
         const address = await reverseGeocode(latitude, longitude);
-        locationDisplay.textContent = `Detected Location: ${address}`;
+        locationDisplay.textContent = `${address}`;
         loadingIndicator.style.display = "none"; // Hide loading text
       },
       (error) => {

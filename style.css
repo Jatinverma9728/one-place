@@ -96,11 +96,11 @@ html {
   /* padding: 20px; */
   display: flex;
   position: relative;
-  left: 0px;
+  left: 580px;
   top: 15px;
 }
 #controls p{
-  font-size: 10px;
+  font-size: 12px;
 
 }
 #location-pin {
