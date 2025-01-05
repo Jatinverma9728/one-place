@@ -87,6 +87,7 @@ html {
   align-items: center;
   justify-content: center;
   font-size: 40px;
+      left: 83px;
   font-family: var(--syne-font);
   margin-top: 0.5rem;
   position: relative;
@@ -96,8 +97,8 @@ html {
   /* padding: 20px; */
   display: flex;
   position: relative;
-  left: 580px;
-  top: 15px;
+ left: 278px;
+    top: 97px;
 }
 #controls p{
   font-size: 12px;

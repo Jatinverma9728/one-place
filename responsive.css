@@ -22,7 +22,8 @@
     font-size: 1vw; /* Font size for mobile devices */
   }
   .logo-text {
-    font-size: 45px;
+    font-size: 40px;
+    margin-left: -40px;
   }
   #controls p{
   font-size: 10px;
@@ -30,11 +31,13 @@
 }
 #controls {
   left: 0px;
+  top: 15px;
 }
   .navbar {
     display: flex;
     position: relative;
     top: 0;
+    left: 0;
     z-index: 1;
     background: #fff;
     justify-content: center;
