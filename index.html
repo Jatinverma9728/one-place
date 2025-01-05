@@ -65,6 +65,13 @@
 
     <nav class="navbar">
       <h1 class="logo-text">One Place</h1>
+      <div id="controls">
+        <div id="location-pin" title="Detect My Location">
+          <img src="icons/gps.png" />
+        </div>
+        <p id="location-display">No location selected yet.</p>
+        <p id="loading">Fetching location...</p>
+      </div>
     </nav>
 
     <!-- -------------section-1------------------- ------------->
@@ -1192,8 +1199,11 @@
       </div>
     </footer>
 
-    <!-- image slider js  -->
+    <!-- -----location picker script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="location.js"></script>
 
+    <!-- image slider js  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="imageswiper.js"></script>
 

@@ -92,7 +92,53 @@ html {
   position: relative;
   /* border: 2px solid blue; */
 }
+#controls {
+  /* padding: 20px; */
+  display: flex;
+  position: relative;
+  left: 0px;
+  top: 15px;
+}
+#controls p{
+  font-size: 10px;
 
+}
+#location-pin {
+  font-size: 50px;
+  cursor: pointer;
+  color: #ff4757;
+  animation: jump 1.5s infinite;
+  position: relative;
+  top: -12px;
+  left: 0px;
+}
+#location-pin img {
+  height: 30px;
+}
+#location-display {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+#loading {
+  display: none;
+  font-size: 16px;
+  color: #555;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+/* Subtle jump animation */
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 .one-place-logo {
   height: 100px;
   width: 150px;
