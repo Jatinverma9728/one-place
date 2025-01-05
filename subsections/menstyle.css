@@ -35,6 +35,8 @@ body {
   display: none;
   position: fixed;
   bottom: 0;
+  /* border: 3px solid red; */
+  border-radius: 12px 12px 0px 0px;
 }
 .nav-items-for-small-screen ul {
   list-style: none;
