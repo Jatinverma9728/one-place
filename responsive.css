@@ -26,7 +26,7 @@
   }
   .navbar {
     display: flex;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1;
     background: #fff;
@@ -123,7 +123,7 @@
   }
 
   #cart-count {
-    top: -20px;
+    top: -40px;
     left: 19px;
   }
   /* ---------modal section------- */
@@ -171,7 +171,16 @@
     z-index: 10;
     background: #f5f5f5;
   }
-
+    #nav-items-for-small-screen li a img{
+      /* border: 1px solid red; */
+      margin-top: -10px;
+      margin-bottom: -10px;
+    }
+.icon-text{
+  margin-top: 0;
+  font-size: 8px;
+  /* border: 1px solid red; */
+}
   .subtitel-s {
     /* border: 2px solid red; */
     margin-left: 10px;
