@@ -243,9 +243,9 @@ body {
   /* width: 345px; */
   height: 200px;
 }
-.card-container h2{
-width: 100%;
- /* border: 1px solid red; */
+.card-container h2 {
+  width: 100%;
+  /* border: 1px solid red; */
 }
 .cards-about li::marker {
   font-size: 16px;
@@ -526,7 +526,7 @@ width: 100%;
     top: 3px;
     left: -15px;
   }
-  .cards-about{
-      width: 345px;
+  .cards-about {
+    width: 345px;
   }
 }
