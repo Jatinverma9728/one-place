@@ -262,7 +262,7 @@ body {
   width: 147px;
   height: 35px;
   margin-top: 29px;
-  color: black;
+  color: #6e43e6;
   background: transparent;
   border: 1px solid #e3e3e3;
   border-radius: 7px;
@@ -275,7 +275,7 @@ body {
 }
 
 .edit-package-btn:active {
-  background: #939393;
+  /* background: #939393; */
   transform: scale(0.91);
 }
 

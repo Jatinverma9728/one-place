@@ -22,6 +22,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  scroll-behavior: smooth;
 }
 .navbar div {
   position: absolute;
@@ -525,6 +526,11 @@ html {
   flex-direction: column;
   backdrop-filter: blur(30px);
 }
+.card-item a {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
 .card-list .card-item .user-image {
   width: 226px;
   height: 176px;
@@ -590,6 +596,11 @@ html {
   height: 280px !important;
   width: 230px !important;
   background-color: #efefef;
+}
+.cardd a {
+  color: black;
+  text-decoration: none;
+  text-align: center;
 }
 .cardd-image {
   position: relative;
@@ -706,12 +717,12 @@ footer {
   margin-top: 150px;
 }
 body::-webkit-scrollbar {
-  width: 5px; /* Width of the scrollbar */
+  width: 10px; /* Width of the scrollbar */
 }
 
 body::-webkit-scrollbar-thumb {
   background: #666666; /* Color of the scrollbar thumb */
-  border-radius: 50px; /* Rounded corners for the thumb */
+  border-radius: 20px; /* Rounded corners for the thumb */
   transition: all 0.3s ease;
 }
 
@@ -721,5 +732,5 @@ body::-webkit-scrollbar-thumb:hover {
 
 body::-webkit-scrollbar-track {
   background: #f1f1f1; /* Background color of the scrollbar track */
-  border-radius: 5px;
+  border-radius: 15px;
 }
