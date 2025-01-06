@@ -196,11 +196,13 @@ body {
 }
 
 .fa-circle {
-  font-size: 3px;
+  font-size: 4px;
   margin-left: 40px;
-  margin-right: 8px;
+  margin-right: 3px;
+  position: relative;
+  top: -4px;
   display: inline;
-  color: rgb(111, 190, 124);
+  color: rgb(0, 255, 42);
 }
 
 .time {
@@ -534,5 +536,8 @@ body {
   .card-container h2 {
     text-align: center;
     /* border: 1px solid red; */
+  }
+  .cards-about li a{
+    font-size: 12px !important;
   }
 }
