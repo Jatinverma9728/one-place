@@ -531,4 +531,8 @@ body {
   .cards-about {
     width: 345px;
   }
+  .card-container h2 {
+    text-align: center;
+    /* border: 1px solid red; */
+  }
 }
