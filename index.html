@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="loader.css" />
     <link rel="stylesheet" href="responsive.css" />
     <link rel="stylesheet" href="messagebtn.css" />
+    <link rel="stylesheet" href="wishlist/addWishListBtn.css" />
     <!-- <link rel="stylesheet" href="cart page/cart.css"> -->
     <script
       src="https://kit.fontawesome.com/92d5a0c82a.js"
@@ -53,7 +54,29 @@
 
     <!-- -----------loader----------- -->
 
-    <div id="loader"><img src="css-loader2.gif" alt="" /></div>
+    <!-- Loader Container to display loaders -->
+    <div id="loader" class="loader-container">
+      <!-- Loader 1 - Circle Loader -->
+      <div class="loader">
+        <svg viewBox="0 0 80 80">
+          <circle r="32" cy="40" cx="40" id="test"></circle>
+        </svg>
+      </div>
+
+      <!-- Loader 2 - Triangle Loader -->
+      <div class="loader triangle">
+        <svg viewBox="0 0 86 80">
+          <polygon points="43 8 79 72 7 72"></polygon>
+        </svg>
+      </div>
+
+      <!-- Loader 3 - Square Loader -->
+      <div class="loader">
+        <svg viewBox="0 0 80 80">
+          <rect height="64" width="64" y="8" x="8"></rect>
+        </svg>
+      </div>
+    </div>
 
     <!-- ---------notification section-------------- -->
 
@@ -77,18 +100,44 @@
     <!-- -------------section-1------------------- ------------->
     <div class="section-1">
       <div class="navigation-items">
-        <img
-          src="images/logo/logo_2-removebg-preview.png"
-          alt="Logo"
-          class="one-place-logo"
-        />
+        <div class="search-container">
+          <input
+            type="text"
+            name="text"
+            class="input"
+            required=""
+            placeholder="Type to search..."
+          />
+          <div class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <title>Search</title>
+              <path
+                d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
+                fill="none"
+                stroke="currentColor"
+                stroke-miterlimit="10"
+                stroke-width="32"
+              ></path>
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                stroke-width="32"
+                d="M338.29 338.29L448 448"
+              ></path>
+            </svg>
+          </div>
+        </div>
         <ul class="nav-items">
           <li><a href="#main-section-image-text">Home</a></li>
-          <li><a href="#" style="margin-right: 5px">Services</a></li>
-          <li><a href="about us.pdf">About</a></li>
-          <li id="pp">
-            <a href="privacy policy oneplace.pdf">Privacy & Policy</a>
-          </li>
+          <li><a href="about us.pdf" style="margin-right: 5px">About</a></li>
+          <li><a href="privacy policy oneplace.pdf">Privacy & Policy</a></li>
+          <li id="pp"><a href="wishlist/wishlist.html">Wishlist</a></li>
         </ul>
         <div class="side-items">
           <a href="sign page/signpage.html" class="login-btn" id="login-modal"
@@ -303,11 +352,54 @@
           <h1 class="subtitel subtitel-s">Saloon For Girls</h1>
           <div class="slider-wrapper">
             <div class="card-list swiper-wrapper">
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="1">
                 <a
                   href="/subsections/girls.html#hairbleach"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Hair care</h2>
                   <img
                     src="images/women saloon image/hair care.jpeg"
@@ -317,11 +409,54 @@
                 </a>
               </div>
 
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="2">
                 <a
                   href="/subsections/girls.html#facial"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">facial and cleanup</h2>
                   <img
                     src="images/women saloon image/facial and cleanup.jpeg"
@@ -331,11 +466,54 @@
                 </a>
               </div>
 
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="3">
                 <a
                   href="/subsections/girls.html#hairbleach"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">bleach and detan</h2>
                   <img
                     src="images/women saloon image/bleach and detan.jpeg"
@@ -343,11 +521,54 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="4">
                 <a
                   href="/subsections/girls.html#threading"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Threading & Face axing</h2>
                   <img
                     src="images/women saloon image/eye brow.jpeg"
@@ -355,11 +576,54 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="5">
                 <a
                   href="/subsections/girls.html#detan"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Manicure</h2>
                   <img
                     src="images/women saloon image/manicure.jpeg"
@@ -367,11 +631,54 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="6">
                 <a
                   href="/subsections/girls.html#detan"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Pedicuree</h2>
                   <img
                     src="images/women saloon image/pedicuree.jpeg"
@@ -379,11 +686,54 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="7">
                 <a
                   href="/subsections/girls.html#haircut-and-beard-styling"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Waxing</h2>
                   <img
                     src="images/women saloon image/waxing.jpeg"
@@ -406,11 +756,54 @@
           </h1>
           <div class="slider-wrapper">
             <div class="card-list swiper-wrapper">
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="8">
                 <a
                   href="/subsections/girls.html#hairbleach"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Stress relief</h2>
                   <img
                     src="images/stress/stress.jpeg"
@@ -418,11 +811,54 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="9">
                 <a
                   href="/subsections/girls.html#hairbleach"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Pain relief</h2>
                   <img
                     src="images/stress/pain.jpeg"
@@ -431,11 +867,54 @@
                 /></a>
               </div>
 
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="10">
                 <a
                   href="/subsections/girls.html#hairbleach"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Natural Skincare</h2>
                   <img
                     src="images/stress/skin.jpeg"
@@ -458,11 +937,54 @@
           <h1 class="subtitel subtitel-s">Saloon For Mens</h1>
           <div class="slider-wrapper">
             <div class="card-list swiper-wrapper">
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="11">
                 <a
                   href="/subsections/menhair.html#haircut-and-beard-styling"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Hair cut & Bread</h2>
                   <img
                     src="images/mens saloon/hair cut.jpeg"
@@ -471,11 +993,54 @@
                   />
                 </a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="12">
                 <a
                   href="/subsections/menhair.html#pedicure"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Pedicuree & Manicure</h2>
                   <img
                     src="images/mens saloon/manicure & pedicuree.jpeg"
@@ -485,11 +1050,54 @@
                 </a>
               </div>
 
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="13">
                 <a
                   href="/subsections/menhair.html#hair-color"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Hair Colour & Spa</h2>
                   <img
                     src="images/mens saloon/hair color & hair spa.jpeg"
@@ -498,11 +1106,54 @@
                   />
                 </a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="14">
                 <a
                   href="/subsections/menhair.html#facialand-cleanup"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Facial & Cleanup</h2>
                   <img
                     src="images/mens saloon/facial cleanup.jpeg"
@@ -527,11 +1178,54 @@
           </h1>
           <div class="slider-wrapper">
             <div class="card-list swiper-wrapper">
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="15">
                 <a
                   href="/subsections/menhair.html#massage"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Stress relief</h2>
                   <img
                     src="images/mens stress/stress.jpeg"
@@ -540,11 +1234,54 @@
                   />
                 </a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="16">
                 <a
                   href="/subsections/menhair.html#massage"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Pain relief</h2>
                   <img
                     src="images/mens stress/pain.jpeg"
@@ -554,11 +1291,54 @@
                 </a>
               </div>
 
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="17">
                 <a
                   href="/subsections/menhair.html#massage"
                   style="text-decoration: none; text-align: center"
                 >
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Post Workout</h2>
                   <img
                     src="images/mens stress/post worlout.jpeg"
@@ -583,8 +1363,51 @@
           <h1 class="subtitel subtitel-s">AC & Applinces Repair</h1>
           <div class="slider-wrapper">
             <div class="card-list swiper-wrapper">
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="18">
                 <a href="/subsections/applinces/ac.html">
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">AC Repair & Service</h2>
                   <img
                     src="images/repairing/ac.jpeg"
@@ -592,8 +1415,51 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="19">
                 <a href="/subsections/applinces/washing.html">
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Washing Machine Repair</h2>
                   <img
                     src="images/repairing/washing machine.jpeg"
@@ -601,8 +1467,51 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="20">
                 <a href="/subsections/applinces/ro.html">
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Water purifier Repir</h2>
                   <img
                     src="images/repairing/water purifier.jpeg"
@@ -610,8 +1519,51 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="21">
                 <a href="/subsections/applinces/chimney.html">
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Chimeny Repair & service</h2>
                   <img
                     src="images/repairing/chimny.jpeg"
@@ -619,8 +1571,51 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="22">
                 <a href="/subsections/applinces/tv.html">
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Telivision Repair</h2>
                   <img
                     src="images/repairing/tv.jpeg"
@@ -628,8 +1623,51 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="23">
                 <a href="/subsections/applinces/fridge.html">
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Refrigrator Repair & service</h2>
                   <img
                     src="images/repairing/fridge.jpeg"
@@ -637,8 +1675,94 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="24">
                 <a href="/subsections/applinces/gyser.html">
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Gyser Repair & service</h2>
                   <img
                     src="images/repairing/gyser.jpeg"
@@ -646,8 +1770,51 @@
                     class="user-image"
                 /></a>
               </div>
-              <div class="card-item swiper-slide">
+              <div class="card-item swiper-slide" data id="25">
                 <a href="/subsections/applinces/microwave.html">
+                  <div class="wishlist-btn">
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      id="wishlistCheckbox"
+                    />
+                    <div class="svg-container">
+                      <!-- Heart outline (empty) -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-outline"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                        ></path>
+                      </svg>
+                      <!-- Heart filled -->
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="svg-filled"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                        ></path>
+                      </svg>
+                      <!-- Celebration particles -->
+                      <svg
+                        class="svg-celebrate"
+                        width="100"
+                        height="100"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon points="10,10 20,20"></polygon>
+                        <polygon points="10,50 20,50"></polygon>
+                        <polygon points="20,80 30,70"></polygon>
+                        <polygon points="90,10 80,20"></polygon>
+                        <polygon points="90,50 80,50"></polygon>
+                        <polygon points="80,80 70,70"></polygon>
+                      </svg>
+                    </div>
+                  </div>
                   <h2 class="user-name">Microwave Repair & service</h2>
                   <img
                     src="images/repairing/microwave.jpeg"
@@ -1240,6 +2407,7 @@
 
     <!-- normal js files -->
     <!-- <script src="cart.js"></script> -->
+    <script src="wishlist/addWishListBtn.js"></script>
     <script src="searchbox.js"></script>
     <script src="cart page/product.js"></script>
     <script src="responsive.js"></script>
