@@ -762,7 +762,6 @@ body::-webkit-scrollbar-track {
 .input:not(:invalid) {
   width: 200px;
   cursor: text;
-
 }
 
 .input:focus + .icon,
