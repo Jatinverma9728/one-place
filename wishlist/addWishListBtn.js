@@ -53,4 +53,4 @@ wishlistButtons.forEach((button) => {
     updateUI();
   });
 });
-prompt("hello")
+prompt("hello");
