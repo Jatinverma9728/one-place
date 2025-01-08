@@ -19,7 +19,7 @@ body {
 
 /* Loader animation */
 .loader {
-  --path: #000000;
+  --path: #ffffff;
   --dot: #3a00f9;
   --duration: 3s;
   width: 44px;
