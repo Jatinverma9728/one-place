@@ -1,48 +1,29 @@
 @media (max-width: 1024px) {
-  /* Adjust the container to have two columns instead of three */
-  body {
-    overflow-x: none !important;
-  }
-  .container {
-    grid-template-columns: 1fr 2fr;
-  }
-
   /* Adjust right sidebar position */
   .sidebar.right {
     display: none;
   }
-  .container-col-2 {
-    /* border: 2px solid red; */
-    height: 500px;
-    width: 430px !important;
-    margin-top: 90px !important;
-  }
-  .item-container {
-    /* border: 2px solid rgb(51, 205, 67); */
-    height: 600px !important;
-    width: 430px !important;
-    gap: 10px;
-  }
+
   .ser-card {
     height: 110px;
     width: 100px;
     /* border: 2px solid blue; */
-
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
 
   .ser-card-images img {
     /* border:1px solid black; */
-    height: 70px;
+    height: 75px;
   }
   /* Adjust content width */
   .content {
     /* transform: scale(0.9); */
-    /* border: 1px solid green; */
+    /* border: 10px solid rgb(255, 136, 0); */
     position: relative;
-    left: -10px;
+    /* left: -10px; */
     margin: 0;
     padding: 0;
     width: 450px !important;
@@ -74,10 +55,7 @@
   }
 
   /* Adjust the left sidebar if needed */
-  .container-col-2 {
-    margin: 20px;
-    width: 100%;
-  }
+
   .group {
     width: 100px;
     font-size: 10px;
@@ -90,12 +68,7 @@
 }
 
 /* For small screens (e.g., mobile devices) */
-@media (max-width: 768px) {
-  /* Make container single-column */
-  .container {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 600px) {
   /* Hide the right sidebar */
   .sidebar.right {
     /* display: none; */
@@ -110,8 +83,122 @@
 
   /* Center the left sidebar and make it more mobile-friendly */
   .container-col-2 {
+    width: 430px;
+    /* border: 2px solid red; */
+    height: 100%;
+    margin: 0;
+    margin-top: 90px;
+  }
+
+  /* Adjust card styling */
+  .card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .container {
+    /* grid-template-columns: fr 1fr; */
+    /* border: 2px solid red !important; */
+    margin-left: 20px !important;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px !important;
+  }
+  .item-container {
+    /* border:3px solid green; */
+    margin-top: -10px;
+    position: relative;
+    height: 250px;
+    width: 100%;
+    /* border: 1px solid #00ff22; */
+    margin-left: -18px;
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+  #nav-items-for-small-screen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    /* border: 1px solid red; */
+    bottom: 0;
+    height: 58px;
+    z-index: 10;
+    background: #f5f5f5;
+  }
+  #cart-count {
+    top: 3px;
+    left: -15px;
+  }
+  .cards-about {
+    width: 345px;
+  }
+  .card-container h2 {
+    text-align: center;
+    /* border: 1px solid red; */
+  }
+  .cards-about li a {
+    font-size: 12px !important;
+  }
+  .brands img{
+    width: 389px;
+  }
+  .works img{
+ width: 389px;
+  }
+  .notemicro img{
+ width: 389px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    /* grid-template-columns: fr 1fr; */
+    /* border: 12px solid red !important; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .item-container {
+    /* border: 3px solid green; */
+    position: relative;
+    height: 250px;
+    /* margin-top: 50px; */
+    width: 104% !important ;
+    margin-left: -15px !important;
+    /* border: 1px solid #00ff22; */
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+  /* Hide the right sidebar */
+  .sidebar.right {
+    /* display: none; */
+  }
+  .navbar {
+    /* border: 2px solid red; */
+    border-bottom-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+  }
+  /* Adjust content width and padding */
+  .content {
     width: 100%;
     margin: 0;
+    padding: 15px;
+    /* border: 2px solid blue; */
+  }
+
+  /* Center the left sidebar and make it more mobile-friendly */
+  .container-col-2 {
+    width: 430px;
+    /* border: 2px solid red; */
+    height: 100%;
+    margin: 0;
+    margin-top: 90px;
   }
 
   /* Adjust card styling */
@@ -125,34 +212,30 @@
     margin: 20px 0;
     height: auto;
   }
-}
-
-/* Additional adjustments for ultra-small screens (e.g., very small mobile screens) */
-@media (max-width: 480px) {
-  /* Further simplify the layout */
-  .content {
-    padding: 10px;
+  #nav-items-for-small-screen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    /* border: 1px solid red; */
+    bottom: 0;
+    height: 58px;
+    z-index: 10;
+    background: #f5f5f5;
   }
-
-  /* Make text and images more compact */
-  .price,
-  .time,
-  .cards-about li a,
-  .edit-package-btn {
-    font-size: 14px;
+  #cart-count {
+    top: 3px;
+    left: -15px;
   }
-
-  /* Reduce padding and margin on smaller cards */
-  .card-container,
-  .item-container,
-  .main-service-icons-links {
-    padding: 10px;
+  .cards-about {
+    width: 345px;
   }
-  .details img {
-    width: 400px !important;
+  .card-container h2 {
+    text-align: center;
+    /* border: 1px solid red; */
   }
-  .add-button-special {
-    margin-top: 29px !important;
-    left: -82px !important;
+  .cards-about li a {
+    font-size: 12px !important;
   }
 }

@@ -18,18 +18,19 @@ body {
   --syne-font: "Syne", system-ui;
 }
 .navbar {
-  height: 80px;
+  height: 60px;
   width: 100%;
   border-bottom: 1px solid #e3e3e3;
   position: fixed;
-  top: px;
-  z-index: 1;
-  background-color: rgb(255, 255, 255);
-}
-.nav-items {
+  top: 0px;
+  z-index: 5;
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-bottom-right-radius: 22px;
+  border-bottom-left-radius: 22px;
 }
+
 
 #nav-items-for-small-screen {
   display: none;
@@ -57,6 +58,48 @@ body {
 .nav-items-for-small-screen li a:active {
   color: rgb(141, 141, 141);
 }
+/* --------location picker/box */
+#controls {
+  /* padding: 20px; */
+  /* border: 2px solid green; */
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#controls p {
+  font-size: 12px;
+}
+#location-pin {
+  font-size: 50px;
+  cursor: pointer;
+  color: #ff4757;
+  animation: jump 1.5s infinite;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+#location-pin img {
+  height: 30px;
+}
+#location-display {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Subtle jump animation */
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* ---------end location picker---------- */
+
+/* -------cart count---------- */
 #cart-count {
   display: inline-flex;
   height: 15px;
@@ -74,71 +117,61 @@ body {
   color: white;
   text-decoration: none;
 }
+/* -----------cart count end------- */
 
-.logo img {
-  height: 50px;
-  width: 78px;
-  margin-top: 11px;
-}
-.serchandlocation {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
 /* ---------search box--------- */
-.group {
-  display: flex;
-  line-height: 28px;
-  align-items: center;
+
+.search-container {
   position: relative;
-  max-width: 190px;
+  --size-button: 40px;
+  color: white;
+  width: 210px;
+  border: 1px solid red;
 }
 
 .input {
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  height: 45px;
-  padding-left: 2.5rem;
-  border: 2px solid #e3e3e3;
-  /* border: 0; */
-  border-radius: 7px;
-  background-color: #ffffff;
+  padding-left: var(--size-button);
+  height: var(--size-button);
+  font-size: 15px;
+  border: none;
+  color: #fff;
   outline: none;
-  color: #101011;
-  font-weight: 200;
-  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  width: var(--size-button);
+  transition: all ease 0.3s;
+  background-color: #191a1e;
+
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.input:focus,
+.input:not(:invalid) {
+  width: 200px;
   cursor: text;
-  z-index: 0;
 }
 
-.input::placeholder {
-  color: #1d1c1c;
+.input:focus + .icon,
+.input:not(:invalid) + .icon {
+  pointer-events: all;
+  cursor: pointer;
 }
 
-/* .input:hover {
-  box-shadow: 0 0 0 2.5px #434343;
-} */
-
-.input:active {
-  transform: scale(0.95);
-  border: 1.5px solid black;
-}
-
-.input:focus {
-  border: 1.5px solid black;
-}
-
-.search-icon {
+.search-container .icon {
   position: absolute;
-  left: 1rem;
-  fill: #363636;
-  width: 1rem;
-  height: 1rem;
+  width: var(--size-button);
+  height: var(--size-button);
+  top: 0;
+  left: 0;
+  padding: 8px;
   pointer-events: none;
-  z-index: 1;
 }
 
-/*  ---------------------*/
+.search-container .icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/*  ----------search box end-----------*/
 
 .container {
   display: grid;
@@ -378,12 +411,13 @@ body {
 #item-container-2nd-text {
   font-family: var(--syne-font);
   margin: 20px;
+  /* border: 2px solid yellow; */
 }
 
 .main-service-icons-links {
   /* border: 3px solid cyan; */
   margin: 24px;
-  height: 300px;
+  /* height: 300px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -455,7 +489,6 @@ body {
   height: 80px;
   background: #f5f5f5;
   display: flex;
-
   align-items: center;
   justify-content: center;
   border-radius: 10px;
@@ -516,31 +549,12 @@ body {
 #logo-remove-cart-add a span {
   display: none;
 }
-@media (min-width: 320px) and (max-width: 480px) {
-  #nav-items-for-small-screen {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    /* border: 1px solid red; */
-    bottom: 0;
-    height: 58px;
-    z-index: 10;
-    background: #f5f5f5;
+.brands img{
+    width: 449px ;
   }
-  #cart-count {
-    top: 3px;
-    left: -15px;
+  .works img{
+ width: 449px ;
   }
-  .cards-about {
-    width: 345px;
+  .notemicro img{
+ width: 449px ;
   }
-  .card-container h2 {
-    text-align: center;
-    /* border: 1px solid red; */
-  }
-  .cards-about li a {
-    font-size: 12px !important;
-  }
-}
