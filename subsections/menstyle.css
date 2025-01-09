@@ -31,7 +31,6 @@ body {
   border-bottom-left-radius: 22px;
 }
 
-
 #nav-items-for-small-screen {
   display: none;
   position: fixed;
@@ -549,12 +548,12 @@ body {
 #logo-remove-cart-add a span {
   display: none;
 }
-.brands img{
-    width: 449px ;
-  }
-  .works img{
- width: 449px ;
-  }
-  .notemicro img{
- width: 449px ;
-  }
+.brands img {
+  width: 449px;
+}
+.works img {
+  width: 449px;
+}
+.notemicro img {
+  width: 449px;
+}
