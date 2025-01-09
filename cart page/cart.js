@@ -46,7 +46,7 @@ function removeFromCart(index) {
   renderCart();
 }
 
-// Save cart to localStorage 
+// Save cart to localStorage
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
