@@ -1,43 +1,43 @@
-const swiper = new Swiper(".slider-wrapper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  loop: false,
-  watchOverflow: true,
+function initializeSwiper(containerId) {
+  const container = document.getElementById(containerId);
+  const cardWrapper = container.querySelector(".card-wrapper");
+  const leftBtn = container.querySelector(".button.left");
+  const rightBtn = container.querySelector(".button.right");
+  const cardWidth = cardWrapper.querySelector(".card").offsetWidth + 16; // Card width + margin
+  let currentScroll = 0;
 
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    dynamicBullets: true,
-  },
+  function updateButtons() {
+    const maxScroll = cardWrapper.scrollWidth - cardWrapper.clientWidth;
+    leftBtn.disabled = currentScroll <= 0;
+    rightBtn.disabled = currentScroll >= maxScroll;
+  }
 
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 2,
-      spaceBetween: 10,
-      centeredSlides: false, // Disable centered slides to avoid partial slides
-      slidesPerGroup: 1, // Swipe 1 card at a time
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      centeredSlides: false,
-      slidesPerGroup: 1,
-    },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      centeredSlides: false,
-      slidesPerGroup: 1,
-    },
-    // when window width is >= 1024px
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 40,
-      centeredSlides: false,
-      slidesPerGroup: 1,
-    },
-  },
-});
+  rightBtn.addEventListener("click", () => {
+    const maxScroll = cardWrapper.scrollWidth - cardWrapper.clientWidth;
+    currentScroll = Math.min(currentScroll + cardWidth, maxScroll);
+    cardWrapper.style.transform = `translateX(-${currentScroll}px)`;
+    updateButtons();
+  });
+
+  leftBtn.addEventListener("click", () => {
+    currentScroll = Math.max(currentScroll - cardWidth, 0);
+    cardWrapper.style.transform = `translateX(-${currentScroll}px)`;
+    updateButtons();
+  });
+
+  window.addEventListener("resize", () => {
+    currentScroll = 0;
+    cardWrapper.style.transform = "translateX(0)";
+    updateButtons();
+  });
+
+  updateButtons();
+}
+
+// Initialize multiple swiper sections
+initializeSwiper("swiper1");
+initializeSwiper("swiper2");
+initializeSwiper("swiper3");
+initializeSwiper("swiper4");
+initializeSwiper("swiper5");
+initializeSwiper("swiper6");

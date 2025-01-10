@@ -3,155 +3,847 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Card Swiper</title>
     <style>
-      /* Container for the swiper */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+      }
+
       .swiper-container {
-        position: relative;
-        width: 80%;
-        max-width: 500px;
-        margin: 50px auto;
+        width: 67%;
+        margin: 20px auto;
         overflow: hidden;
-        border-radius: 20px; /* Rounded corners */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
-        background: linear-gradient(
-          to bottom right,
-          #f8f9fa,
-          #e2e6ea
-        ); /* Soft gradient */
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: relative;
       }
 
-      /* Wrapper that holds the cards */
-      .swiper-wrapper {
+      .card-wrapper {
         display: flex;
-        transition: transform 0.5s ease-in-out;
+        transition: transform 0.4s ease;
       }
 
-      /* Styling for individual cards */
       .card {
-        min-width: 100%;
-        box-sizing: border-box;
-        padding: 30px;
-        background-color: #fff;
-        margin: 10px;
-        border-radius: 10px; /* Rounded corners */
+        flex: 0 0 calc(100% / 5 - 16px);
+        margin: 8px;
+        background: #fff;
+        border-radius: 17px;
+        border: 1px solid rgb(202, 202, 202);
+        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
         text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Card shadow */
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        /* padding: 10px; */
+        box-sizing: border-box;
+        height: 270px;
+        width: 100%; /* Use full width in flex calculation */
       }
 
-      /* Hover effect for cards */
-      .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      .card a {
+        text-decoration: none;
       }
-
-      /* Styling for the left and right buttons */
-      .swiper-button-left,
-      .swiper-button-right {
+      .card a img {
+        width: 100%;
+        margin-top: 46px;
+        max-width: 250px;
+        border-radius: 17px;
+        transition: all 0.3s ease;
+      }
+      .card a img:hover {
+        transform: scale(1.01);
+      }
+      .card h2 {
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+      }
+      .card-wrapper-special > div {
+        /* border: 1px solid red; */
+        border: none;
+        height: 280px;
+      }
+      .card-wrapper-special > div img {
+        /* border: 1px solid rgb(0, 255, 76); */
+        height: 100%;
+        margin-top: 0px !important;
+      }
+      .card-wrapper-special > div p {
+        color: black;
+        font-size: 12px;
+        margin-left: 5px;
+      }
+      .swiper-container-special button {
+        /* color: red; */
+        top: 50%;
+        margin-top: -20px !important;
+      }
+      .button {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.3);
-        color: white;
-        padding: 15px;
-        border-radius: 50%;
+        /* transform: translateY(-50%); */
+        background-color: #fff;
         border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
-        font-size: 2rem;
         z-index: 10;
-        transition: background 0.3s ease;
       }
 
-      /* Button hover effect */
-      .swiper-button-left:hover,
-      .swiper-button-right:hover {
-        background: rgba(0, 0, 0, 0.6);
+      .button.left {
+        left: 0;
       }
 
-      /* Position the left and right buttons inside the swiper container */
-      .swiper-button-left {
-        left: 10px; /* Place the left button inside the container with gap */
+      .button.right {
+        right: 0;
       }
 
-      .swiper-button-right {
-        right: 10px; /* Place the right button inside the container with gap */
+      .button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
       }
 
-      /* Responsive design for mobile devices */
+      .button svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      @media (max-width: 1024px) {
+        .swiper-container {
+          width: 67%;
+        }
+        .card {
+          flex: 0 0 calc(100% / 4 - 16px);
+        }
+      }
+
       @media (max-width: 768px) {
         .swiper-container {
-          width: 90%;
+          width: 67%;
         }
-
         .card {
-          font-size: 1.2rem;
+          flex: 0 0 calc(100% / 3 - 16px);
         }
+      }
 
-        .swiper-button-left,
-        .swiper-button-right {
-          font-size: 1.5rem;
-          padding: 12px;
+      @media (max-width: 480px) {
+        .swiper-container {
+          width: 95%;
+        }
+        .card {
+          height: 230px;
+          flex: 0 0 calc(100% / 2 - 12px);
+        }
+        .card img {
+          height: 150px;
+          margin-top: 44px !important;
+        }
+        .card h2 {
+          font-size: 12px;
         }
       }
     </style>
   </head>
   <body>
-    <div class="swiper-container">
-      <button class="swiper-button-left" id="leftBtn">&#8592;</button>
-      <div class="swiper-wrapper">
-        <!-- Add your cards here -->
-        <div class="card">Card 1</div>
-        <div class="card">Card 2</div>
-        <div class="card">Card 3</div>
-        <div class="card">Card 4</div>
-        <div class="card">Card 5</div>
+    <h1 class="subtitel" style="text-align: center">Girls Section</h1>
+    <div class="swiper-container" id="swiper1">
+      <h1 class="subtitel subtitel-s">Saloon For Girls</h1>
+      <button class="button left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="card-wrapper">
+        <div class="card">
+          <a
+            href="/subsections/girls.html#hairbleach"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Hair care</h2>
+            <img
+              src="images/women saloon image/hair care.jpeg"
+              alt="Hair care"
+              class="user-image"
+            />
+          </a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/girls.html#facial"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">facial and cleanup</h2>
+            <img
+              src="images/women saloon image/facial and cleanup.jpeg"
+              alt="facial and cleanup"
+              class="user-image"
+            />
+          </a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/girls.html#hairbleach"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">bleach and detan</h2>
+            <img
+              src="images/women saloon image/bleach and detan.jpeg"
+              alt="bleach and detan"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/girls.html#threading"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Threading & Face axing</h2>
+            <img
+              src="images/women saloon image/eye brow.jpeg"
+              alt="Threading & Face axing"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/girls.html#detan"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Manicure</h2>
+            <img
+              src="images/women saloon image/manicure.jpeg"
+              alt="Manicure"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/girls.html#detan"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Pedicuree</h2>
+            <img
+              src="images/women saloon image/pedicuree.jpeg"
+              alt="Pedicuree"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/girls.html#haircut-and-beard-styling"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Waxing</h2>
+            <img
+              src="images/women saloon image/waxing.jpeg"
+              alt="Waxing"
+              class="user-image"
+          /></a>
+        </div>
       </div>
-      <button class="swiper-button-right" id="rightBtn">&#8594;</button>
+      <button class="button right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Duplicate swiper section -->
+    <div class="swiper-container" id="swiper2">
+      <h1 class="subtitel subtitel-s" id="spa-for-girls-heading">
+        Spa For Girls
+      </h1>
+      <button class="button left" disabled>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="card-wrapper">
+        <div class="card">
+          <a
+            href="/subsections/girls.html#hairbleach"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Stress relief</h2>
+            <img
+              src="images/stress/stress.jpeg"
+              alt="Stress relief"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/girls.html#hairbleach"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Pain relief</h2>
+            <img
+              src="images/stress/pain.jpeg"
+              alt="Pain relief"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/girls.html#hairbleach"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Natural Skincare</h2>
+            <img
+              src="images/stress/skin.jpeg"
+              alt="Natural Skincare"
+              class="user-image"
+          /></a>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+      <button class="button right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+    <hr />
+    <!-- --------------------MENS SECTION--------------------- -->
+
+    <!-- Duplicate swiper section -->
+    <h1 class="subtitel" style="text-align: center">Men's Section</h1>
+    <div class="swiper-container" id="swiper3">
+      <h1 class="subtitel subtitel-s">Saloon For Mens</h1>
+      <button class="button left" disabled>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="card-wrapper">
+        <div class="card">
+          <a
+            href="/subsections/menhair.html#haircut-and-beard-styling"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Hair cut & Bread</h2>
+            <img
+              src="images/mens saloon/hair cut.jpeg"
+              alt="hair cut"
+              class="user-image"
+            />
+          </a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/menhair.html#pedicure"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Pedicuree & Manicure</h2>
+            <img
+              src="images/mens saloon/manicure & pedicuree.jpeg"
+              alt="manicure & pedicuree"
+              class="user-image"
+            />
+          </a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/menhair.html#hair-color"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Hair Colour & Spa</h2>
+            <img
+              src="images/mens saloon/hair color & hair spa.jpeg"
+              alt="hair color & hair spa"
+              class="user-image"
+            />
+          </a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/menhair.html#facialand-cleanup"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Facial & Cleanup</h2>
+            <img
+              src="images/mens saloon/facial cleanup.jpeg"
+              alt="Facial & Cleanup"
+              class="user-image"
+            />
+          </a>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+      <button class="button right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="swiper-container" id="swiper4">
+      <h1 class="subtitel subtitel-s">Spa For Men's</h1>
+      <button class="button left" disabled>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="card-wrapper">
+        <div class="card">
+          <a
+            href="/subsections/menhair.html#massage"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Stress relief</h2>
+            <img
+              src="images/mens stress/stress.jpeg"
+              alt="stress"
+              class="user-image"
+            />
+          </a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/menhair.html#massage"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Pain relief</h2>
+            <img
+              src="images/mens stress/pain.jpeg"
+              alt="Pain relief"
+              class="user-image"
+            />
+          </a>
+        </div>
+        <div class="card">
+          <a
+            href="/subsections/menhair.html#massage"
+            style="text-decoration: none; text-align: center"
+          >
+            <h2 class="user-name">Post Workout</h2>
+            <img
+              src="images/mens stress/post worlout.jpeg"
+              alt="post workout"
+              class="user-image"
+            />
+          </a>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+      <button class="button right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+    <hr />
+    <!-- -------------------Applincies section------------------------------- -->
+
+    <h1 class="subtitel" style="text-align: center">AC & Applinces Repair</h1>
+    <div class="swiper-container" id="swiper5">
+      <button class="button left" disabled>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="card-wrapper">
+        <div class="card">
+          <a href="/subsections/applinces/ac.html">
+            <h2 class="user-name">AC Repair & Service</h2>
+            <img
+              src="images/repairing/ac.jpeg"
+              alt="AC Repair & Service"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a href="/subsections/applinces/washing.html">
+            <h2 class="user-name">Washing Machine Repair</h2>
+            <img
+              src="images/repairing/washing machine.jpeg"
+              alt="washing machine"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a href="/subsections/applinces/ro.html">
+            <h2 class="user-name">Water purifier Repir</h2>
+            <img
+              src="images/repairing/water purifier.jpeg"
+              alt="Water purifier Repir"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a href="/subsections/applinces/chimney.html">
+            <h2 class="user-name">Chimeny Repair & service</h2>
+            <img
+              src="images/repairing/chimny.jpeg"
+              alt="Chimeny Repair & service"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a href="/subsections/applinces/tv.html">
+            <h2 class="user-name">Telivision Repair</h2>
+            <img
+              src="images/repairing/tv.jpeg"
+              alt="Telivision Repair"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a href="/subsections/applinces/fridge.html">
+            <h2 class="user-name">Refrigrator Repair & service</h2>
+            <img
+              src="images/repairing/fridge.jpeg"
+              alt="Refrigrator Repair & service"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a href="/subsections/applinces/gyser.html">
+            <h2 class="user-name">Gyser Repair & service</h2>
+            <img
+              src="images/repairing/gyser.jpeg"
+              alt="Gyser Repair & service"
+              class="user-image"
+          /></a>
+        </div>
+        <div class="card">
+          <a href="/subsections/applinces/microwave.html">
+            <h2 class="user-name">Microwave Repair & service</h2>
+            <img
+              src="images/repairing/microwave.jpeg"
+              alt="Microwave Repair & service"
+              class="user-image"
+          /></a>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+      <button class="button right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ------------Quick Home repairs----------------- -->
+    <div class="swiper-container swiper-container-special" id="swiper6">
+      <h1 class="subtitel subtitel-s">Quick Home Repairs</h1>
+      <button class="button left" disabled>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="card-wrapper card-wrapper-special">
+        <div class="card">
+          <a href="/subsections/electrician.html#fan">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/fan and exasut.jpeg"
+                  alt="fan and exasut"
+                  class="cardd-imgg"
+                />
+              </div>
+              <p id="names" style="text-align: left">
+                Fan repair(celling/exhaust/wall) <br />₹199
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="/subsections/carpenter.html#clothes">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/frsm.jpeg"
+                  alt="Drill & Hang(wall decor)"
+                  class="cardd-imgg"
+                />
+              </div>
+              <p id="names" style="text-align: left">
+                Drill & Hang(wall decor) <br />₹129
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="/subsections/carpenter.html#clothes">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/minor door repair.jpeg"
+                  alt="minor door repair"
+                  class="cardd-imgg"
+                />
+              </div>
+              <p id="names" style="text-align: left">
+                Minor wooden door repair <br />₹199
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="/subsections/carpenter.html#cupboard">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/cupboard hing repair and installatiobn.jpeg"
+                  alt="cupboard hing repair and installation"
+                  class="cardd-imgg"
+                />
+              </div>
+              <p id="names" style="text-align: left">
+                cupboard hing installation <br />₹199
+              </p>
+            </div></a
+          >
+        </div>
+        <div class="card">
+          <a href="/subsections/electrician.html#switch">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/switch board.jpeg"
+                  alt="switch board"
+                  class="cardd-imgg"
+                />
+              </div>
+              <p id="names" style="text-align: left">
+                Switch/Socket Replacement <br />₹109
+              </p>
+            </div></a
+          >
+        </div>
+        <div class="card">
+          <a href="/subsections/carpenter.html#door">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/door lock repair.jpeg"
+                  alt="door lock repair"
+                  class="cardd-imgg"
+                />
+              </div>
+              <p id="names" style="text-align: left">
+                Door lock repair <br />₹259
+              </p>
+            </div></a
+          >
+        </div>
+        <div class="card">
+          <a href="/subsections/carpenter.html#cupboard">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/drawer chennal repair.jpeg"
+                  alt="chennal repair"
+                  class="cardd-imgg"
+                />
+                <p id="names" style="text-align: left">
+                  Channel repair(One set) <br />₹178
+                </p>
+              </div>
+            </div></a
+          >
+        </div>
+        <div class="card">
+          <a href="/subsections/electrician.html#switch">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/switch board.jpeg"
+                  alt="switch board"
+                  class="cardd-imgg"
+                />
+              </div>
+              <p id="names" style="text-align: left">
+                Switchboard/switchbox repair <br />₹120
+              </p>
+            </div></a
+          >
+        </div>
+        <div class="card">
+          <a href="/subsections/electrician.html#applinces">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/wifi cctv installation.jpeg"
+                  alt="wifi cctv installation"
+                  class="cardd-imgg"
+                />
+              </div>
+              <p id="names" style="text-align: left">
+                WIFI CCTV installation <br />₹299
+              </p>
+            </div></a
+          >
+        </div>
+        <div class="card">
+          <a href="/subsections/carpenter.html#window">
+            <div class="image-content">
+              <div class="cardd-image">
+                <img
+                  src="images/repair/curtain rod installation.jpeg"
+                  alt="curtain rod installation"
+                  class="cardd-imgg"
+                />
+              </div>
+              <p id="names" style="text-align: left">
+                curtain rod installation (2 brackets) <br />₹199
+              </p>
+            </div></a
+          >
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+      <button class="button right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
 
     <script>
-      const leftBtn = document.getElementById("leftBtn");
-      const rightBtn = document.getElementById("rightBtn");
-      const swiperWrapper = document.querySelector(".swiper-wrapper");
-      const cards = document.querySelectorAll(".card");
-      let currentIndex = 0;
+      function initializeSwiper(containerId) {
+        const container = document.getElementById(containerId);
+        const cardWrapper = container.querySelector(".card-wrapper");
+        const leftBtn = container.querySelector(".button.left");
+        const rightBtn = container.querySelector(".button.right");
+        const cardWidth = cardWrapper.querySelector(".card").offsetWidth + 16; // Card width + margin
+        let currentScroll = 0;
 
-      function updateButtons() {
-        // Hide left button if at the first card, right button if at the last card
-        leftBtn.style.display = currentIndex === 0 ? "none" : "block";
-        rightBtn.style.display =
-          currentIndex === cards.length - 1 ? "none" : "block";
-      }
-
-      function slideLeft() {
-        if (currentIndex > 0) {
-          currentIndex--;
-          swiperWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-          updateButtons();
+        function updateButtons() {
+          const maxScroll = cardWrapper.scrollWidth - cardWrapper.clientWidth;
+          leftBtn.disabled = currentScroll <= 0;
+          rightBtn.disabled = currentScroll >= maxScroll;
         }
-      }
 
-      function slideRight() {
-        if (currentIndex < cards.length - 1) {
-          currentIndex++;
-          swiperWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        rightBtn.addEventListener("click", () => {
+          const maxScroll = cardWrapper.scrollWidth - cardWrapper.clientWidth;
+          currentScroll = Math.min(currentScroll + cardWidth, maxScroll);
+          cardWrapper.style.transform = `translateX(-${currentScroll}px)`;
           updateButtons();
-        }
+        });
+
+        leftBtn.addEventListener("click", () => {
+          currentScroll = Math.max(currentScroll - cardWidth, 0);
+          cardWrapper.style.transform = `translateX(-${currentScroll}px)`;
+          updateButtons();
+        });
+
+        window.addEventListener("resize", () => {
+          currentScroll = 0;
+          cardWrapper.style.transform = "translateX(0)";
+          updateButtons();
+        });
+
+        updateButtons();
       }
 
-      // Initialize buttons visibility
-      updateButtons();
-
-      // Add event listeners to buttons
-      leftBtn.addEventListener("click", slideLeft);
-      rightBtn.addEventListener("click", slideRight);
+      // Initialize multiple swiper sections
+      initializeSwiper("swiper1");
+      initializeSwiper("swiper2");
+      initializeSwiper("swiper3");
+      initializeSwiper("swiper4");
+      initializeSwiper("swiper5");
+      initializeSwiper("swiper6");
     </script>
   </body>
 </html>
