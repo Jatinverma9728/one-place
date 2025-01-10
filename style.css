@@ -455,162 +455,163 @@ html {
 }
 
 /* <!---------------section-3---------------------> */
-.girls-section{
+.girls-section {
   margin-top: 7rem;
   font-family: var(--syne-font);
 }
-.mens-section{
+.mens-section {
   margin-top: 7rem;
-    font-family: var(--syne-font);
+  font-family: var(--syne-font);
 }
-.applinces-section{
+.applinces-section {
   margin-top: 7rem;
-    font-family: var(--syne-font);
+  font-family: var(--syne-font);
 }
-.quick-section{
+.quick-section {
   margin-top: 7rem;
-    font-family: var(--syne-font);
+  font-family: var(--syne-font);
 }
 .swiper-container {
-        width: 65%;
-        margin: 20px auto;
-        overflow: hidden;
-        position: relative;
-      }
-      .subtitel{
+  width: 65%;
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+}
+.subtitel {
   font-size: 28px;
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
 
-      .card-wrapper {
-        display: flex;
-        transition: transform 0.4s ease;
-      }
+.card-wrapper {
+  display: flex;
+  transition: transform 0.4s ease;
+}
 
-      .card {
-        flex: 0 0 calc(100% / 5 - 16px);
-        margin: 8px;
-        background: #fff;
-        border-radius: 17px;
-        border: 1px solid rgb(202, 202, 202);
-        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-        text-align: center;
-        /* padding: 10px; */
-        box-sizing: border-box;
-        height: 270px;
-        width: 100%; /* Use full width in flex calculation */
-      }
+.card {
+  flex: 0 0 calc(100% / 5 - 16px);
+  margin: 8px;
+  background: #fff;
+  border-radius: 17px;
+  border: 1px solid rgb(202, 202, 202);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+  /* padding: 10px; */
+  box-sizing: border-box;
+  height: 270px;
+  width: 100%; /* Use full width in flex calculation */
+}
 
-      .card a {
-        text-decoration: none;
-      }
-      .card a img {
-        width: 100%;
-        margin-top: 46px;
-        max-width: 250px;
-        border-radius: 17px;
-        transition: all 0.3s ease;
-      }
-      .card a img:hover {
-        transform: scale(1.01);
-      }
-      .card h2 {
-        font-size: 16px;
-        color: black;
-            margin-top: 31px;
-        text-decoration: none;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      }
-      .card-wrapper-special > div {
-        /* border: 1px solid red; */
-        border: none;
-        height: 280px;
-      }
-      .card-wrapper-special > div img {
-        /* border: 1px solid rgb(0, 255, 76); */
-        height: 100%;
-        margin-top: 0px !important;
-      }
-      .card-wrapper-special > div p {
-        color: black;
-        font-size: 12px;
-        margin-left: 5px;
-      }
-      .swiper-container-special button {
-        /* color: red; */
-        /* top: 50%; */
-        margin-top: -40px !important;
-      }
-      .button {
-        position: absolute;
-        top: 50%;
-        /* transform: translateY(-50%); */
-        background-color: #fff;
-        border: none;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 10;
-      }
+.card a {
+  text-decoration: none;
+}
+.card a img {
+  width: 100%;
+  margin-top: 46px;
+  max-width: 250px;
+  border-radius: 17px;
+  transition: all 0.3s ease;
+}
+.card a img:hover {
+  transform: scale(1.01);
+}
+.card h2 {
+  font-size: 14px;
+  color: black;
+  margin-top: 31px;
+  text-decoration: none;
+  font-weight: 400;
+   font-family: "Poppins", serif;
+}
+.card-wrapper-special > div {
+  /* border: 1px solid red; */
+  border: none;
+  height: 280px;
+}
+.card-wrapper-special > div img {
+  /* border: 1px solid rgb(0, 255, 76); */
+  height: 100%;
+  margin-top: 0px !important;
+}
+.card-wrapper-special > div p {
+  color: black;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.swiper-container-special button {
+  /* color: red; */
+  /* top: 50%; */
+  margin-top: -40px !important;
+}
+.button {
+  position: absolute;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  background-color: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
 
-      .button.left {
-        left: 0;
-      }
+.button.left {
+  left: 0;
+}
 
-      .button.right {
-        right: 0;
-      }
+.button.right {
+  right: 0;
+}
 
-      .button:disabled {
-        background-color: #ccc;
-        cursor: not-allowed;
-      }
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
 
-      .button svg {
-        width: 20px;
-        height: 20px;
-      }
+.button svg {
+  width: 20px;
+  height: 20px;
+}
 
-      @media (max-width: 1024px) {
-        .swiper-container {
-          width: 67%;
-        }
-        .card {
-          flex: 0 0 calc(100% / 4 - 16px);
-        }
-      }
+@media (max-width: 1024px) {
+  .swiper-container {
+    width: 67%;
+  }
+  .card {
+    flex: 0 0 calc(100% / 4 - 16px);
+  }
+}
 
-      @media (max-width: 768px) {
-        .swiper-container {
-          width: 67%;
-        }
-        .card {
-          flex: 0 0 calc(100% / 3 - 16px);
-        }
-      }
+@media (max-width: 768px) {
+  .swiper-container {
+    width: 67%;
+  }
+  .card {
+    flex: 0 0 calc(100% / 3 - 16px);
+  }
+}
 
-      @media (max-width: 480px) {
-        .swiper-container {
-          width: 95%;
-        }
-        .card {
-          height: 230px;
-          flex: 0 0 calc(100% / 2 - 12px);
-        }
-        .card img {
-          height: 150px;
-          margin-top: 44px !important;
-        }
-        .card h2 {
-          font-size: 12px;
-        }
-      }
+@media (max-width: 480px) {
+  .swiper-container {
+    width: 95%;
+  }
+  .card {
+    height: 230px;
+    flex: 0 0 calc(100% / 2 - 12px);
+  }
+  .card img {
+    height: 150px;
+    margin-top: 44px !important;
+  }
+  .card h2 {
+    font-size: 12px;
+  }
+}
 
 /* ------------footer section---------- */
 footer {
@@ -738,7 +739,7 @@ body::-webkit-scrollbar-track {
   outline: none;
   width: var(--size-button);
   transition: all ease 0.3s;
-  background-color: #191a1e;
+  background-color: #ffffff;
 
   border-radius: 50px;
   cursor: pointer;
