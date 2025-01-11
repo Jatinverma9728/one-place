@@ -153,6 +153,28 @@
   .notemicro img {
     width: 389px;
   }
+  .special-girls-image{
+    width: 400px !important;
+    /* border: 2px solid red; */
+  }
+  .details{
+    /* border: 2px solid red; */
+    margin-left: -15px;
+  }
+  .content{
+    /* border: 2px solid red; */
+    width: 100%;
+    padding-left: 30px !important;
+  }
+  .container{
+    /* border: 2px solid green; */
+    margin-left: 0px !important;
+  }
+  .item-container{
+    /* border: 2px solid red; */
+    margin-left: 0px;
+  }
+ 
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {

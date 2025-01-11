@@ -1,43 +1,58 @@
-function initializeSwiper(containerId) {
-  const container = document.getElementById(containerId);
-  const cardWrapper = container.querySelector(".card-wrapper");
-  const leftBtn = container.querySelector(".button.left");
-  const rightBtn = container.querySelector(".button.right");
-  const cardWidth = cardWrapper.querySelector(".card").offsetWidth + 16; // Card width + margin
-  let currentScroll = 0;
+  const swiperContainers = document.querySelectorAll('.swiper-container');
+      swiperContainers.forEach((container) => {
+        const cardWrapper = container.querySelector('.card-wrapper');
+        const leftButton = container.querySelector('.button.left');
+        const rightButton = container.querySelector('.button.right');
+        const cards = container.querySelectorAll('.card');
+        const cardWidth = cards[0].getBoundingClientRect().width + 16; // Including margin
+        const visibleCards = Math.floor(container.offsetWidth / cardWidth);
+        let offset = 0;
 
-  function updateButtons() {
-    const maxScroll = cardWrapper.scrollWidth - cardWrapper.clientWidth;
-    leftBtn.disabled = currentScroll <= 0;
-    rightBtn.disabled = currentScroll >= maxScroll;
-  }
+        const updateButtons = () => {
+          if (offset === 0) leftButton.classList.add('hidden');
+          else leftButton.classList.remove('hidden');
+          if (offset <= -(cards.length - visibleCards) * cardWidth) rightButton.classList.add('hidden');
+          else rightButton.classList.remove('hidden');
+        };
 
-  rightBtn.addEventListener("click", () => {
-    const maxScroll = cardWrapper.scrollWidth - cardWrapper.clientWidth;
-    currentScroll = Math.min(currentScroll + cardWidth, maxScroll);
-    cardWrapper.style.transform = `translateX(-${currentScroll}px)`;
-    updateButtons();
-  });
+        const slide = (direction) => {
+          offset += direction * cardWidth;
+          offset = Math.max(offset, -(cards.length - visibleCards) * cardWidth);
+          offset = Math.min(offset, 0);
+          cardWrapper.style.transform = `translateX(${offset}px)`;
+          updateButtons();
+        };
 
-  leftBtn.addEventListener("click", () => {
-    currentScroll = Math.max(currentScroll - cardWidth, 0);
-    cardWrapper.style.transform = `translateX(-${currentScroll}px)`;
-    updateButtons();
-  });
+        rightButton.addEventListener('click', () => slide(-1));
+        leftButton.addEventListener('click', () => slide(1));
 
-  window.addEventListener("resize", () => {
-    currentScroll = 0;
-    cardWrapper.style.transform = "translateX(0)";
-    updateButtons();
-  });
+        let startX = 0;
+        let isDragging = false;
 
-  updateButtons();
-}
+        container.addEventListener('touchstart', (e) => {
+          if (window.innerWidth <= 768) {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+          }
+        });
 
-// Initialize multiple swiper sections
-initializeSwiper("swiper1");
-initializeSwiper("swiper2");
-initializeSwiper("swiper3");
-initializeSwiper("swiper4");
-initializeSwiper("swiper5");
-initializeSwiper("swiper6");
+        container.addEventListener('touchmove', (e) => {
+          if (isDragging && window.innerWidth <= 768) {
+            const currentX = e.touches[0].clientX;
+            if (currentX - startX > 50) {
+              slide(1);
+              isDragging = false;
+            } else if (startX - currentX > 50) {
+              slide(-1);
+              isDragging = false;
+            }
+          }
+        });
+
+        container.addEventListener('touchend', () => {
+          isDragging = false;
+        });
+
+        updateButtons();
+      });
+      

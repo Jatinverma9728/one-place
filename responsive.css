@@ -61,7 +61,7 @@
     font-weight: 500;
   }
  .girls-section{
-  margin-top: -15rem ;
+  margin-top: -2rem ;
   /* font-family: var(--syne-font); */
   /* border: 2px solid red; */
 }
@@ -89,6 +89,10 @@
 .card h2 {
        margin-top: 20px;
       }
+
+       .button {
+          display: none;
+        }
   footer {
     border: none !important;
     /* border: 2px solid green; */
