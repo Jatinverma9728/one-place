@@ -31,10 +31,10 @@ body {
   border-bottom-right-radius: 22px;
   border-bottom-left-radius: 22px;
 }
-.logo-text{
-      font-size: 39px;
-    margin-left: 41px;
-    margin-right: 41px;
+.logo-text {
+  font-size: 39px;
+  margin-left: 41px;
+  margin-right: 41px;
 }
 #nav-items-for-small-screen {
   display: none;
@@ -69,7 +69,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-      gap: 10px;
+  gap: 10px;
 }
 #controls p {
   font-size: 12px;
