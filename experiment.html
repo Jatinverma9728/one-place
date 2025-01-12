@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="search.css" />
-  </head>
-  <body>
-    <script src="searchbox.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Search Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      padding: 10px 15px;
+      width: 300px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      margin-bottom: 20px;
+    }
+    .search-container .icon {
+      font-size: 18px;
+      color: #888;
+      margin-right: 10px;
+    }
+    .search-container input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 16px;
+      color: #333;
+    }
+    .search-container input:focus + .placeholder {
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .search-container .placeholder {
+      position: absolute;
+      left: 50px;
+      pointer-events: none;
+      font-size: 16px;
+      color: #888;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .search-container input:not(:focus) + .placeholder {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .dynamic-text {
+      font-weight: bold;
+      color: #333;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-container">
+    <span class="icon">🔍</span>
+    <input type="text" id="search-box-1" />
+    <div class="placeholder">
+      Search for '<span class="dynamic-text" id="dynamic-text-1"></span>'
+    </div>
+  </div>
+
+  <div class="search-container">
+    <span class="icon">🔍</span>
+    <input type="text" id="search-box-2" />
+    <div class="placeholder">
+      Search for '<span class="dynamic-text" id="dynamic-text-2"></span>'
+    </div>
+  </div>
+
+  <script>
+    const dynamicTexts = [
+      "AC service",
+      "home cleaning",
+      "plumbing",
+      "electrician",
+      "painting"
+    ];
+
+    function typeDynamicText(dynamicTextElement, currentIndex) {
+      let text = dynamicTexts[currentIndex];
+      let index = 0;
+
+      // Typing animation
+      const typingInterval = setInterval(() => {
+        if (index < text.length) {
+          dynamicTextElement.textContent += text.charAt(index);
+          index++;
+        } else {
+          clearInterval(typingInterval);
+          setTimeout(() => {
+            // De-typing (erasing) animation
+            let eraseIndex = text.length;
+            const eraseInterval = setInterval(() => {
+              if (eraseIndex > 0) {
+                dynamicTextElement.textContent = text.substring(0, eraseIndex - 1);
+                eraseIndex--;
+              } else {
+                clearInterval(eraseInterval);
+                setTimeout(() => {
+                  currentIndex = (currentIndex + 1) % dynamicTexts.length;
+                  typeDynamicText(dynamicTextElement, currentIndex); // Start typing the next text
+                }, 1000); // Pause before starting the next typing
+              }
+            }, 100); // De-typing speed
+          }, 2000); // Wait before erasing
+        }
+      }, 150); // Typing speed
+    }
+
+    // Apply dynamic text animation to multiple elements
+    document.querySelectorAll('.dynamic-text').forEach((dynamicTextElement, index) => {
+      typeDynamicText(dynamicTextElement, 0); // Start typing from the first text in the array for each instance
+    });
+  </script>
+</body>
 </html>

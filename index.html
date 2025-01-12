@@ -79,54 +79,117 @@
     <header id="notification-section">
       <h1><span id="element"></span></h1>
     </header>
+    <div class="hamburger-menuu">
+      <!-- Hamburger Icon -->
+      <div class="hamburger-icon" id="hamburger-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 
+      <!-- Offcanvas Menu -->
+      <div id="offcanvas" class="offcanvas">
+        <div class="offcanvas-header">
+          <div class="customer-details">
+            <h3>Verified Customer</h3>
+            <h5>+91 998989898</h5>
+          </div>
+          <button class="close-btn" onclick="toggleMenu()">
+            <i class="fa-solid fa-x"></i>
+          </button>
+        </div>
+        <!-- Search Box -->
+        <div class="search-container">
+          <input type="text" placeholder="Search" class="search-box" />
+          <button class="search-btn">Search</button>
+        </div>
+
+        <!-- -----cards-------- -->
+        <div class="ham-card">
+          <div class="scard">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <p>my bookings</p>
+          </div>
+          <div class="scard">
+            <i class="fa-solid fa-headset"></i>
+            <p>Help & support</p>
+          </div>
+        </div>
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-sheet-plastic"></i>My Plans</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-wallet"></i>Wallet</a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-certificate"></i>Plus membership</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-star"></i>My ratings</a>
+          </li>
+          <li>
+            <a href="#" id="location-pin"
+              ><i class="fa-solid fa-location-dot"></i>Manage addresses
+                <p id="location-display">No location selected yet.</p>
+        <p id="loading">Fetching location...</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-credit-card"></i>Manage payment methods</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-gear"></i>Settings</a>
+          </li>
+          <li>
+            <a href="#"><img src="images/logo/logo_2-removebg-preview.png" style="width: 16px; margin-right: 10px;" alt="">About OP</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown()"
+              >Dropdown <i class="fa-solid fa-caret-down"></i
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Option 1</a></li>
+              <li><a href="#">Option 2</a></li>
+              <li><a href="#">Option 3</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="action-btn">
+        <button id="logout-btn" onclick="alert('user has been logout')">Logout</button></div>
+      </div>
+    </div>
     <!-- ---------------logo------------- -->
 
     <nav class="navbar">
       <h1 class="logo-text">One Place</h1>
-      <div id="controls">
+       <div id="controls">
         <div id="location-pin" title="Detect My Location">
-          <img src="icons/gps.png" />
+       <img src="icons/gps.png" alt="">
         </div>
         <p id="location-display">No location selected yet.</p>
         <p id="loading">Fetching location...</p>
       </div>
     </nav>
-
+    <div class="search-container search-container-1">
+      <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+      <input type="text" id="search-box" />
+      <div class="placeholder">
+        Search for '<span class="dynamic-text" id="dynamic-text"></span>'
+      </div>
+    </div>
     <!-- -------------section-1------------------- ------------->
     <div class="section-1">
       <div class="navigation-items">
-        <div class="search-container">
-          <input
-            type="text"
-            name="text"
-            class="input"
-            required=""
-            placeholder="Type to search..."
-          />
-          <div class="icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="ionicon"
-              viewBox="0 0 512 512"
-            >
-              <title>Search</title>
-              <path
-                d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
-                fill="none"
-                stroke="currentColor"
-                stroke-miterlimit="10"
-                stroke-width="32"
-              ></path>
-              <path
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-miterlimit="10"
-                stroke-width="32"
-                d="M338.29 338.29L448 448"
-              ></path>
-            </svg>
+        <div class="search-container search-container-2">
+          <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <input type="text" id="search-box-2" />
+          <div class="placeholder">
+            Search for '<span class="dynamic-text" id="dynamic-text-2"></span>'
           </div>
         </div>
         <ul class="nav-items">
@@ -477,8 +540,8 @@
             stroke-linejoin="round"
           >
             <polyline points="15 18 9 12 15 6"></polyline>
-          </svg></button
-        >
+          </svg>
+        </button>
         <div class="card-wrapper">
           <div class="card">
             <a
@@ -1403,6 +1466,7 @@
 
     <!-- normal js files -->
     <!-- <script src="cart.js"></script> -->
+    <script src="hamburger.js"></script>
     <script src="wishlist/addWishListBtn.js"></script>
     <script src="searchbox.js"></script>
     <script src="cart page/product.js"></script>

@@ -19,7 +19,56 @@
     font-size: 1vw; /* Font size for mobile devices */
     border-radius: 0px 0px 15px 15px;
   }
+  .search-container-1 {
+    display: flex !important;
+  }
+  /* --------hamburger menu------------- */
 
+  .offcanvas {
+    position: fixed;
+    /* width: 100%; */
+    /* max-width: 100%; */
+    /* border: 2px solid red; */
+  }
+
+  .offcanvas h2 {
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
+
+  .offcanvas a {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .hamburger {
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: 20px;
+  }
+  .hamburger-icon {
+    display: flex !important;
+  }
+  .hamburger div {
+    height: 3px;
+  }
+  #location-pin {
+    animation: none;
+    font-size: 14px;
+    color: black;
+    top: 0;
+    /* border: 2px solid red; */
+  }
+  #location-display {
+    font-size: 12px;
+    /* border: 1px solid green; */
+    width: 200px;
+    margin-left: 10px;
+  }
+  #controls {
+    display: none;
+  }
   .section-1 {
     display: none;
   }
@@ -60,39 +109,38 @@
     font-size: 10px;
     font-weight: 500;
   }
- .girls-section{
-  margin-top: -2rem ;
-  /* font-family: var(--syne-font); */
-  /* border: 2px solid red; */
-}
-.mens-section{
-  margin-top: 7rem;
+  .girls-section {
+    margin-top: -5rem;
+    /* font-family: var(--syne-font); */
+    /* border: 2px solid red; */
+  }
+  .mens-section {
+    margin-top: 7rem;
     font-family: var(--syne-font);
-}
-.applinces-section{
-  margin-top: 7rem;
+  }
+  .applinces-section {
+    margin-top: 7rem;
     font-family: var(--syne-font);
-}
-.quick-section{
-  margin-top: 7rem;
+  }
+  .quick-section {
+    margin-top: 7rem;
     font-family: var(--syne-font);
-}
-.subtitel{
-  font-size: 28px;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-}
-.subtitel-s{
-  font-size: 22px;
-  
-}
-.card h2 {
-       margin-top: 20px;
-      }
+  }
+  .subtitel {
+    font-size: 28px;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  .subtitel-s {
+    font-size: 22px;
+  }
+  .card h2 {
+    margin-top: 20px;
+  }
 
-       .button {
-          display: none;
-        }
+  .button {
+    display: none;
+  }
   footer {
     border: none !important;
     /* border: 2px solid green; */
@@ -189,7 +237,6 @@
     font-size: 9px !important;
   }
 
-
   #message-button {
     /* top: 70px; */
     left: 78% !important;
@@ -265,6 +312,37 @@
   #notification-section h1 span {
     font-size: 3vw; /* Font size for tablets and smaller */
   }
+
+  /* Responsive Styles */
+
+  .offcanvas {
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid red;
+  }
+
+  .offcanvas h2 {
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
+
+  .offcanvas a {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .hamburger {
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: 20px;
+    border: 2px solid green;
+  }
+
+  .hamburger div {
+    height: 3px;
+  }
+
   .section-1 {
     display: none;
   }

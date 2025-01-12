@@ -1,67 +1,45 @@
-const inputField = document.getElementById("search-input");
-const texts = [
-  "Kitchen cleaning",
-  "Plumber",
-  "Hair spa",
-  "Carpanter",
-  "AC repair",
-  "Electrician",
-  "Applinces repair",
+const dynamicTexts = [
+  "AC service",
+  "home cleaning",
+  "plumbing",
+  "electrician",
+  "painting",
 ];
-let currentTextIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let pauseEnd = false;
-let isFocused = false; // Tracks input focus state
 
-function typeAnimation() {
-  if (isFocused) return; // Do nothing if input is focused (user interaction)
+function typeDynamicText(dynamicTextElement, currentIndex) {
+  let text = dynamicTexts[currentIndex];
+  let index = 0;
 
-  const currentText = texts[currentTextIndex];
-
-  if (!pauseEnd) {
-    // Typing and Deleting Logic
-    if (isDeleting) {
-      charIndex--;
-      if (charIndex === 0) {
-        isDeleting = false;
-        pauseEnd = true;
-        currentTextIndex = (currentTextIndex + 1) % texts.length; // Move to next word
-      }
+  // Typing animation
+  const typingInterval = setInterval(() => {
+    if (index < text.length) {
+      dynamicTextElement.textContent += text.charAt(index);
+      index++;
     } else {
-      charIndex++;
-      if (charIndex === currentText.length) {
-        isDeleting = true;
-        pauseEnd = true;
-      }
+      clearInterval(typingInterval);
+      setTimeout(() => {
+        // De-typing (erasing) animation
+        let eraseIndex = text.length;
+        const eraseInterval = setInterval(() => {
+          if (eraseIndex > 0) {
+            dynamicTextElement.textContent = text.substring(0, eraseIndex - 1);
+            eraseIndex--;
+          } else {
+            clearInterval(eraseInterval);
+            setTimeout(() => {
+              currentIndex = (currentIndex + 1) % dynamicTexts.length;
+              typeDynamicText(dynamicTextElement, currentIndex); // Start typing the next text
+            }, 1000); // Pause before starting the next typing
+          }
+        }, 100); // De-typing speed
+      }, 2000); // Wait before erasing
     }
-    inputField.setAttribute(
-      "placeholder",
-      `Search for '${currentText.slice(0, charIndex)}'`
-    );
-  } else {
-    // Pause before typing or deleting
-    setTimeout(() => {
-      pauseEnd = false;
-    }, 200); // Pause for 2 seconds
-  }
-
-  // Adjust speed dynamically
-  const typingSpeed = isDeleting ? 100 : 150;
-  const delay = pauseEnd ? 1000 : typingSpeed;
-  setTimeout(typeAnimation, delay);
+  }, 150); // Typing speed
 }
 
-// Event listeners for input focus/blur
-inputField.addEventListener("focus", () => {
-  isFocused = true; // Stop animation when input is focused
-  inputField.setAttribute("placeholder", ""); // Clear placeholder
-});
-
-inputField.addEventListener("blur", () => {
-  isFocused = false; // Resume animation on blur
-  typeAnimation();
-});
-
-// Start the animation initially
-typeAnimation();
+// Apply dynamic text animation to multiple elements
+document
+  .querySelectorAll(".dynamic-text")
+  .forEach((dynamicTextElement, index) => {
+    typeDynamicText(dynamicTextElement, 0); // Start typing from the first text in the array for each instance
+  });
