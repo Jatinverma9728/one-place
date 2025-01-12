@@ -1,191 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Offcanvas Menu</title>
-  <style>
-    /* General Reset */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: white;
-    }
-
-    /* Hamburger Icon */
-    .hamburger {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 25px;
-      transition: transform 0.3s ease;
-    }
-
-    .hamburger div {
-      width: 100%;
-      height: 4px;
-      background-color: white;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger.open div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.open div:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    /* Offcanvas Menu */
-    .offcanvas {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 300px;
-      max-width: 80%;
-      height: 100%;
-      background-color: #1e1e1e;
-      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-      transition: left 0.3s ease;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .offcanvas.open {
-      left: 0;
-    }
-
-    .offcanvas h2 {
-      margin: 0 0 20px;
-      font-size: 24px;
-      border-bottom: 1px solid #444;
-      padding-bottom: 10px;
-    }
-
-    .offcanvas a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-
-    .offcanvas a:hover {
-      color: #00aaff;
-    }
-
-    .dropdown {
-      margin-bottom: 20px;
-    }
-
-    .offcanvas input[type="text"] {
-      width: calc(100% - 60px);
-      padding: 10px;
-      border: 1px solid #555;
-      border-radius: 5px;
-      background-color: #2a2a2a;
-      color: white;
-    }
-
-    .offcanvas button {
-      padding: 10px 15px;
-      background-color: #00aaff;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-
-    .offcanvas button:hover {
-      background-color: #0088cc;
-    }
-
-   
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      .offcanvas {
-        width: 100%;
-        max-width: 100%;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Offcanvas Menu</title>
+    <style>
+      /* General Reset */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: white;
       }
 
-      .offcanvas h2 {
-        font-size: 20px;
-        padding-bottom: 8px;
-      }
-
-      .offcanvas a {
-        font-size: 16px;
-        margin-bottom: 10px;
-      }
-
+      /* Hamburger Icon */
       .hamburger {
-        top: 15px;
-        left: 15px;
-        width: 25px;
-        height: 20px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        transition: transform 0.3s ease;
       }
 
       .hamburger div {
-        height: 3px;
+        width: 100%;
+        height: 4px;
+        background-color: white;
+        border-radius: 2px;
+        transition: all 0.3s ease;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <!-- Hamburger Icon -->
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <!-- Offcanvas Menu -->
-  <div class="offcanvas" id="offcanvas">
-    <h2>Menu</h2>
-    <a href="#">Home</a>
-    <a href="#">Link</a>
-    <div class="dropdown">
-      <label for="dropdown">Dropdown:</label>
-      <select id="dropdown">
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
-    </div>
-    <div style="display: flex; align-items: center;">
-      <input type="text" placeholder="Search">
-      <button>Search</button>
-    </div>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const offcanvas = document.getElementById('offcanvas');
-      const hamburger = document.getElementById('hamburger');
-      const isOpen = offcanvas.classList.toggle('open');
-      hamburger.classList.toggle('open');
-
-      // Add or remove backdrop effect
-      if (isOpen) {
-        document.body.classList.add('menu-open');
-      } else {
-        document.body.classList.remove('menu-open');
+      .hamburger.open div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
       }
-    }
-  </script>
-</body>
+
+      .hamburger.open div:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.open div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      /* Offcanvas Menu */
+      .offcanvas {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        max-width: 80%;
+        height: 100%;
+        background-color: #1e1e1e;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s ease;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .offcanvas.open {
+        left: 0;
+      }
+
+      .offcanvas h2 {
+        margin: 0 0 20px;
+        font-size: 24px;
+        border-bottom: 1px solid #444;
+        padding-bottom: 10px;
+      }
+
+      .offcanvas a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .offcanvas a:hover {
+        color: #00aaff;
+      }
+
+      .dropdown {
+        margin-bottom: 20px;
+      }
+
+      .offcanvas input[type="text"] {
+        width: calc(100% - 60px);
+        padding: 10px;
+        border: 1px solid #555;
+        border-radius: 5px;
+        background-color: #2a2a2a;
+        color: white;
+      }
+
+      .offcanvas button {
+        padding: 10px 15px;
+        background-color: #00aaff;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      .offcanvas button:hover {
+        background-color: #0088cc;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .offcanvas {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .offcanvas h2 {
+          font-size: 20px;
+          padding-bottom: 8px;
+        }
+
+        .offcanvas a {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+
+        .hamburger {
+          top: 15px;
+          left: 15px;
+          width: 25px;
+          height: 20px;
+        }
+
+        .hamburger div {
+          height: 3px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas" id="offcanvas">
+      <h2>Menu</h2>
+      <a href="#">Home</a>
+      <a href="#">Link</a>
+      <div class="dropdown">
+        <label for="dropdown">Dropdown:</label>
+        <select id="dropdown">
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+      <div style="display: flex; align-items: center">
+        <input type="text" placeholder="Search" />
+        <button>Search</button>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        const offcanvas = document.getElementById("offcanvas");
+        const hamburger = document.getElementById("hamburger");
+        const isOpen = offcanvas.classList.toggle("open");
+        hamburger.classList.toggle("open");
+
+        // Add or remove backdrop effect
+        if (isOpen) {
+          document.body.classList.add("menu-open");
+        } else {
+          document.body.classList.remove("menu-open");
+        }
+      }
+    </script>
+  </body>
 </html>
