@@ -1,136 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dynamic Search Box</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #f9f9f9;
-      }
-      .search-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        border: 1px solid #ccc;
-        border-radius: 25px;
-        padding: 10px 15px;
-        width: 300px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-        margin-bottom: 20px;
-      }
-      .search-container .icon {
-        font-size: 18px;
-        color: #888;
-        margin-right: 10px;
-      }
-      .search-container input {
-        border: none;
-        outline: none;
-        flex: 1;
-        font-size: 16px;
-        color: #333;
-      }
-      .search-container input:focus + .placeholder {
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s, transform 0.3s;
-      }
-      .search-container .placeholder {
-        position: absolute;
-        left: 50px;
-        pointer-events: none;
-        font-size: 16px;
-        color: #888;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-      .search-container input:not(:focus) + .placeholder {
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.3s, transform 0.3s;
-      }
-      .dynamic-text {
-        font-weight: bold;
-        color: #333;
-        display: inline-block;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="search-container">
-      <span class="icon">🔍</span>
-      <input type="text" id="search-box-1" />
-      <div class="placeholder">
-        Search for '<span class="dynamic-text" id="dynamic-text-1"></span>'
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #searchBox {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+}
 
-    <div class="search-container">
-      <span class="icon">🔍</span>
-      <input type="text" id="search-box-2" />
-      <div class="placeholder">
-        Search for '<span class="dynamic-text" id="dynamic-text-2"></span>'
-      </div>
-    </div>
+#suggestions .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
 
-    <script>
-      const dynamicTexts = [
-        "AC service",
-        "home cleaning",
-        "plumbing",
-        "electrician",
-        "painting",
-      ];
+#suggestions .suggestion-item:hover {
+    background-color: #f0f0f0;
+}
 
-      function typeDynamicText(dynamicTextElement, currentIndex) {
-        let text = dynamicTexts[currentIndex];
-        let index = 0;
+  </style>
+</head>
+<body>
+<!-- Search Box -->
+<input type="text" id="searchBox" placeholder="Search..." autocomplete="off">
 
-        // Typing animation
-        const typingInterval = setInterval(() => {
-          if (index < text.length) {
-            dynamicTextElement.textContent += text.charAt(index);
-            index++;
-          } else {
-            clearInterval(typingInterval);
-            setTimeout(() => {
-              // De-typing (erasing) animation
-              let eraseIndex = text.length;
-              const eraseInterval = setInterval(() => {
-                if (eraseIndex > 0) {
-                  dynamicTextElement.textContent = text.substring(
-                    0,
-                    eraseIndex - 1
-                  );
-                  eraseIndex--;
-                } else {
-                  clearInterval(eraseInterval);
-                  setTimeout(() => {
-                    currentIndex = (currentIndex + 1) % dynamicTexts.length;
-                    typeDynamicText(dynamicTextElement, currentIndex); // Start typing the next text
-                  }, 1000); // Pause before starting the next typing
+<!-- Suggestions Box -->
+<div id="suggestions" style="display: none; border: 1px solid #ccc; position: absolute; background: #fff; width: 300px; max-height: 200px; overflow-y: auto; z-index: 10;"></div>
+
+
+
+<script>
+// Get the search box and suggestions container
+const searchBox = document.getElementById('searchBox');
+const suggestionsBox = document.getElementById('suggestions');
+
+// Function to search through the website's content
+function searchSite(query) {
+    if (!query) {
+        suggestionsBox.style.display = 'none'; // Hide suggestions when query is empty
+        return;
+    }
+
+    // Get all elements that are possible candidates to contain search terms
+    const searchableElements = document.querySelectorAll('h1, h2, h3, p, a, li');  // Add more tags if needed
+    const results = [];
+
+    // Loop through all these elements and check if the query matches their text content
+    searchableElements.forEach(element => {
+        const textContent = element.textContent.toLowerCase();
+        if (textContent.includes(query.toLowerCase())) {
+            results.push({
+                text: element.textContent,
+                link: element.id ? `#${element.id}` : (element.closest('a') ? element.closest('a').href : '')
+            });
+        }
+    });
+
+    // If there are matching results, display them
+    if (results.length > 0) {
+        suggestionsBox.innerHTML = ''; // Clear previous suggestions
+        results.forEach(result => {
+            const suggestionDiv = document.createElement('div');
+            suggestionDiv.classList.add('suggestion-item');
+            suggestionDiv.textContent = result.text;
+            suggestionDiv.addEventListener('click', () => {
+                if (result.link) {
+                    window.location.href = result.link; // Redirect to the matched link
                 }
-              }, 100); // De-typing speed
-            }, 2000); // Wait before erasing
-          }
-        }, 150); // Typing speed
-      }
-
-      // Apply dynamic text animation to multiple elements
-      document
-        .querySelectorAll(".dynamic-text")
-        .forEach((dynamicTextElement, index) => {
-          typeDynamicText(dynamicTextElement, 0); // Start typing from the first text in the array for each instance
+            });
+            suggestionsBox.appendChild(suggestionDiv);
         });
-    </script>
-  </body>
+        suggestionsBox.style.display = 'block'; // Show the suggestions box
+    } else {
+        suggestionsBox.style.display = 'none'; // Hide if no results
+    }
+}
+
+// Event listener to trigger the search function on input change
+searchBox.addEventListener('input', function() {
+    searchSite(searchBox.value);
+});
+
+// Hide suggestions if clicked outside the search box
+document.addEventListener('click', function(event) {
+    if (!suggestionsBox.contains(event.target) && event.target !== searchBox) {
+        suggestionsBox.style.display = 'none';
+    }
+});
+
+
+</script>
+</body>
 </html>

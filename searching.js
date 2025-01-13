@@ -1,0 +1,61 @@
+// Get the search box and suggestions container
+const searchBox = document.getElementById("searchBox");
+const suggestionsBox = document.getElementById("suggestions");
+
+// Function to search through the website's content
+function searchSite(query) {
+  if (!query) {
+    suggestionsBox.style.display = "none"; // Hide suggestions when query is empty
+    return;
+  }
+
+  // Get all elements that are possible candidates to contain search terms
+  const searchableElements = document.querySelectorAll("h1, h2, h3, p, a, li"); // Add more tags if needed
+  const results = [];
+
+  // Loop through all these elements and check if the query matches their text content
+  searchableElements.forEach((element) => {
+    const textContent = element.textContent.toLowerCase();
+    if (textContent.includes(query.toLowerCase())) {
+      results.push({
+        text: element.textContent,
+        link: element.id
+          ? `#${element.id}`
+          : element.closest("a")
+          ? element.closest("a").href
+          : "",
+      });
+    }
+  });
+
+  // If there are matching results, display them
+  if (results.length > 0) {
+    suggestionsBox.innerHTML = ""; // Clear previous suggestions
+    results.forEach((result) => {
+      const suggestionDiv = document.createElement("div");
+      suggestionDiv.classList.add("suggestion-item");
+      suggestionDiv.textContent = result.text;
+      suggestionDiv.addEventListener("click", () => {
+        if (result.link) {
+          window.location.href = result.link; // Redirect to the matched link
+        }
+      });
+      suggestionsBox.appendChild(suggestionDiv);
+    });
+    suggestionsBox.style.display = "block"; // Show the suggestions box
+  } else {
+    suggestionsBox.style.display = "none"; // Hide if no results
+  }
+}
+
+// Event listener to trigger the search function on input change
+searchBox.addEventListener("input", function () {
+  searchSite(searchBox.value);
+});
+
+// Hide suggestions if clicked outside the search box
+document.addEventListener("click", function (event) {
+  if (!suggestionsBox.contains(event.target) && event.target !== searchBox) {
+    suggestionsBox.style.display = "none";
+  }
+});

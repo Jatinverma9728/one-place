@@ -79,6 +79,9 @@
     <header id="notification-section">
       <h1><span id="element"></span></h1>
     </header>
+
+    <!---------------------- hamberuger menu section-------------- -->
+
     <div class="hamburger-menuu">
       <!-- Hamburger Icon -->
       <div class="hamburger-icon" id="hamburger-icon" onclick="toggleMenu()">
@@ -100,10 +103,29 @@
         </div>
         <!-- Search Box -->
         <div class="search-container">
-          <input type="text" placeholder="Search" class="search-box" />
+          <input
+            type="text"
+            id="searchBox"
+            placeholder="Search"
+            class="search-box"
+            autocomplete="off"
+          />
           <button class="search-btn">Search</button>
         </div>
-
+        <!-- Suggestions Box -->
+        <div
+          id="suggestions"
+          style="
+            display: none;
+            border: 1px solid #ccc;
+            position: absolute;
+            background: #fff;
+            width: 300px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+          "
+        ></div>
         <!-- -----cards-------- -->
         <div class="ham-card">
           <div class="scard">
@@ -474,7 +496,7 @@
               href="/subsections/girls.html#threading"
               style="text-decoration: none; text-align: center"
             >
-              <h2 class="user-name">Threading & Face axing</h2>
+              <h2 class="user-name">Threading & Face waxing</h2>
               <img
                 src="images/women saloon image/eye brow.jpeg"
                 alt="Threading & Face axing"
@@ -538,7 +560,7 @@
         <h1 class="subtitel subtitel-s" id="spa-for-girls-heading">
           Spa For Girls
         </h1>
-        <button class="button left" disabled>
+        <button class="button left" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -611,7 +633,7 @@
       <h1 class="subtitel" style="text-align: center">Men's Section</h1>
       <div class="swiper-container" id="swiper3">
         <h1 class="subtitel subtitel-s">Saloon For Mens</h1>
-        <button class="button left" disabled>
+        <button class="button left" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -695,7 +717,7 @@
       </div>
       <div class="swiper-container" id="swiper4">
         <h1 class="subtitel subtitel-s">Spa For Men's</h1>
-        <button class="button left" disabled>
+        <button class="button left" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -770,7 +792,7 @@
     <div class="applinces-section">
       <h1 class="subtitel" style="text-align: center">AC & Applinces Repair</h1>
       <div class="swiper-container" id="swiper5">
-        <button class="button left" disabled>
+        <button class="button left" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -879,7 +901,7 @@
     <div class="quick-section">
       <div class="swiper-container swiper-container-special" id="swiper6">
         <h1 class="subtitel subtitel-s">Quick Home Repairs</h1>
-        <button class="button left" disabled>
+        <button class="button left" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -1475,6 +1497,7 @@
 
     <!-- normal js files -->
     <!-- <script src="cart.js"></script> -->
+    <script src="searching.js"></script>
     <script src="hamburger.js"></script>
     <script src="wishlist/addWishListBtn.js"></script>
     <script src="searchbox.js"></script>
