@@ -49,6 +49,10 @@
   }
   .hamburger-icon {
     display: flex !important;
+    /* border: 2px solid red; */
+    padding: 10px;
+    border-radius: 30px;
+    background: white;
   }
   .hamburger div {
     height: 3px;
@@ -199,12 +203,13 @@
   .navbar {
     display: flex;
     position: relative;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 1;
     background: #fff;
     justify-content: center;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
   }
 
   .main-service-icons-links {
