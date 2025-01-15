@@ -22,6 +22,9 @@
   .search-container-1 {
     display: flex !important;
   }
+  .search-container-2 {
+    display: flex ;
+  }
   /* --------hamburger menu------------- */
 
   .offcanvas {
@@ -300,6 +303,7 @@
   }
 }
 
+
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   body {
     flex-grow: 1;
@@ -347,7 +351,6 @@
   .hamburger div {
     height: 3px;
   }
-
   .section-1 {
     display: none;
   }

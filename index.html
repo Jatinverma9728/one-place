@@ -101,31 +101,19 @@
             <i class="fa-solid fa-x"></i>
           </button>
         </div>
-        <!-- Search Box -->
-        <div class="search-container">
+        <div class="search-container search-container-1">
+          <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
           <input
             type="text"
-            id="searchBox"
-            placeholder="Search"
+            id="search-box-1"
             class="search-box"
             autocomplete="off"
           />
-          <button class="search-btn">Search</button>
+          <div class="placeholder">
+            Search for '<span class="dynamic-text" id="dynamic-text-1"></span>'
+          </div>
+          <div class="suggestions" id="suggestions-1"></div>
         </div>
-        <!-- Suggestions Box -->
-        <div
-          id="suggestions"
-          style="
-            display: none;
-            border: 1px solid #ccc;
-            position: absolute;
-            background: #fff;
-            width: 300px;
-            max-height: 200px;
-            overflow-y: auto;
-            z-index: 10;
-          "
-        ></div>
         <!-- -----cards-------- -->
         <div class="ham-card">
           <div class="scard">
@@ -206,23 +194,35 @@
         <p id="loading">Fetching location...</p>
       </div>
     </nav>
-    <div class="search-container search-container-1">
+    <div class="search-container search-container-2">
       <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-      <input type="text" id="search-box" />
+      <input
+        type="text"
+        id="search-box-2"
+        class="search-box"
+        autocomplete="off"
+      />
       <div class="placeholder">
-        Search for '<span class="dynamic-text" id="dynamic-text"></span>'
+        Search for '<span class="dynamic-text" id="dynamic-text-2"></span>'
       </div>
+      <div class="suggestions" id="suggestions-2"></div>
     </div>
     <!-- -------------section-1------------------- ------------->
     <div class="section-1">
       <div class="navigation-items">
-        <div class="search-container search-container-2">
-          <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-          <input type="text" id="search-box-2" />
-          <div class="placeholder">
-            Search for '<span class="dynamic-text" id="dynamic-text-2"></span>'
-          </div>
-        </div>
+         <div class="search-container search-container-3">
+      <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+      <input
+        type="text"
+        id="search-box-2"
+        class="search-box"
+        autocomplete="off"
+      />
+      <div class="placeholder">
+        Search for '<span class="dynamic-text" id="dynamic-text-2"></span>'
+      </div>
+      <div class="suggestions" id="suggestions-2"></div>
+    </div>
         <ul class="nav-items">
           <li><a href="#main-section-image-text">Home</a></li>
           <li><a href="about us.pdf" style="margin-right: 5px">About</a></li>
@@ -560,7 +560,7 @@
         <h1 class="subtitel subtitel-s" id="spa-for-girls-heading">
           Spa For Girls
         </h1>
-        <button class="button left" >
+        <button class="button left">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -633,7 +633,7 @@
       <h1 class="subtitel" style="text-align: center">Men's Section</h1>
       <div class="swiper-container" id="swiper3">
         <h1 class="subtitel subtitel-s">Saloon For Mens</h1>
-        <button class="button left" >
+        <button class="button left">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -717,7 +717,7 @@
       </div>
       <div class="swiper-container" id="swiper4">
         <h1 class="subtitel subtitel-s">Spa For Men's</h1>
-        <button class="button left" >
+        <button class="button left">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -792,7 +792,7 @@
     <div class="applinces-section">
       <h1 class="subtitel" style="text-align: center">AC & Applinces Repair</h1>
       <div class="swiper-container" id="swiper5">
-        <button class="button left" >
+        <button class="button left">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -901,7 +901,7 @@
     <div class="quick-section">
       <div class="swiper-container swiper-container-special" id="swiper6">
         <h1 class="subtitel subtitel-s">Quick Home Repairs</h1>
-        <button class="button left" >
+        <button class="button left">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
