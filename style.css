@@ -54,7 +54,7 @@ html {
   position: fixed;
   top: 55px;
   right: 20px; /* Move to the right */
-  z-index: 1000;
+  z-index: 2;
   cursor: pointer;
   display: flex;
   display: none;
@@ -276,17 +276,17 @@ html {
   position: relative;
   /* border: 2px solid blue; */
 }
-#controls {
+.controls {
   /* padding: 20px; */
   display: flex;
   position: relative;
   left: 278px;
   top: 73px;
 }
-#controls p {
+.controls p {
   font-size: 12px;
 }
-#location-pin {
+.location-pin {
   /* font-size: 50px; */
   cursor: pointer;
   color: #ff4757;
@@ -295,15 +295,15 @@ html {
   top: -12px;
   left: 0px;
 }
-#location-pin img {
+.location-pin img {
   height: 30px;
 }
-#location-display {
+.location-display {
   /* margin-top: 10px; */
   font-size: 16px;
   color: #333;
 }
-#loading {
+.loading {
   display: none;
   font-size: 16px;
   color: #555;
@@ -807,10 +807,12 @@ html {
 
 @media (max-width: 768px) {
   .swiper-container {
-    width: 67%;
+    width: 85%;
   }
   .card {
     flex: 0 0 calc(100% / 3 - 16px);
+            height: 221px;
+
   }
 }
 
@@ -942,11 +944,11 @@ body::-webkit-scrollbar-track {
 .search-container {
   position: relative;
   align-items: center;
-  display: none;
+  /* display: none; */
   border: 1px solid #ccc;
   /* border-left: 1px solid #ccc; */
   border-radius: 25px;
-  padding: 10px 15px;
+  padding: 5px 15px;
   /* width: 270px; */
   margin-left: 20px;
   margin-right: 20px;

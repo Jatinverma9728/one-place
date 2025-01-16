@@ -1,5 +1,5 @@
 /* Media Queries for responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 576px) {
   body {
     flex-grow: 1;
     box-sizing: border-box;
@@ -23,7 +23,7 @@
     display: flex !important;
   }
   .search-container-2 {
-    display: flex ;
+    display: flex !important ;
   }
   /* --------hamburger menu------------- */
 
@@ -164,11 +164,13 @@
   .modal-content-1 {
     border: 1px solid rgb(122, 122, 122) !important;
     width: 90% !important;
+    z-index: 3;
   }
   .modal-content {
     width: 90% !important;
     /* height: 75%; */
     /* border: 1px solid blue; */
+     z-index: 3;
   }
   #waterpurifier-modal {
     width: 170px;
@@ -295,12 +297,325 @@
   }
   .subtitel-s {
     /* border: 2px solid red; */
+    font-size: 22px;
     margin-left: 10px;
   }
   .footer-bottom p {
     position: relative;
     top: -50px;
   }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+   
+ body {
+    flex-grow: 1;
+    box-sizing: border-box;
+    background: rgb(9, 255, 0);
+  }
+  #loader {
+    max-width: 100vw;
+    height: 100%;
+    background: #000;
+    /* transform: scale(0.2); */
+  }
+  #loader img {
+    height: 480px !important;
+    /* width: 50%; */
+    transform: scale(0.5);
+  }
+  #notification-section {
+    font-size: 1vw; /* Font size for mobile devices */
+    border-radius: 0px 0px 15px 15px;
+  }
+  .search-container-1 {
+    display: flex !important;
+  }
+  .search-container-2 {
+    display: flex ;
+  }
+  /* --------hamburger menu------------- */
+
+  .offcanvas {
+    position: fixed;
+    /* width: 100%; */
+    /* max-width: 100%; */
+    /* border: 2px solid red; */
+            right: -767px;
+  }
+
+  .offcanvas h2 {
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
+
+  .offcanvas a {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .hamburger {
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: 20px;
+  }
+  .hamburger-icon {
+    display: flex !important;
+    /* border: 2px solid red; */
+    padding: 10px;
+    border-radius: 30px;
+    z-index: 2;
+    background: white;
+  }
+  .hamburger div {
+    height: 3px;
+  }
+  #location-pin {
+    animation: none;
+    font-size: 14px;
+    color: black;
+    top: 0;
+    /* border: 2px solid red; */
+  }
+  #location-display {
+    font-size: 12px;
+    /* border: 1px solid green; */
+    width: 200px;
+    margin-left: 10px;
+  }
+  #controls {
+    display: none;
+  }
+  .section-1 {
+    display: none;
+  }
+  .content {
+    display: inline;
+  }
+  .featured-images {
+    display: none;
+  }
+  .item-container {
+    margin-top: 0px;
+  }
+  .container-col-1 {
+    display: block;
+  }
+  .container-col-2 {
+    width: 100%;
+    margin: 0px;
+    height: 100%;
+    padding: 10px 10px 10px 10px;
+    /* height: 70% !important; */
+    margin-top: -20px !important;
+  }
+  .container-col-2 h2 {
+    display: none;
+  }
+  .item-container {
+    height: 420px;
+    width: 95vw;
+  }
+  .ser-card-images {
+    /* border: 1px solid ; */
+    width: 100% !important;
+  }
+
+  .ser-card p {
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .girls-section {
+    margin-top: -5rem;
+    /* font-family: var(--syne-font); */
+    /* border: 2px solid red; */
+  }
+  .mens-section {
+    margin-top: 7rem;
+    font-family: var(--syne-font);
+  }
+  .applinces-section {
+    margin-top: 7rem;
+    font-family: var(--syne-font);
+  }
+  .quick-section {
+    margin-top: 7rem;
+    font-family: var(--syne-font);
+  }
+  .subtitel {
+    font-size: 28px;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  .subtitel-s {
+    font-size: 29px !important;
+  }
+  .card h2 {
+    margin-top: 20px;
+  }
+
+  .button {
+    display: none;
+  }
+  footer {
+    border: none !important;
+    /* border: 2px solid green; */
+    height: 80%;
+  }
+
+  #chatbox-modal {
+    z-index: 10;
+    /* border: 2px solid red; */
+  }
+
+  /* ---------modal section------- */
+
+  .modal-content-1 {
+    border: 1px solid rgb(122, 122, 122) !important;
+    width: 90% !important;
+    
+  }
+  .modal-content {
+    width: 90% !important;
+    /* height: 75%; */
+    /* border: 1px solid blue; */
+  }
+     #waterpurifier-modal {
+        width: 50%;
+    }
+
+
+  #notification-section h1 span {
+    font-size: 3vw; /* Font size for tablets and smaller */
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social-links-section,
+  .app-links img {
+    margin-top: 20px;
+  }
+
+  body::-webkit-scrollbar {
+    display: none !important;
+    width: 0px; /* Width of the scrollbar */
+  }
+  .logo-text {
+    font-size: 40px;
+    margin-left: -40px;
+  }
+  #controls p {
+    font-size: 10px;
+  }
+  #controls {
+    left: 0px;
+    top: 15px;
+  }
+
+  .navbar {
+    display: flex;
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    justify-content: center;
+    /* margin-left: 1rem; */
+  }
+
+  .main-service-icons-links {
+    /* border: 1px solid pink; */
+    width: 90%;
+    height: 80%;
+  }
+
+  .big-cards {
+    /* border: 1px solid rgb(9, 128, 0); */
+    width: 100%;
+  }
+  .ser-card {
+    /* border: 1px solid red; */
+    width: 120px;
+  }
+  .big-cards p {
+    font-size: 9px !important;
+  }
+
+   .ser-2-card {
+width: 100%;
+    /* border: 1px solid red; */
+  }
+  .ser-2-card-images {
+    /* border: 1px solid red; */
+    height: 100%;
+  }
+  .ser-2-card-images p {
+    font-size: 9px !important;
+  }
+
+  #message-button {
+    /* top: 70px; */
+    left: 78% !important;
+  }
+  #cart-count {
+    top: -40px;
+    left: 19px;
+  }
+  .service-item {
+    /* border: 1px solid black; */
+    height: 95%;
+  }
+  .service-item a {
+    font-size: 8px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columns */
+    gap: 10px;
+  }
+  .service-item a img {
+    /* border: 1px solid red; */
+    height: 40px;
+    width: 40px;
+  }
+  #nav-items-for-small-screen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    border-radius: 15px 15px 10px 10px;
+    height: 58px;
+    z-index: 10;
+    background: #ececec;
+  }
+  #nav-items-for-small-screen li a img {
+    /* border: 1px solid red; */
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+  .icon-text {
+    margin-top: 0;
+    font-size: 8px;
+    /* border: 1px solid red; */
+  }
+  .subtitel-s {
+    /* border: 2px solid red; */
+    margin-left: 10px;
+  }
+  .footer-bottom p {
+    position: relative;
+    top: -50px;
+  }
+
+
+
+
 }
 
 
@@ -388,7 +703,7 @@
     width: 100% !important;
   }
   .ser-2-card {
-    width: 250px !important;
+    /* width: 250px !important; */
     /* border: 1px solid red; */
   }
   .ser-card {
@@ -438,7 +753,7 @@
   footer {
     border: none !important;
     /* border: 2px solid green; */
-    height: 99%;
+    /* height: 99%; */
   }
 
   #chatbox-modal {
@@ -457,9 +772,9 @@
     /* height: 75%; */
     /* border: 1px solid blue; */
   }
-  #waterpurifier-modal {
+  /* #waterpurifier-modal {
     width: 170px;
-  }
+  } */
 
   /* ---------------modal end------------- */
 

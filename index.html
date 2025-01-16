@@ -186,15 +186,17 @@
 
     <nav class="navbar">
       <h1 class="logo-text">One Place</h1>
-      <div id="controls">
-        <div id="location-pin" title="Detect My Location">
-          <img src="icons/gps.png" alt="" />
-        </div>
-        <p id="location-display">No location selected yet.</p>
-        <p id="loading">Fetching location...</p>
-      </div>
+      <div class="controls">
+  <div class="location-pin" title="Detect My Location">
+    <img src="icons/gps.png" alt="GPS Icon" />
+  </div>
+  <p class="location-display">No location selected yet.</p>
+  <p class="loading">Fetching location...</p>
+</div>
+
     </nav>
-    <div class="search-container search-container-2">
+    
+    <div class="search-container search-container-2" style="display: none;">
       <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
       <input
         type="text"
@@ -240,6 +242,13 @@
           >
         </div>
       </div>
+<div class="controls">
+  <div class="location-pin" title="Detect My Location">
+    <img src="icons/gps.png" alt="GPS Icon" />
+  </div>
+  <p class="location-display">No location selected yet.</p>
+  <p class="loading">Fetching location...</p>
+</div>
 
       <!-- ---------------------main section----------- -->
       <div class="main-section-image-text">
