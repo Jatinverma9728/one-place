@@ -29,7 +29,7 @@
 
   .offcanvas {
     position: fixed;
-    /* width: 100%; */
+    width: 100%;
     /* max-width: 100%; */
     /* border: 2px solid red; */
   }
@@ -44,15 +44,11 @@
     margin-bottom: 10px;
   }
 
-  .hamburger {
-    top: 15px;
-    left: 15px;
-    width: 25px;
-    height: 20px;
-  }
   .hamburger-icon {
-    display: flex !important;
+    display: flex;
     /* border: 2px solid red; */
+    position: absolute;
+    
     padding: 10px;
     border-radius: 30px;
     background: white;
@@ -195,7 +191,7 @@
   }
   .logo-text {
     font-size: 40px;
-    margin-left: -40px;
+    /* margin-left: -40px; */
   }
   #controls p {
     font-size: 10px;

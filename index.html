@@ -141,12 +141,18 @@
             <a href="#"><i class="fa-solid fa-star"></i>My ratings</a>
           </li>
           <li>
-            <a href="#" id="location-pin"
-              ><i class="fa-solid fa-location-dot"></i>Manage addresses
-              <p id="location-display">No location selected yet.</p>
-              <p id="loading">Fetching location...</p></a
+            <div
+              class="controls"
+              style="position: relative; top: 15px; left: 0"
             >
+              <a href="#" class="location-pin" style="animation: none"
+                ><i class="fa-solid fa-location-dot"></i>Manage addresses
+                <p class="location-display">No location selected yet.</p>
+                <p class="loading">Fetching location...</p></a
+              >
+            </div>
           </li>
+
           <li>
             <a href="#"
               ><i class="fa-solid fa-credit-card"></i>Manage payment methods</a
@@ -187,16 +193,15 @@
     <nav class="navbar">
       <h1 class="logo-text">One Place</h1>
       <div class="controls">
-  <div class="location-pin" title="Detect My Location">
-    <img src="icons/gps.png" alt="GPS Icon" />
-  </div>
-  <p class="location-display">No location selected yet.</p>
-  <p class="loading">Fetching location...</p>
-</div>
-
+        <div class="location-pin" title="Detect My Location">
+          <img src="icons/gps.png" alt="GPS Icon" />
+        </div>
+        <p class="location-display">No location selected yet.</p>
+        <p class="loading">Fetching location...</p>
+      </div>
     </nav>
-    
-    <div class="search-container search-container-2" style="display: none;">
+
+    <div class="search-container search-container-2" style="display: none">
       <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
       <input
         type="text"
@@ -212,19 +217,19 @@
     <!-- -------------section-1------------------- ------------->
     <div class="section-1">
       <div class="navigation-items">
-         <div class="search-container search-container-3">
-      <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-      <input
-        type="text"
-        id="search-box-2"
-        class="search-box"
-        autocomplete="off"
-      />
-      <div class="placeholder">
-        Search for '<span class="dynamic-text" id="dynamic-text-2"></span>'
-      </div>
-      <div class="suggestions" id="suggestions-2"></div>
-    </div>
+        <div class="search-container search-container-3">
+          <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <input
+            type="text"
+            id="search-box-2"
+            class="search-box"
+            autocomplete="off"
+          />
+          <div class="placeholder">
+            Search for '<span class="dynamic-text" id="dynamic-text-2"></span>'
+          </div>
+          <div class="suggestions" id="suggestions-2"></div>
+        </div>
         <ul class="nav-items">
           <li><a href="#main-section-image-text">Home</a></li>
           <li><a href="about us.pdf" style="margin-right: 5px">About</a></li>
@@ -242,14 +247,6 @@
           >
         </div>
       </div>
-<div class="controls">
-  <div class="location-pin" title="Detect My Location">
-    <img src="icons/gps.png" alt="GPS Icon" />
-  </div>
-  <p class="location-display">No location selected yet.</p>
-  <p class="loading">Fetching location...</p>
-</div>
-
       <!-- ---------------------main section----------- -->
       <div class="main-section-image-text">
         <div class="main-col-1">

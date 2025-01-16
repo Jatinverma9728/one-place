@@ -52,7 +52,7 @@ html {
 /* Hamburger Icon (Top Right) */
 .hamburger-icon {
   position: fixed;
-  top: 55px;
+  top: 50px;
   right: 20px; /* Move to the right */
   z-index: 2;
   cursor: pointer;
@@ -811,8 +811,7 @@ html {
   }
   .card {
     flex: 0 0 calc(100% / 3 - 16px);
-            height: 221px;
-
+    height: 221px;
   }
 }
 
