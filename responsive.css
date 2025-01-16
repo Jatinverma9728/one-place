@@ -48,7 +48,7 @@
     display: flex;
     /* border: 2px solid red; */
     position: absolute;
-    
+
     padding: 10px;
     border-radius: 30px;
     background: white;
@@ -163,7 +163,7 @@
     width: 90% !important;
     /* height: 75%; */
     /* border: 1px solid blue; */
-     z-index: 3;
+    z-index: 3;
   }
   #waterpurifier-modal {
     width: 170px;
@@ -293,8 +293,7 @@
   }
 }
 @media (min-width: 576px) and (max-width: 768px) {
-   
- body {
+  body {
     flex-grow: 1;
     box-sizing: border-box;
     /* background: rgb(9, 255, 0); */
@@ -318,7 +317,7 @@
     display: flex !important;
   }
   .search-container-2 {
-    display: flex ;
+    display: flex;
   }
   /* --------hamburger menu------------- */
 
@@ -327,7 +326,7 @@
     /* width: 100%; */
     /* max-width: 100%; */
     /* border: 2px solid red; */
-            right: -767px;
+    right: -767px;
   }
 
   .offcanvas h2 {
@@ -460,17 +459,15 @@
   .modal-content-1 {
     border: 1px solid rgb(122, 122, 122) !important;
     width: 90% !important;
-    
   }
   .modal-content {
     width: 90% !important;
     /* height: 75%; */
     /* border: 1px solid blue; */
   }
-     #waterpurifier-modal {
-        width: 50%;
-    }
-
+  #waterpurifier-modal {
+    width: 50%;
+  }
 
   #notification-section h1 span {
     font-size: 3vw; /* Font size for tablets and smaller */
@@ -531,8 +528,8 @@
     font-size: 9px !important;
   }
 
-   .ser-2-card {
-width: 100%;
+  .ser-2-card {
+    width: 100%;
     /* border: 1px solid red; */
   }
   .ser-2-card-images {
@@ -599,12 +596,7 @@ width: 100%;
     position: relative;
     top: -50px;
   }
-
-
-
-
 }
-
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   body {
