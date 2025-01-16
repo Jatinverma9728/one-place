@@ -28,10 +28,6 @@
     width: 450px;
     right: 0;
   }
-
-  .card {
-    /* border: 2px solid purple; */
-  }
   .imgandbtn {
     position: relative;
     left: -80px;
@@ -63,11 +59,6 @@
 
 /* For small screens (e.g., mobile devices) */
 @media (max-width: 600px) {
-  /* Hide the right sidebar */
-  .sidebar.right {
-    /* display: none; */
-  }
-
   /* Adjust content width and padding */
   .content {
     width: 100%;
