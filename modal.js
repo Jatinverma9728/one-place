@@ -1,134 +1,48 @@
-// Get the modal element
-let modal = document.getElementById("modal");
-let btn = document.getElementById("Book-A-Professional");
-let closeBtn = document.getElementsByClassName("close-btn-for-pro-book")[0];
+// Generalize modal functionality
+function setupModal(modalId, triggerId, closeClass) {
+  const modal = document.getElementById(modalId);
+  const trigger = document.getElementById(triggerId);
+  const closeBtn = document.getElementsByClassName(closeClass)[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function () {
-  modal.style.display = "block";
-};
+  // Open modal on trigger click
+  trigger.onclick = function () {
+    modal.style.display = "block";
+  };
 
-// When the user clicks on <span> (x), close the modal
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
+  // Close modal on close button click
+  closeBtn.onclick = function () {
     modal.style.display = "none";
-  }
-};
-// Get the modal elements
-let womenIconSpaSaloonModal = document.getElementById(
-  "modal-for-women-spa-saloon-icon"
-);
-let womenIconSpaSaloonCard = document.getElementById("womem-saloon-spa-modal");
+  };
 
-// Get the close button
-let closeBtnWomenIconSpaSaloon = document.getElementsByClassName(
+  // Close modal on click outside the modal
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
+// Setup all modals
+setupModal("modal", "Book-A-Professional", "close-btn-for-pro-book");
+setupModal(
+  "modal-for-women-spa-saloon-icon",
+  "womem-saloon-spa-modal",
   "close-modal-for-women-spa-saloon-icon"
-)[0];
-
-// When the user clicks on the card, open the modal
-womenIconSpaSaloonCard.onclick = function () {
-  womenIconSpaSaloonModal.style.display = "block";
-};
-
-// When the user clicks on <span> (x), close the modal
-closeBtnWomenIconSpaSaloon.onclick = function () {
-  womenIconSpaSaloonModal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == womenIconSpaSaloonModal) {
-    womenIconSpaSaloonModal.style.display = "none";
-  }
-};
-
-// Men's Salon Modal
-let mensSalonModal = document.getElementById("modal-for-mens-salon");
-let mensSalonBtn = document.getElementById("mens-salon-modal");
-let closeMensSalon = document.getElementsByClassName("close-modal-mens")[0];
-
-mensSalonBtn.onclick = function () {
-  mensSalonModal.style.display = "block";
-};
-
-closeMensSalon.onclick = function () {
-  mensSalonModal.style.display = "none";
-};
-
-window.onclick = function (event) {
-  if (event.target == mensSalonModal) {
-    mensSalonModal.style.display = "none";
-  }
-};
-
-// AC Repair Modal
-let messageBtn = document.getElementById("modal-for-ac-repair");
-let acRepairBtn = document.getElementById("ac-repair-modal");
-let closeACRepair = document.getElementsByClassName("close-modal-ac")[0];
-
-acRepairBtn.onclick = function () {
-  messageBtn.style.display = "block";
-};
-
-closeACRepair.onclick = function () {
-  messageBtn.style.display = "none";
-};
-window.onclick = function (event) {
-  if (event.target == messageBtn) {
-    messageBtn.style.display = "none";
-  }
-};
-
-// Painter & waterproofing Modal
-let painterWater = document.getElementById("modal-for-waterproofing");
-
-let waterproofing = document.getElementById("painter-modal");
-
-let closeWaterproofing = document.getElementsByClassName(
+);
+setupModal("modal-for-mens-salon", "mens-salon-modal", "close-modal-mens");
+setupModal("modal-for-ac-repair", "ac-repair-modal", "close-modal-ac");
+setupModal(
+  "modal-for-waterproofing",
+  "painter-modal",
   "close-modal-waterproofing"
-)[0];
-
-waterproofing.onclick = function () {
-  painterWater.style.display = "block";
-};
-
-closeWaterproofing.onclick = function () {
-  painterWater.style.display = "none";
-};
-window.onclick = function (event) {
-  if (event.target == painterWater) {
-    painterWater.style.display = "none";
-  }
-};
-
-// electrician and plumber Modal
-let elecplumb = document.getElementById("modal-for-electrician");
-
-let electricianModal = document.getElementById("electrician-modal");
-
-let closeElectrician = document.getElementsByClassName(
+);
+setupModal(
+  "modal-for-electrician",
+  "electrician-modal",
   "close-modal-electrician"
-)[0];
+);
 
-electricianModal.onclick = function () {
-  elecplumb.style.display = "block";
-};
-
-closeElectrician.onclick = function () {
-  elecplumb.style.display = "none";
-};
-window.onclick = function (event) {
-  if (event.target == elecplumb) {
-    elecplumb.style.display = "none";
-  }
-};
-
-// modal for message btn
+// Modal for message button
 const messageButton = document.getElementById("message-button");
 const chatboxModal = document.getElementById("chatbox-modal");
 const closeChatbox = document.getElementById("close-chatbox");
@@ -143,4 +57,13 @@ closeChatbox.addEventListener("click", () => {
   setTimeout(() => {
     messageButton.classList.remove("hidden"); // Fade the message button back in after chatbox is closed
   }, 200); // Delay to allow chatbox animation to finish
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === chatboxModal) {
+    chatboxModal.classList.remove("open"); // Hide the chatbox if clicked outside
+    setTimeout(() => {
+      messageButton.classList.remove("hidden");
+    }, 200);
+  }
 });

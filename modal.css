@@ -69,7 +69,7 @@
 .modal-for-women-spa-saloon-icon {
   display: none; /* Hidden by default */
   position: fixed;
-  
+  z-index: 3;
   left: 0;
   top: 0;
   width: 100%;
