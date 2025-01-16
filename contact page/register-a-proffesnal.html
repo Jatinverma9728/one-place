@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register as a Professional | OnePlace</title>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: url(pexels-padrinan-19670\ .jpg);
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Container Styles */
+      .container {
+        background: #fff;
+        width: 90%;
+        max-width: 500px;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-header h1 {
+        font-size: 24px;
+        color: #0d62ac;
+      }
+
+      .form-header p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* Form Styles */
+      .registration-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form-group {
+        position: relative;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      label span {
+        color: red;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+        transition: border 0.3s;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #00d704;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      .error-message {
+        color: #ff4757;
+        font-size: 12px;
+        display: none;
+      }
+
+      /* Submit Button */
+      .submit-button {
+        background: #0064c1;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .submit-button:hover {
+        background: #1577ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-header">
+        <h1>Join OnePlace as a Professional</h1>
+        <p>Start offering your expertise to customers today!</p>
+      </div>
+      <form id="professionalForm" class="registration-form">
+        <div class="form-group">
+          <label for="fullName">Full Name <span>*</span></label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
+            required
+          />
+          <small class="error-message"></small>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number <span>*</span></label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            required
+          />
+          <small class="error-message"></small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address <span>*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <small class="error-message"></small>
+        </div>
+        <div class="form-group">
+          <label for="profession">Expertise <span>*</span></label>
+          <select id="profession" name="profession" required>
+            <option value="" disabled selected>Choose your profession</option>
+            <option value="Plumber">Plumber</option>
+            <option value="Carpenter">Carpenter</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Hair & Makeup Artist">Hair & Makeup Artist</option>
+            <option value="Salon Expert">Salon Expert</option>
+            <option value="Massage Expert">Massage Expert</option>
+            <option value="WiFi/CCTV Expert">WiFi/CCTV Expert</option>
+            <option value="Spa Expert">Spa Expert</option>
+            <option value="Other">Other</option>
+          </select>
+          <small class="error-message"></small>
+        </div>
+        <div class="form-group">
+          <label for="message">Additional Details</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Tell us more about your skills"
+          ></textarea>
+        </div>
+        <button type="submit" class="submit-button">Register Now</button>
+      </form>
+    </div>
+    <script>
+      document
+        .getElementById("professionalForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const form = e.target;
+          const name = form.fullName.value.trim();
+          const phone = form.phone.value.trim();
+          const email = form.email.value.trim();
+          const profession = form.profession.value;
+
+          let isValid = true;
+
+          // Validate Full Name
+          if (name === "") {
+            showError(form.fullName, "Full Name is required");
+            isValid = false;
+          } else {
+            clearError(form.fullName);
+          }
+
+          // Validate Phone
+          if (!/^\d{10}$/.test(phone)) {
+            showError(form.phone, "Enter a valid 10-digit phone number");
+            isValid = false;
+          } else {
+            clearError(form.phone);
+          }
+
+          // Validate Email
+          if (!/^\S+@\S+\.\S+$/.test(email)) {
+            showError(form.email, "Enter a valid email address");
+            isValid = false;
+          } else {
+            clearError(form.email);
+          }
+
+          // Validate Profession
+          if (!profession) {
+            showError(form.profession, "Please select your profession");
+            isValid = false;
+          } else {
+            clearError(form.profession);
+          }
+
+          // Final Submission
+          if (isValid) {
+            alert("Thank you for registering!");
+            form.reset();
+          }
+        });
+
+      // Helper Functions for Validation
+      function showError(input, message) {
+        const parent = input.parentElement;
+        const error = parent.querySelector(".error-message");
+        error.innerText = message;
+        error.style.display = "block";
+        input.style.borderColor = "#ff4757";
+      }
+
+      function clearError(input) {
+        const parent = input.parentElement;
+        const error = parent.querySelector(".error-message");
+        error.style.display = "none";
+        input.style.borderColor = "#ddd";
+      }
+    </script>
+  </body>
+</html>
