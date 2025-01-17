@@ -3,134 +3,271 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Product Page</title>
     <style>
-      .controls {
-        /* padding: 20px; */
-        display: flex;
-        position: relative;
-        left: 278px;
-        top: 73px;
-      }
-      .controls p {
-        font-size: 12px;
-      }
-      .location-pin {
-        /* font-size: 50px; */
-        cursor: pointer;
-        color: #ff4757;
-        animation: jump 1.5s infinite;
-        position: relative;
-        top: -12px;
-        left: 0px;
-      }
-      .location-pin img {
-        height: 30px;
-      }
-      .location-display {
-        /* margin-top: 10px; */
-        font-size: 16px;
-        color: #333;
-      }
-      .loading {
-        display: none;
-        font-size: 16px;
-        color: #555;
-        position: absolute;
-        top: 30px;
-        left: 30px;
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
       }
 
-      /* Subtle jump animation */
-      @keyframes jump {
-        0%,
-        100% {
-          transform: translateY(0);
+      header {
+        text-align: center;
+        padding: 20px;
+        background: #f8f9fa;
+      }
+
+      .wishlist-link {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      .products-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .product {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        width: 200px;
+      }
+
+      .product img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      /* From Uiverse.io by catraco */
+      .heart-container {
+        --heart-color: rgb(255, 91, 137);
+        position: relative;
+        width: 50px;
+        height: 50px;
+        transition: 0.3s;
+      }
+
+      .heart-container .checkbox {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 20;
+        cursor: pointer;
+      }
+
+      .heart-container .svg-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .heart-container .svg-outline,
+      .heart-container .svg-filled {
+        fill: var(--heart-color);
+        position: absolute;
+      }
+
+      .heart-container .svg-filled {
+        animation: keyframes-svg-filled 1s;
+        display: none;
+      }
+
+      .heart-container .svg-celebrate {
+        position: absolute;
+        animation: keyframes-svg-celebrate 0.5s;
+        animation-fill-mode: forwards;
+        display: none;
+        stroke: var(--heart-color);
+        fill: var(--heart-color);
+        stroke-width: 2px;
+      }
+
+      .heart-container .checkbox:checked ~ .svg-container .svg-filled {
+        display: block;
+      }
+
+      .heart-container .checkbox:checked ~ .svg-container .svg-celebrate {
+        display: block;
+      }
+
+      @keyframes keyframes-svg-filled {
+        0% {
+          transform: scale(0);
         }
+
+        25% {
+          transform: scale(1.2);
+        }
+
         50% {
-          transform: translateY(-10px);
+          transform: scale(1);
+          filter: brightness(1.5);
+        }
+      }
+
+      @keyframes keyframes-svg-celebrate {
+        0% {
+          transform: scale(0);
+        }
+
+        50% {
+          opacity: 1;
+          filter: brightness(1.5);
+        }
+
+        100% {
+          transform: scale(1.4);
+          opacity: 0;
+          display: none;
         }
       }
     </style>
   </head>
   <body>
-    <div class="controls">
-      <div class="location-pin" title="Detect My Location">
-        <img src="icons/gps.png" alt="GPS Icon" />
-      </div>
-      <p class="location-display">No location selected yet.</p>
-      <p class="loading">Fetching location...</p>
-    </div>
+    <header>
+      <h1>Product Wishlist</h1>
+      <a href="exp.html" class="wishlist-link">Go to Wishlist</a>
+    </header>
+    <main>
+      <div class="products-container">
+        <!-- Product 1 -->
+        <div class="product">
+          <img src="product1.jpg" alt="Honey Waxing & Threading" />
 
-    <div class="controls">
-      <div class="location-pin" title="Detect My Location">
-        <img src="icons/gps.png" alt="GPS Icon" />
-      </div>
-      <p class="location-display">No location selected yet.</p>
-      <p class="loading">Fetching location...</p>
-    </div>
+          <div
+            class="heart-container wishlist-btn"
+            title="Like"
+            data-id="127"
+            data-name="Honey Waxing & Threading"
+            data-price="696"
+          >
+            <input type="checkbox" class="checkbox" id="Give-It-An-Id" />
+            <div class="svg-container">
+              <svg
+                viewBox="0 0 24 24"
+                class="svg-outline"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                ></path>
+              </svg>
+              <svg
+                viewBox="0 0 24 24"
+                class="svg-filled"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                ></path>
+              </svg>
+              <svg
+                class="svg-celebrate"
+                width="100"
+                height="100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon points="10,10 20,20"></polygon>
+                <polygon points="10,50 20,50"></polygon>
+                <polygon points="20,80 30,70"></polygon>
+                <polygon points="90,10 80,20"></polygon>
+                <polygon points="90,50 80,50"></polygon>
+                <polygon points="80,80 70,70"></polygon>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="product">
+          <img src="product2.jpg" alt="Facial & Clean-up" />
 
+          <div
+            class="heart-container wishlist-btn"
+            data-id="128"
+            data-name="Facial & Clean-up"
+            data-price="499"
+            title="Like"
+          >
+            <input type="checkbox" class="checkbox" id="Give-It-An-Id" />
+            <div class="svg-container">
+              <svg
+                viewBox="0 0 24 24"
+                class="svg-outline"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+                ></path>
+              </svg>
+              <svg
+                viewBox="0 0 24 24"
+                class="svg-filled"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+                ></path>
+              </svg>
+              <svg
+                class="svg-celebrate"
+                width="100"
+                height="100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon points="10,10 20,20"></polygon>
+                <polygon points="10,50 20,50"></polygon>
+                <polygon points="20,80 30,70"></polygon>
+                <polygon points="90,10 80,20"></polygon>
+                <polygon points="90,50 80,50"></polygon>
+                <polygon points="80,80 70,70"></polygon>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Add more products here -->
+      </div>
+    </main>
     <script>
-      document.querySelectorAll(".controls").forEach((control) => {
-        let selectedLocation = null;
+      // Wishlist Logic
+      const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-        const locationPin = control.querySelector(".location-pin");
-        const locationDisplay = control.querySelector(".location-display");
-        const loadingIndicator = control.querySelector(".loading");
+      document.querySelectorAll(".wishlist-btn").forEach((button) => {
+        const checkbox = button.querySelector(".checkbox");
+        const id = button.getAttribute("data-id");
 
-        locationPin.addEventListener("click", () => {
-          loadingIndicator.style.display = "block"; // Show loading text
+        // Pre-check if item is already in wishlist
+        if (wishlist.some((item) => item.id === id)) {
+          checkbox.checked = true;
+        }
 
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-              async (position) => {
-                const { latitude, longitude } = position.coords;
-                selectedLocation = { latitude, longitude };
+        button.addEventListener("change", function () {
+          const name = this.getAttribute("data-name");
+          const price = this.getAttribute("data-price");
+          const itemIndex = wishlist.findIndex((item) => item.id === id);
 
-                const address = await reverseGeocode(latitude, longitude);
-                locationDisplay.textContent = `${address}`;
-                loadingIndicator.style.display = "none"; // Hide loading text
-              },
-              (error) => {
-                handleGeolocationError(error);
-                loadingIndicator.style.display = "none"; // Hide loading text
-              }
-            );
+          if (checkbox.checked) {
+            // Add to wishlist if not already present
+            if (itemIndex === -1) {
+              wishlist.push({ id, name, price });
+            }
           } else {
-            alert("Geolocation is not supported by this browser.");
-            loadingIndicator.style.display = "none"; // Hide loading text
+            // Remove from wishlist
+            if (itemIndex !== -1) {
+              wishlist.splice(itemIndex, 1);
+            }
           }
+
+          // Save to localStorage
+          localStorage.setItem("wishlist", JSON.stringify(wishlist));
         });
-
-        async function reverseGeocode(lat, lon) {
-          try {
-            const response = await fetch(
-              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
-            );
-            const data = await response.json();
-            return data.display_name || "Unknown Location";
-          } catch {
-            return "Unable to fetch address.";
-          }
-        }
-
-        function handleGeolocationError(error) {
-          let errorMessage = "An error occurred while fetching location.";
-          switch (error.code) {
-            case error.PERMISSION_DENIED:
-              errorMessage = "Location access denied by the user.";
-              break;
-            case error.POSITION_UNAVAILABLE:
-              errorMessage = "Location information is unavailable.";
-              break;
-            case error.TIMEOUT:
-              errorMessage = "The request to get user location timed out.";
-              break;
-            default:
-              errorMessage = "An unknown error occurred.";
-          }
-          alert(errorMessage);
-        }
       });
     </script>
   </body>

@@ -19,7 +19,7 @@ function loadWishlist() {
       wishlistItem.innerHTML = `
               <img src="${product.image}" alt="${product.name}" />
               <h3>${product.name}</h3>
-              <p class="price">${product.price}</p>
+              <p class="price"> ₹ ${product.price}</p>
               <button onclick="removeFromWishlist('${product.id}')">Remove from Wishlist</button>
             `;
 

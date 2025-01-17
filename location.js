@@ -5,6 +5,14 @@ document.querySelectorAll(".controls").forEach((control) => {
   const locationDisplay = control.querySelector(".location-display");
   const loadingIndicator = control.querySelector(".loading");
 
+  // Check if a location is already saved in localStorage
+  const savedLocation = localStorage.getItem("userLocation");
+  if (savedLocation) {
+    const { address } = JSON.parse(savedLocation);
+    locationDisplay.textContent = address;
+    selectedLocation = JSON.parse(savedLocation);
+  }
+
   locationPin.addEventListener("click", () => {
     loadingIndicator.style.display = "block"; // Show loading text
 
@@ -15,7 +23,15 @@ document.querySelectorAll(".controls").forEach((control) => {
           selectedLocation = { latitude, longitude };
 
           const address = await reverseGeocode(latitude, longitude);
-          locationDisplay.textContent = `${address}`;
+          selectedLocation.address = address;
+
+          // Save the location to localStorage
+          localStorage.setItem(
+            "userLocation",
+            JSON.stringify(selectedLocation)
+          );
+
+          updateLocationDisplays(address);
           loadingIndicator.style.display = "none"; // Hide loading text
         },
         (error) => {
@@ -57,5 +73,12 @@ document.querySelectorAll(".controls").forEach((control) => {
         errorMessage = "An unknown error occurred.";
     }
     alert(errorMessage);
+  }
+
+  // Update all location displays
+  function updateLocationDisplays(address) {
+    document.querySelectorAll(".location-display").forEach((display) => {
+      display.textContent = address;
+    });
   }
 });

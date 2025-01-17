@@ -1,189 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Offcanvas Menu</title>
-    <style>
-      /* General Reset */
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #121212;
-        color: white;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist</title>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-      /* Hamburger Icon */
-      .hamburger {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1000;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 25px;
-        transition: transform 0.3s ease;
-      }
+header {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+}
 
-      .hamburger div {
-        width: 100%;
-        height: 4px;
-        background-color: white;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-      }
+.wishlist-link {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1rem;
+}
 
-      .hamburger.open div:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
+#wishlist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
 
-      .hamburger.open div:nth-child(2) {
-        opacity: 0;
-      }
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 80%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-      .hamburger.open div:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
+.product h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
 
-      /* Offcanvas Menu */
-      .offcanvas {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 300px;
-        max-width: 80%;
-        height: 100%;
-        background-color: #1e1e1e;
-        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-        transition: left 0.3s ease;
-        padding: 20px;
-        box-sizing: border-box;
-      }
+.product p {
+  margin: 0;
+  color: #555;
+}
 
-      .offcanvas.open {
-        left: 0;
-      }
+.product .remove-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
-      .offcanvas h2 {
-        margin: 0 0 20px;
-        font-size: 24px;
-        border-bottom: 1px solid #444;
-        padding-bottom: 10px;
-      }
+.product .remove-btn:hover {
+  background: #c0392b;
+}
 
-      .offcanvas a {
-        display: block;
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        margin-bottom: 15px;
-      }
+.empty-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 20px;
+}
 
-      .offcanvas a:hover {
-        color: #00aaff;
-      }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Your Wishlist</h1>
+    <a href="index.html" class="wishlist-link">Back to Products</a>
+  </header>
+  <main>
+    <div id="wishlist-container"></div>
+  </main>
+<script>
+  const wishlistContainer = document.querySelector('#wishlist-container');
 
-      .dropdown {
-        margin-bottom: 20px;
-      }
+// Fetch the wishlist from localStorage or set default products
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [
+  { id: "127", name: "Honey Waxing & Threading", price: "696" },
+  { id: "128", name: "Facial & Clean-up", price: "499" }
+];
 
-      .offcanvas input[type="text"] {
-        width: calc(100% - 60px);
-        padding: 10px;
-        border: 1px solid #555;
-        border-radius: 5px;
-        background-color: #2a2a2a;
-        color: white;
-      }
+// Function to render the wishlist
+function renderWishlist() {
+  wishlistContainer.innerHTML = ''; // Clear the container
 
-      .offcanvas button {
-        padding: 10px 15px;
-        background-color: #00aaff;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
-        margin-left: 10px;
-      }
+  if (wishlist.length === 0) {
+    wishlistContainer.innerHTML = '<p class="empty-message">Your wishlist is empty.</p>';
+    return;
+  }
 
-      .offcanvas button:hover {
-        background-color: #0088cc;
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 768px) {
-        .offcanvas {
-          width: 100%;
-          max-width: 100%;
-        }
-
-        .offcanvas h2 {
-          font-size: 20px;
-          padding-bottom: 8px;
-        }
-
-        .offcanvas a {
-          font-size: 16px;
-          margin-bottom: 10px;
-        }
-
-        .hamburger {
-          top: 15px;
-          left: 15px;
-          width: 25px;
-          height: 20px;
-        }
-
-        .hamburger div {
-          height: 3px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Hamburger Icon -->
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <!-- Offcanvas Menu -->
-    <div class="offcanvas" id="offcanvas">
-      <h2>Menu</h2>
-      <a href="#">Home</a>
-      <a href="#">Link</a>
-      <div class="dropdown">
-        <label for="dropdown">Dropdown:</label>
-        <select id="dropdown">
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
+  wishlist.forEach(item => {
+    const productElement = document.createElement('div');
+    productElement.classList.add('product');
+    productElement.innerHTML = `
+      <div>
+        <h3>${item.name}</h3>
+        <p>Price: $${item.price}</p>
       </div>
-      <div style="display: flex; align-items: center">
-        <input type="text" placeholder="Search" />
-        <button>Search</button>
-      </div>
-    </div>
+      <button class="remove-btn" data-id="${item.id}">Remove</button>
+    `;
+    wishlistContainer.appendChild(productElement);
+  });
 
-    <script>
-      function toggleMenu() {
-        const offcanvas = document.getElementById("offcanvas");
-        const hamburger = document.getElementById("hamburger");
-        const isOpen = offcanvas.classList.toggle("open");
-        hamburger.classList.toggle("open");
+  // Add event listeners to the remove buttons
+  document.querySelectorAll('.remove-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const id = this.getAttribute('data-id');
+      removeFromWishlist(id);
+    });
+  });
+}
 
-        // Add or remove backdrop effect
-        if (isOpen) {
-          document.body.classList.add("menu-open");
-        } else {
-          document.body.classList.remove("menu-open");
-        }
-      }
-    </script>
-  </body>
+// Function to remove an item from the wishlist
+function removeFromWishlist(id) {
+  wishlist = wishlist.filter(item => item.id !== id);
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  renderWishlist();
+}
+
+// Initial render
+renderWishlist();
+
+</script>
+</body>
 </html>

@@ -1,55 +1,34 @@
-// Select all wishlist buttons inside cards
-const wishlistButtons = document.querySelectorAll(".wishlist-btn");
+// Wishlist Logic
+const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-// Initialize wishlist array from localStorage
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+document.querySelectorAll(".wishlist-btn").forEach((button) => {
+  const checkbox = button.querySelector(".checkbox");
+  const id = button.getAttribute("data-id");
 
-// Function to update UI for liked items
-function updateUI() {
-  wishlistButtons.forEach((button) => {
-    const card = button.closest(".card");
-    const cardId = card.dataset.id;
-    const checkbox = button.querySelector(".checkbox");
+  // Pre-check if item is already in wishlist
+  if (wishlist.some((item) => item.id === id)) {
+    checkbox.checked = true;
+  }
 
-    // Check if the product is already in the wishlist
-    if (wishlist.some((item) => item.id === cardId)) {
-      checkbox.checked = true;
+  button.addEventListener("change", function () {
+    const name = this.getAttribute("data-name");
+    const image = this.getAttribute("data-image");
+    const price = this.getAttribute("data-price");
+    const itemIndex = wishlist.findIndex((item) => item.id === id);
+
+    if (checkbox.checked) {
+      // Add to wishlist if not already present
+      if (itemIndex === -1) {
+        wishlist.push({ id, name, price });
+      }
     } else {
-      checkbox.checked = false;
-    }
-  });
-}
-
-// Update UI for already liked items
-updateUI();
-
-// Add event listeners to wishlist buttons
-wishlistButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const card = button.closest(".card");
-    const cardId = card.dataset.id;
-
-    const product = {
-      id: cardId,
-      name: card.querySelector("h3").textContent,
-      price: card.querySelector(".price").textContent,
-      image: card.querySelector("img").src,
-    };
-
-    const existingIndex = wishlist.findIndex((item) => item.id === cardId);
-
-    if (existingIndex > -1) {
       // Remove from wishlist
-      wishlist.splice(existingIndex, 1);
-    } else {
-      // Add to wishlist
-      wishlist.push(product);
+      if (itemIndex !== -1) {
+        wishlist.splice(itemIndex, 1);
+      }
     }
 
-    // Save updated wishlist to localStorage
+    // Save to localStorage
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-    // Update UI
-    updateUI();
   });
 });

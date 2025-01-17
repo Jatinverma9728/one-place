@@ -1,9 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
 .wishlist-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
