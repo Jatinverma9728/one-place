@@ -53,4 +53,3 @@ function saveCart() {
 
 // Initialize cart on page load
 document.addEventListener("DOMContentLoaded", renderCart);
-

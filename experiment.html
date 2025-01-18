@@ -1,181 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .heart-container {
-  --heart-color: rgb(255, 91, 137);
-  position: relative;
-  left: 20rem;
-  top: -1rem;
-  width: 25px;
-  height: 25px;
-  transition: .3s;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .heart-container {
+        --heart-color: rgb(255, 91, 137);
+        position: relative;
+        left: 20rem;
+        top: -1rem;
+        width: 25px;
+        height: 25px;
+        transition: 0.3s;
+      }
 
-.heart-container .checkbox {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 20;
-  cursor: pointer;
-}
+      .heart-container .checkbox {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 20;
+        cursor: pointer;
+      }
 
-.heart-container .svg-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      .heart-container .svg-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-.heart-container .svg-outline,
-        .heart-container .svg-filled {
-  fill: var(--heart-color);
-  position: absolute;
-}
+      .heart-container .svg-outline,
+      .heart-container .svg-filled {
+        fill: var(--heart-color);
+        position: absolute;
+      }
 
-.heart-container .svg-filled {
-  animation: keyframes-svg-filled 1s;
-  display: none;
-}
+      .heart-container .svg-filled {
+        animation: keyframes-svg-filled 1s;
+        display: none;
+      }
 
-.heart-container .svg-celebrate {
-  position: absolute;
-  animation: keyframes-svg-celebrate .5s;
-  animation-fill-mode: forwards;
-  display: none;
-  stroke: var(--heart-color);
-  fill: var(--heart-color);
-  stroke-width: 2px;
-}
+      .heart-container .svg-celebrate {
+        position: absolute;
+        animation: keyframes-svg-celebrate 0.5s;
+        animation-fill-mode: forwards;
+        display: none;
+        stroke: var(--heart-color);
+        fill: var(--heart-color);
+        stroke-width: 2px;
+      }
 
-.heart-container .checkbox:checked~.svg-container .svg-filled {
-  display: block
-}
+      .heart-container .checkbox:checked ~ .svg-container .svg-filled {
+        display: block;
+      }
 
-.heart-container .checkbox:checked~.svg-container .svg-celebrate {
-  display: block
-}
+      .heart-container .checkbox:checked ~ .svg-container .svg-celebrate {
+        display: block;
+      }
 
-@keyframes keyframes-svg-filled {
-  0% {
-    transform: scale(0);
-  }
+      @keyframes keyframes-svg-filled {
+        0% {
+          transform: scale(0);
+        }
 
-  25% {
-    transform: scale(1.2);
-  }
+        25% {
+          transform: scale(1.2);
+        }
 
-  50% {
-    transform: scale(1);
-    filter: brightness(1.5);
-  }
-}
+        50% {
+          transform: scale(1);
+          filter: brightness(1.5);
+        }
+      }
 
-@keyframes keyframes-svg-celebrate {
-  0% {
-    transform: scale(0);
-  }
+      @keyframes keyframes-svg-celebrate {
+        0% {
+          transform: scale(0);
+        }
 
-  50% {
-    opacity: 1;
-    filter: brightness(1.5);
-  }
+        50% {
+          opacity: 1;
+          filter: brightness(1.5);
+        }
 
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
-    display: none;
-  }
-}
-  </style>
-</head>
-<body>
-  <div class="product" data-id="101" data-name="Product A" data-price="500">
-  <img src="product-a.jpg" alt="Product A" />
-  <p>Product A</p>
-  <p>Price: ₹500</p>
-</div>
+        100% {
+          transform: scale(1.4);
+          opacity: 0;
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product" data-id="101" data-name="Product A" data-price="500">
+      <img src="product-a.jpg" alt="Product A" />
+      <p>Product A</p>
+      <p>Price: ₹500</p>
+    </div>
 
-<div class="product" data-id="102" data-name="Product B" data-price="750">
-  <img src="product-b.jpg" alt="Product B" />
-  <p>Product B</p>
-  <p>Price: ₹750</p>
-</div>
+    <div class="product" data-id="102" data-name="Product B" data-price="750">
+      <img src="product-b.jpg" alt="Product B" />
+      <p>Product B</p>
+      <p>Price: ₹750</p>
+    </div>
 
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
-<div class="product" data-id="103" data-name="Product C" data-price="999">
-  <img src="product-c.jpg" alt="Product C" />
-  <p>Product C</p>
-  <p>Price: ₹999</p>
-</div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
+    <div class="product" data-id="103" data-name="Product C" data-price="999">
+      <img src="product-c.jpg" alt="Product C" />
+      <p>Product C</p>
+      <p>Price: ₹999</p>
+    </div>
 
-<!-- Add this script tag before the closing body tag -->
-<script>
-  // Wishlist Logic with Dynamic Button Placement
+    <!-- Add this script tag before the closing body tag -->
+    <script>
+      // Wishlist Logic with Dynamic Button Placement
 
-document.addEventListener("DOMContentLoaded", () => {
-  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      document.addEventListener("DOMContentLoaded", () => {
+        const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-  // Function to render wishlist buttons dynamically
-  function addWishlistButtons() {
-    const products = document.querySelectorAll(".product");
+        // Function to render wishlist buttons dynamically
+        function addWishlistButtons() {
+          const products = document.querySelectorAll(".product");
 
-    products.forEach((product) => {
-      if (!product.querySelector(".wishlist-button")) {
-        const button = document.createElement("div");
-        button.className = "heart-container wishlist-button";
-        button.title = "Add to Wishlist";
+          products.forEach((product) => {
+            if (!product.querySelector(".wishlist-button")) {
+              const button = document.createElement("div");
+              button.className = "heart-container wishlist-button";
+              button.title = "Add to Wishlist";
 
-        button.innerHTML = `
+              button.innerHTML = `
           <input type="checkbox" class="checkbox">
           <div class="svg-container">
             <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
@@ -187,45 +187,51 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
-        product.appendChild(button);
+              product.appendChild(button);
 
-        // Attach click event for wishlist functionality
-        button.querySelector(".checkbox").addEventListener("change", () => {
-          toggleWishlist(product);
-        });
+              // Attach click event for wishlist functionality
+              button
+                .querySelector(".checkbox")
+                .addEventListener("change", () => {
+                  toggleWishlist(product);
+                });
 
-        // Pre-check the button if the product is already in the wishlist
-        const productId = product.getAttribute("data-id");
-        if (wishlist.some((item) => item.id === productId)) {
-          button.querySelector(".checkbox").checked = true;
+              // Pre-check the button if the product is already in the wishlist
+              const productId = product.getAttribute("data-id");
+              if (wishlist.some((item) => item.id === productId)) {
+                button.querySelector(".checkbox").checked = true;
+              }
+            }
+          });
         }
-      }
-    });
-  }
 
-  // Function to add or remove products from wishlist
-  function toggleWishlist(product) {
-    const productId = product.getAttribute("data-id");
-    const productName = product.getAttribute("data-name");
-    const productPrice = product.getAttribute("data-price");
+        // Function to add or remove products from wishlist
+        function toggleWishlist(product) {
+          const productId = product.getAttribute("data-id");
+          const productName = product.getAttribute("data-name");
+          const productPrice = product.getAttribute("data-price");
 
-    const existingIndex = wishlist.findIndex((item) => item.id === productId);
+          const existingIndex = wishlist.findIndex(
+            (item) => item.id === productId
+          );
 
-    if (existingIndex === -1) {
-      wishlist.push({ id: productId, name: productName, price: productPrice });
-    } else {
-      wishlist.splice(existingIndex, 1);
-    }
+          if (existingIndex === -1) {
+            wishlist.push({
+              id: productId,
+              name: productName,
+              price: productPrice,
+            });
+          } else {
+            wishlist.splice(existingIndex, 1);
+          }
 
-    // Update localStorage
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  }
+          // Update localStorage
+          localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        }
 
-  // Initialize buttons on page load
-  addWishlistButtons();
-});
-
-</script>
-
-</body>
+        // Initialize buttons on page load
+        addWishlistButtons();
+      });
+    </script>
+  </body>
 </html>

@@ -1,139 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wishlist</title>
-<style>
-  body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-header {
-  text-align: center;
-  padding: 20px;
-  background: #f8f9fa;
-}
+      header {
+        text-align: center;
+        padding: 20px;
+        background: #f8f9fa;
+      }
 
-.wishlist-link {
-  text-decoration: none;
-  color: #007bff;
-  font-size: 1rem;
-}
+      .wishlist-link {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 1rem;
+      }
 
-#wishlist-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
+      #wishlist-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
 
-.product {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 10px 0;
-  width: 80%;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+      .product {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 10px 0;
+        width: 80%;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
 
-.product h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
+      .product h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
 
-.product p {
-  margin: 0;
-  color: #555;
-}
+      .product p {
+        margin: 0;
+        color: #555;
+      }
 
-.product .remove-btn {
-  background: #e74c3c;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+      .product .remove-btn {
+        background: #e74c3c;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
 
-.product .remove-btn:hover {
-  background: #c0392b;
-}
+      .product .remove-btn:hover {
+        background: #c0392b;
+      }
 
-.empty-message {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #555;
-  margin-top: 20px;
-}
+      .empty-message {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #555;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Your Wishlist</h1>
+      <a href="index.html" class="wishlist-link">Back to Products</a>
+    </header>
+    <main>
+      <div id="wishlist-container"></div>
+    </main>
+    <script>
+      const wishlistContainer = document.querySelector("#wishlist-container");
 
-</style>
-</head>
-<body>
-  <header>
-    <h1>Your Wishlist</h1>
-    <a href="index.html" class="wishlist-link">Back to Products</a>
-  </header>
-  <main>
-    <div id="wishlist-container"></div>
-  </main>
-<script>
-  const wishlistContainer = document.querySelector('#wishlist-container');
+      // Fetch the wishlist from localStorage or set default products
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [
+        { id: "127", name: "Honey Waxing & Threading", price: "696" },
+        { id: "128", name: "Facial & Clean-up", price: "499" },
+      ];
 
-// Fetch the wishlist from localStorage or set default products
-let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [
-  { id: "127", name: "Honey Waxing & Threading", price: "696" },
-  { id: "128", name: "Facial & Clean-up", price: "499" }
-];
+      // Function to render the wishlist
+      function renderWishlist() {
+        wishlistContainer.innerHTML = ""; // Clear the container
 
-// Function to render the wishlist
-function renderWishlist() {
-  wishlistContainer.innerHTML = ''; // Clear the container
+        if (wishlist.length === 0) {
+          wishlistContainer.innerHTML =
+            '<p class="empty-message">Your wishlist is empty.</p>';
+          return;
+        }
 
-  if (wishlist.length === 0) {
-    wishlistContainer.innerHTML = '<p class="empty-message">Your wishlist is empty.</p>';
-    return;
-  }
-
-  wishlist.forEach(item => {
-    const productElement = document.createElement('div');
-    productElement.classList.add('product');
-    productElement.innerHTML = `
+        wishlist.forEach((item) => {
+          const productElement = document.createElement("div");
+          productElement.classList.add("product");
+          productElement.innerHTML = `
       <div>
         <h3>${item.name}</h3>
         <p>Price: $${item.price}</p>
       </div>
       <button class="remove-btn" data-id="${item.id}">Remove</button>
     `;
-    wishlistContainer.appendChild(productElement);
-  });
+          wishlistContainer.appendChild(productElement);
+        });
 
-  // Add event listeners to the remove buttons
-  document.querySelectorAll('.remove-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const id = this.getAttribute('data-id');
-      removeFromWishlist(id);
-    });
-  });
-}
+        // Add event listeners to the remove buttons
+        document.querySelectorAll(".remove-btn").forEach((button) => {
+          button.addEventListener("click", function () {
+            const id = this.getAttribute("data-id");
+            removeFromWishlist(id);
+          });
+        });
+      }
 
-// Function to remove an item from the wishlist
-function removeFromWishlist(id) {
-  wishlist = wishlist.filter(item => item.id !== id);
-  localStorage.setItem('wishlist', JSON.stringify(wishlist));
-  renderWishlist();
-}
+      // Function to remove an item from the wishlist
+      function removeFromWishlist(id) {
+        wishlist = wishlist.filter((item) => item.id !== id);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        renderWishlist();
+      }
 
-// Initial render
-renderWishlist();
-
-</script>
-</body>
+      // Initial render
+      renderWishlist();
+    </script>
+  </body>
 </html>
