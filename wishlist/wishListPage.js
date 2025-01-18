@@ -18,9 +18,9 @@ function loadWishlist() {
 
       wishlistItem.innerHTML = `
               <img src="${product.image}" alt="${product.name}" />
-              <h3>${product.name}</h3>
+              <h4>${product.name}</h4>
               <p class="price"> ₹ ${product.price}</p>
-              <button onclick="removeFromWishlist('${product.id}')">Remove from Wishlist</button>
+              <button onclick="removeFromWishlist('${product.id}')">Remove</button>
             `;
 
       wishlistContainer.appendChild(wishlistItem);

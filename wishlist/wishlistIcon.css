@@ -1,10 +1,9 @@
 .heart-container {
   --heart-color: rgb(255, 91, 137);
   position: relative;
-  left: 20rem;
-  top: -1rem;
   width: 25px;
   height: 25px;
+  top: -200px;
   transition: .3s;
 }
 
