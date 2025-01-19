@@ -1,11 +1,12 @@
 document.querySelectorAll(".controls").forEach((control) => {
   let selectedLocation = null;
+  let isFetching = false; // Prevent multiple simultaneous fetches
 
   const locationPin = control.querySelector(".location-pin");
   const locationDisplay = control.querySelector(".location-display");
   const loadingIndicator = control.querySelector(".loading");
 
-  // Check if a location is already saved in localStorage
+  // Load the saved location from localStorage (if available)
   const savedLocation = localStorage.getItem("userLocation");
   if (savedLocation) {
     const { address } = JSON.parse(savedLocation);
@@ -14,7 +15,10 @@ document.querySelectorAll(".controls").forEach((control) => {
   }
 
   locationPin.addEventListener("click", () => {
+    if (selectedLocation || isFetching) return; // Skip if location is already fetched or fetching
+
     loadingIndicator.style.display = "block"; // Show loading text
+    isFetching = true; // Set fetching flag
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -22,41 +26,48 @@ document.querySelectorAll(".controls").forEach((control) => {
           const { latitude, longitude } = position.coords;
           selectedLocation = { latitude, longitude };
 
-          const address = await reverseGeocode(latitude, longitude);
-          selectedLocation.address = address;
+          try {
+            const address = await reverseGeocode(latitude, longitude);
+            selectedLocation.address = address;
 
-          // Save the location to localStorage
-          localStorage.setItem(
-            "userLocation",
-            JSON.stringify(selectedLocation)
-          );
+            // Save to localStorage
+            localStorage.setItem(
+              "userLocation",
+              JSON.stringify(selectedLocation)
+            );
 
-          updateLocationDisplays(address);
-          loadingIndicator.style.display = "none"; // Hide loading text
+            // Update location display
+            locationDisplay.textContent = address;
+          } catch {
+            alert("Failed to fetch the address. Please try again.");
+          } finally {
+            loadingIndicator.style.display = "none"; // Hide loading text
+            isFetching = false; // Reset fetching flag
+          }
         },
         (error) => {
           handleGeolocationError(error);
           loadingIndicator.style.display = "none"; // Hide loading text
+          isFetching = false; // Reset fetching flag
         }
       );
     } else {
       alert("Geolocation is not supported by this browser.");
       loadingIndicator.style.display = "none"; // Hide loading text
+      isFetching = false; // Reset fetching flag
     }
   });
 
+  // Function to fetch address using reverse geocoding
   async function reverseGeocode(lat, lon) {
-    try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
-      );
-      const data = await response.json();
-      return data.display_name || "Unknown Location";
-    } catch {
-      return "Unable to fetch address.";
-    }
+    const response = await fetch(
+      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+    );
+    const data = await response.json();
+    return data.display_name || "Unknown Location";
   }
 
+  // Handle geolocation errors
   function handleGeolocationError(error) {
     let errorMessage = "An error occurred while fetching location.";
     switch (error.code) {
@@ -69,16 +80,7 @@ document.querySelectorAll(".controls").forEach((control) => {
       case error.TIMEOUT:
         errorMessage = "The request to get user location timed out.";
         break;
-      default:
-        errorMessage = "An unknown error occurred.";
     }
     alert(errorMessage);
-  }
-
-  // Update all location displays
-  function updateLocationDisplays(address) {
-    document.querySelectorAll(".location-display").forEach((display) => {
-      display.textContent = address;
-    });
   }
 });
