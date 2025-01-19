@@ -33,10 +33,7 @@ document.querySelectorAll(".controls").forEach((control) => {
             selectedLocation.address = address;
 
             // Save the location to localStorage
-            localStorage.setItem(
-              "userLocation",
-              JSON.stringify(selectedLocation)
-            );
+            localStorage.setItem("userLocation", JSON.stringify(selectedLocation));
 
             updateLocationDisplays(address);
             loadingIndicator.style.display = "none"; // Hide loading text
@@ -78,12 +75,10 @@ document.querySelectorAll(".controls").forEach((control) => {
     let errorMessage = "An error occurred while fetching location.";
     switch (error.code) {
       case error.PERMISSION_DENIED:
-        errorMessage =
-          "Location access denied by the user. Please allow access.";
+        errorMessage = "Location access denied by the user. Please allow access.";
         break;
       case error.POSITION_UNAVAILABLE:
-        errorMessage =
-          "Location information is unavailable. Please enable location.";
+        errorMessage = "Location information is unavailable. Please enable location.";
         break;
       case error.TIMEOUT:
         errorMessage = "The request to get user location timed out.";
