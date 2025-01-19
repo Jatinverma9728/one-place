@@ -1,0 +1,154 @@
+/* The switch - the box around the slider */
+.switch {
+  display: block;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  --size-of-icon: 1.4em;
+  --slider-offset: 0.3em;
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon, 1.4em);
+  width: var(--size-of-icon, 1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset, 0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #303136;
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+/* Default light mode styles */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #171717;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles for specific elements */
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode footer,
+body.dark-mode .card,
+body.dark-mode .btn {
+  background-color: #171717;
+  color: #fff;
+}
+body.dark-mode #nav-items-for-small-screen {
+  background: rgb(36, 36, 36);
+}
+body.dark-mode .card {
+  border: 1px solid rgb(60, 60, 60);
+  background: rgb(36, 36, 36);
+}
+/* For buttons in dark mode */
+body.dark-mode .btn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #444;
+  border-color: #555;
+}
+
+/* For links in dark mode */
+body.dark-mode a,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode p {
+  color: #efefefe5;
+}
+.dark-mode #notification-section {
+  color: #000000;
+  background: #daa5f9;
+}
+
+body.dark-mode a:hover {
+  color: #b2b2b2;
+}
+body.dark-mode .hamburger-icon {
+  background-color: #171717;
+  color: #fff;
+}
+body.dark-mode .hamburger-icon div {
+  background-color: #fff;
+}
+body.dark-mode .search-container,
+body.dark-mode .search-container input {
+  background-color: #171717;
+  color: #fff;
+}
+body.dark-mode .dynamic-text {
+  color: #e2e2e2e9;
+}
+body.dark-mode .main-heading {
+  color: #000000;
+}
+body.dark-mode #main-col-para {
+  color: #000000;
+}
+body.dark-mode .main-col-1 {
+  background-color: #daa5f9;
+  color: #fff;
+}
+body.dark-mode .ser-card-images {
+  background-color: #353535;
+  color: #fff;
+}
+
+body.dark-mode .quick-section .card {
+  background: none;
+  border: none;
+}
+
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+body.dark-mode .footer-container a {
+  color: #e2e2e2e9;
+}

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="loader.css" />
     <link rel="stylesheet" href="responsive.css" />
     <link rel="stylesheet" href="messagebtn.css" />
+    <link rel="stylesheet" href="switchMode/switchMode.css" />
     <script
       src="https://kit.fontawesome.com/92d5a0c82a.js"
       crossorigin="anonymous"
@@ -187,6 +188,10 @@
     </div>
     <!-- ---------------logo------------- -->
 
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider"></span>
+    </label>
     <nav class="navbar">
       <h1 class="logo-text">One Place</h1>
       <div class="controls">
@@ -351,7 +356,7 @@
                   <a>
                     <div class="ser-card-images">
                       <img
-                        src="icons/women saloon.png"
+                        src="icons/women_saloon-removebg-preview.png"
                         alt="Women's Saloon & Spa"
                         style="height: 56px; width: 56px"
                       />
@@ -364,7 +369,7 @@
                   <a>
                     <div class="ser-card-images">
                       <img
-                        src="icons/men sal.png"
+                        src="icons/men_sal-removebg-preview.png"
                         alt="Mens saloon"
                         style="height: 56px; width: 56px"
                       />
@@ -390,7 +395,7 @@
                 <div class="partion1">
                   <div class="ser-2-card" id="painter-modal">
                     <a>
-                      <div class="ser-2-card-images">
+                      <div class="ser-2-card-images ser-card-images">
                         <p>Painting & <br />Waterproofing</p>
                         <img
                           src="icons/painter.png"
@@ -403,7 +408,7 @@
                   </div>
                   <div class="ser-2-card" id="electrician-modal">
                     <a>
-                      <div class="ser-2-card-images">
+                      <div class="ser-2-card-images ser-card-images">
                         <p>Electrician, Plumber & <br />Carpenter</p>
                         <img
                           src="icons/repair.png"
@@ -418,10 +423,13 @@
                 <div class="partion2">
                   <div class="ser-2-card" id="waterpurifier-modal">
                     <a href="#">
-                      <div class="ser-2-card-images">
+                      <div
+                        class="ser-2-card-images ser-card-images"
+                        style="width: 100%"
+                      >
                         <p>Water Purifier</p>
                         <img
-                          src="icons/ro.png"
+                          src="icons/ro-removebg-preview (1).png"
                           alt="Water Purifier"
                           style="height: 55px; width: 55px; margin-left: 10px"
                           class="ser-2-card-images-hover"
@@ -1504,6 +1512,7 @@
     <!-- normal js files -->
     <!-- <script src="cart.js"></script> -->
     <script src="searching.js"></script>
+    <script src="switchMode/switchMode.js"></script>
     <script src="hamburger.js"></script>
     <script src="searchbox.js"></script>
     <script src="cart page/product.js"></script>
