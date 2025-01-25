@@ -25,7 +25,6 @@ html {
   height: 100%;
   scroll-behavior: smooth;
 }
-
 .navbar div {
   right: 50px;
 }
@@ -188,15 +187,15 @@ html {
   color: #00aaff;
 }
 
-.offcanvas i {
-  font-size: 16px;
-  opacity: 0.7;
+.offcanvas img {
+  height: 21px;
   margin-right: 10px;
 }
 
 .dropdown-menu {
   display: none;
   margin-left: 20px;
+  transition: all 0.3s ease;
 }
 
 .dropdown-menu li {
@@ -389,17 +388,19 @@ html {
   list-style: none;
   font-size: 25px;
   position: relative;
-  height: 30px;
+  /* height: 30px; */
   width: fit-content;
   text-align: center;
 }
-
+.nav-items-for-small-screen li a{
+  text-decoration: none ;
+}
 .icon-text {
   font-size: 12px;
   border: none;
   text-decoration: none;
   position: relative;
-  top: -9px;
+  /* top: -9px; */
   font-family: var(--popins-font);
 }
 

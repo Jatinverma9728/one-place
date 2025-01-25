@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="loader.css" />
     <link rel="stylesheet" href="responsive.css" />
     <link rel="stylesheet" href="messagebtn.css" />
-    <link rel="stylesheet" href="switchMode/switchMode.css">
+    <link rel="stylesheet" href="switchMode/switchMode.css" />
     <script
       src="https://kit.fontawesome.com/92d5a0c82a.js"
       crossorigin="anonymous"
@@ -113,6 +113,13 @@
         <!-- -----cards-------- -->
         <div class="ham-card">
           <div class="scard">
+            <img src="icons/shopping-cart.png" alt="">
+            <p>Cart</p>
+            <a href="cart page/cart.html" class="cart-btn" id="cardt-modal"
+              ><span id="cart-count">0</span></a
+            >
+          </div>
+          <div class="scard">
             <i class="fa-solid fa-clipboard-list"></i>
             <p>my bookings</p>
           </div>
@@ -123,20 +130,22 @@
         </div>
         <ul>
           <li>
-            <a href="#"><i class="fa-solid fa-sheet-plastic"></i>My Plans</a>
+            <a href="#"
+              ><img src="icons/task.png"/>My Plans</a
+            >
           </li>
           <li>
             <a href="wishlist/wishlist.html"
-              ><i class="fa-solid fa-heart"></i>Wishlist</a
+              ><img src="icons/wishlist.png">Wishlist</a
             >
           </li>
           <li>
             <a href="#"
-              ><i class="fa-solid fa-certificate"></i>Plus membership</a
+              ><img src="icons/guarantee.png" alt="">Plus membership</a
             >
           </li>
           <li>
-            <a href="#"><i class="fa-solid fa-star"></i>My ratings</a>
+            <a href="#"><img src="icons/star.png" alt="">My ratings</a>
           </li>
           <li>
             <div
@@ -144,7 +153,7 @@
               style="position: relative; top: 15px; left: 0"
             >
               <a href="#" class="location-pin" style="animation: none"
-                ><i class="fa-solid fa-location-dot"></i>Manage addresses
+                ><img src="icons/location.png" style="height: 21px;">Manage addresses
                 <p class="location-display">No location selected yet.</p>
                 <p class="loading">Fetching location...</p></a
               >
@@ -153,17 +162,19 @@
 
           <li>
             <a href="#"
-              ><i class="fa-solid fa-credit-card"></i>Manage payment methods</a
+              ><img src="icons/credit-card.png" alt="">Manage payment methods</a
             >
           </li>
           <li>
-            <a href="settingPage.html"><i class="fa-solid fa-gear"></i>Settings</a>
+            <a href="settingPage.html"
+              ><img src="icons/setting.png" alt="">Settings</a
+            >
           </li>
           <li>
             <a href="#"
               ><img
                 src="images/logo/logo_2-removebg-preview.png"
-                style="width: 16px; margin-right: 10px"
+                style="height: 21px;width: 21px; margin-right: 10px"
                 alt=""
               />About OP</a
             >
@@ -187,16 +198,10 @@
       </div>
     </div>
     <!-- ---------------logo------------- -->
- 
+
     <nav class="navbar">
       <h1 class="logo-text">One Place</h1>
-      <div class="controls">
-        <div class="location-pin" title="Detect My Location">
-          <img src="icons/gps.png" alt="GPS Icon" />
-        </div>
-        <p class="location-display">No location selected yet.</p>
-        <p class="loading">Fetching location...</p>
-      </div>
+   
     </nav>
 
     <div class="search-container search-container-2" style="display: none">
@@ -232,7 +237,7 @@
           <li><a href="#main-section-image-text">Home</a></li>
           <li><a href="about us.pdf" style="margin-right: 5px">About</a></li>
           <li><a href="privacy policy oneplace.pdf">Privacy & Policy</a></li>
-          <li id="pp"><a href="wishlist/wishlist.html">Wishlist</a></li>
+          <li id="pp"><a href="settingPage.html">Settings</a></li>
         </ul>
         <div class="side-items">
           <a href="sign page/signpage.html" class="login-btn" id="login-modal"
@@ -303,17 +308,6 @@
             />
             <br />
             <span class="icon-text"> Repairing</span>
-          </a>
-        </li>
-        <li>
-          <!-- ================================================================================================================================ -->
-          <a href="cart page/cart.html">
-            <img src="icons/shopping-cart.png" alt="" style="height: 28px" />
-            <br />
-            <span class="icon-text"> Cart</span>
-            <a href="" class="cart-btn" id="cardt-modal"
-              ><span id="cart-count">0</span></a
-            >
           </a>
         </li>
 

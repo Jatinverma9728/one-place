@@ -152,3 +152,6 @@ body.dark-mode footer {
 body.dark-mode .footer-container a {
   color: #e2e2e2e9;
 }
+ body.dark-mode .logo img {
+  filter: invert(100);
+ }

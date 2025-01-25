@@ -1,76 +1,264 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="switchMode/switchMode.css" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Settings Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
       body {
+        font-family: "Inter", sans-serif;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 34px;
+        height: 20px;
       }
 
-      header {
-        background: #e4e4e4;
-        border-bottom-left-radius: 23px;
-        border-bottom-right-radius: 23px;
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
       }
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        /* background: red; */
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
       }
-      .logo {
-        height: 5rem;
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
       }
-      .logo img {
-        height: 50px;
-        margin-top: 15px;
+
+      input:checked + .slider {
+        background-color: #4caf50;
       }
-      nav li {
-        list-style: none;
+
+      input:checked + .slider:before {
+        transform: translateX(14px);
       }
-      nav li a {
-        text-decoration: none;
+
+      .sidebar-item:hover {
+        background-color: #ffffff; /* Tailwind's bg-gray-200 */
         color: black;
-        font-size: 1.25rem;
-        padding: 10px;
-        border-radius: 20px;
-        border: 1px solid #3e3e3e;
       }
-      .mode {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px solid #ababab;
-        padding: 1rem;
-        border-radius: 23px;
-        margin: 10px;
+
+      .icon-hover:hover {
+        background-color: #e5e7eb; /* Tailwind's bg-gray-200 */
+        color: black;
+        border-radius: 50%;
+        padding: 0.5rem;
+      }
+
+      .sidebar-item-active {
+        background-color: #e5e7eb; /* Tailwind's bg-gray-200 */
+        color: black;
+      }
+      .sidebar {
+        background-image: linear-gradient(
+          to top,
+          rgb(212, 212, 212),
+          rgb(255, 255, 255)
+        );
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+      }
+      .middel {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
       }
     </style>
   </head>
-  <body>
-    <header>
-      <nav>
-        <div class="logo">
-          <img src="/images/logo/logo_2-removebg-preview.png" />
+  <body class="bg-gray-100">
+    <div class="flex flex-col lg:flex-row h-screen">
+      <!-- Sidebar -->
+      <div class="w-full h-full lg:w-64 p-6 sidebar">
+        <div class="flex items-center mb-8">
+          <div
+            class="bg-gray-200 rounded-full h-10 w-10 flex items-center justify-center"
+          >
+            <span class="text-xl font-bold">J</span>
+          </div>
+          <span class="ml-3 text-xl font-semibold">Jatin</span>
         </div>
-        <li><a href="/index.html">Home</a></li>
-      </nav>
-    </header>
-    <div class="mode">
-      <h2>Mode</h2>
-      <label class="switch">
-        <input type="checkbox" id="theme-toggle" />
-        <span class="slider"></span>
-      </label>
+        <nav>
+          <ul>
+            <li class="mb-4">
+              <a
+                class="flex items-center text-gray-600 hover:text-black sidebar-item p-2 rounded-2xl"
+                href="#"
+              >
+                <i class="fas fa-user mr-3"></i>
+                Profile
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                class="flex items-center text-gray-600 hover:text-black sidebar-item sidebar-item p-2 rounded-2xl"
+                href="#"
+              >
+                <i class="fas fa-cog mr-3"></i>
+                Settings
+              </a>
+            </li>
+            <li class="mb-4">
+              <a
+                class="flex items-center text-gray-600 hover:text-black sidebar-item p-2 rounded-2xl focus:text-blue-700 focus:bg-white-200"
+                href="#"
+              >
+                <i class="fas fa-credit-card mr-3"></i>
+                Payments
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Main Content -->
+      <div class="flex-1 p-8 middel">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between mb-8"
+        >
+          <div class="flex items-center mb-4 md:mb-0">
+            <img
+              alt="User profile picture"
+              class="rounded-full h-10 w-10 mr-3"
+              height="40"
+              src="images/logo/pixelcut-export.png"
+              width="40"
+            />
+            <div>
+              <h2 class="text-lg font-semibold">Jatin Verma</h2>
+              <p class="text-sm text-gray-500">Last edited 11-12-13, 8:13AM</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <i class="fas fa-pen text-gray-600 icon-hover"></i>
+            <i class="fas fa-trash text-gray-600 icon-hover"></i>
+            <i class="fas fa-user text-gray-600 icon-hover"></i>
+            <i class="fas fa-ellipsis-h text-gray-600 icon-hover"></i>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mb-6">
+          <h1 class="text-3xl font-bold">Settings</h1>
+          <div class="relative">
+            <input
+              class="border border-gray-300 rounded-lg py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search..."
+              type="text"
+            />
+            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-xl font-semibold mb-4">Notification settings</h2>
+          <p class="text-gray-600 mb-6">
+            By default, designers will be notified by your company’s preferred
+            dark patterns. Employees can also customize their notification
+            preferences by logging into the
+            <a class="text-blue-500" href="#">Setproduct dashboard</a>
+          </p>
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">PRIMARY SETTINGS</h3>
+            <div
+              class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded-lg mb-4"
+            >
+              <div class="flex items-center mb-4 md:mb-0">
+                <i class="fas fa-cog text-gray-600 mr-3"></i>
+                <div>
+                  <h4 class="font-semibold">Setting option disabled</h4>
+                  <p class="text-gray-500">Describe here what it is for</p>
+                </div>
+              </div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div
+              class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded-lg"
+            >
+              <div class="flex items-center mb-4 md:mb-0">
+                <i class="fas fa-text-width text-gray-600 mr-3"></i>
+                <div>
+                  <h4 class="font-semibold">Automatically text alignment</h4>
+                  <p class="text-gray-500">
+                    This is unuseful experimental feature
+                  </p>
+                </div>
+              </div>
+              <label class="switch">
+                <input checked="" type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">SECONDARY OPTIONS</h3>
+            <div
+              class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded-lg mb-4"
+            >
+              <div class="flex items-center mb-4 md:mb-0">
+                <i class="fas fa-cog text-gray-600 mr-3"></i>
+                <div>
+                  <h4 class="font-semibold">Setting option disabled</h4>
+                  <p class="text-gray-500">Here is the onhovered statement</p>
+                </div>
+              </div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div
+              class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded-lg"
+            >
+              <div class="flex items-center mb-4 md:mb-0">
+                <i class="fas fa-trash text-gray-600 mr-3"></i>
+                <div>
+                  <h4 class="font-semibold">Automatically delete items</h4>
+                  <p class="text-gray-500">
+                    Get rid of sh*t and keep working hard
+                  </p>
+                </div>
+              </div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div class="mt-6">
+            <button class="bg-green-500 text-white px-6 py-2 rounded-lg">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <script src="switchMode/switchMode.js"></script>
   </body>
 </html>
