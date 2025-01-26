@@ -315,7 +315,6 @@ html {
   left: 30px;
 }
 
-
 @keyframes jump {
   0%,
   100% {
@@ -395,8 +394,8 @@ html {
   width: fit-content;
   text-align: center;
 }
-.nav-items-for-small-screen li a{
-  text-decoration: none ;
+.nav-items-for-small-screen li a {
+  text-decoration: none;
 }
 .icon-text {
   font-size: 12px;
