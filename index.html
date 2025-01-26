@@ -10,10 +10,10 @@
     />
     <title>One Place</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="modal.css" />
-    <link rel="stylesheet" href="loader.css" />
+    <link rel="stylesheet" href="modals/modal.css" />
+    <link rel="stylesheet" href="loader/loader.css" />
     <link rel="stylesheet" href="responsive.css" />
-    <link rel="stylesheet" href="messagebtn.css" />
+    <link rel="stylesheet" href="chatBot/messagebtn.css" />
     <link rel="stylesheet" href="switchMode/switchMode.css" />
     <script
       src="https://kit.fontawesome.com/92d5a0c82a.js"
@@ -23,26 +23,24 @@
 
   <body>
     <!-- --------------chat button & modal--------------- -->
-    <div id="message-button">
+    <!-- <div id="message-button">
       <img
         src="message-unscreen.gif"
         style="height: 40px; border-radius: 50%"
         alt="Message me"
       />
-    </div>
+    </div> -->
 
-    <!-- --------------modal---------------- -->
-    <div id="chatbox-modal" class="chatbox-modal">
+    <!-- <div id="chatbox-modal" class="chatbox-modal">
       <div class="chatbox-header">
         <span>Chat with us</span>
         <span id="close-chatbox" class="close">&times;</span>
       </div>
       <div class="chatbox-body">
         <p>Welcome! How can we help you?</p>
-        <!-- later add more chat UI elements -->
         <a href="https://wa.me/qr/AIVEWBGXII5JF1" target="_blank">Message us</a>
       </div>
-    </div>
+    </div> -->
 
     <!-- -----------loader----------- -->
 
@@ -113,39 +111,37 @@
         <!-- -----cards-------- -->
         <div class="ham-card">
           <div class="scard">
-            <img src="icons/shopping-cart.png" alt="">
+            <img src="icons/shopping-cart.png" alt="" />
             <p>Cart</p>
             <a href="cart page/cart.html" class="cart-btn" id="cardt-modal"
               ><span id="cart-count">0</span></a
             >
           </div>
           <div class="scard">
-            <i class="fa-solid fa-clipboard-list"></i>
+            <img src="icons/booking.png" alt="">
             <p>my bookings</p>
           </div>
           <div class="scard">
-            <i class="fa-solid fa-headset"></i>
+            <img src="icons/customer-service.png" alt="">
             <p>Help & support</p>
           </div>
         </div>
         <ul>
           <li>
-            <a href="#"
-              ><img src="icons/task.png"/>My Plans</a
-            >
+            <a href="#"><img src="icons/clipboard.png" />My Plans</a>
           </li>
           <li>
             <a href="wishlist/wishlist.html"
-              ><img src="icons/wishlist.png">Wishlist</a
+              ><img src="icons/wishlist.png" />Wishlist</a
             >
           </li>
           <li>
             <a href="#"
-              ><img src="icons/guarantee.png" alt="">Plus membership</a
+              ><img src="icons/guarantee.png" alt="" />Plus membership</a
             >
           </li>
           <li>
-            <a href="#"><img src="icons/star.png" alt="">My ratings</a>
+            <a href="#"><img src="icons/star.png" alt="" />My ratings</a>
           </li>
           <li>
             <div
@@ -153,7 +149,8 @@
               style="position: relative; top: 15px; left: 0"
             >
               <a href="#" class="location-pin" style="animation: none"
-                ><img src="icons/location.png" style="height: 21px;">Manage addresses
+                ><img src="icons/location.png" style="height: 21px" />Manage
+                addresses
                 <p class="location-display">No location selected yet.</p>
                 <p class="loading">Fetching location...</p></a
               >
@@ -162,19 +159,20 @@
 
           <li>
             <a href="#"
-              ><img src="icons/credit-card.png" alt="">Manage payment methods</a
+              ><img src="icons/credit-card.png" alt="" />Manage payment
+              methods</a
             >
           </li>
           <li>
             <a href="settingPage.html"
-              ><img src="icons/setting.png" alt="">Settings</a
+              ><img src="icons/setting.png" alt="" />Settings</a
             >
           </li>
           <li>
             <a href="#"
               ><img
-                src="images/logo/logo_2-removebg-preview.png"
-                style="height: 21px;width: 21px; margin-right: 10px"
+                src="images/logo/o-removebg-preview.png"
+                style="height: 21px; width: 21px; margin-right: 10px"
                 alt=""
               />About OP</a
             >
@@ -201,7 +199,6 @@
 
     <nav class="navbar">
       <h1 class="logo-text">One Place</h1>
-   
     </nav>
 
     <div class="search-container search-container-2" style="display: none">
@@ -1490,25 +1487,25 @@
 
     <!-- -----location picker script -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="location.js"></script>
+    <script src="/location/location.js"></script>
 
     <!-- image slider js  -->
     <script src="imageswiper.js"></script>
 
     <!-- typed js file -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="anouncement.js"></script>
+    <script src="anouncement/anouncement.js"></script>
 
     <!-- normal js files -->
     <!-- <script src="cart.js"></script> -->
-    <script src="searching.js"></script>
     <script src="switchMode/switchMode.js"></script>
-    <script src="hamburger.js"></script>
-    <script src="searchbox.js"></script>
+    <script src="hamburger menu/hamburger.js"></script>
+    <script src="searchBox/searching.js"></script>
     <script src="cart page/product.js"></script>
     <script src="responsive.js"></script>
-    <script src="modal.js"></script>
-    <script src="loader.js"></script>
+    <script src="modals/modal.js"></script>
+    <script src="loader/loader.js"></script>
     <script src="script.js"></script>
+    <script src="chatBot/chatbot.js"></script>
   </body>
 </html>

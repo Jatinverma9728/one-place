@@ -56,6 +56,10 @@
     width: 200px;
     margin-left: 10px;
   }
+  #chatbase-bubble-button{
+  bottom: 6rem !important;
+  right: 2rem !important;
+}
   .section-1 {
     display: none;
   }

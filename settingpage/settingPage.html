@@ -12,53 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="switchMode/switchMode.css" />
     <style>
       body {
         font-family: "Inter", sans-serif;
-      }
-      .switch {
-        position: relative;
-        display: inline-block;
-        width: 34px;
-        height: 20px;
-      }
-
-      .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: 0.4s;
-        border-radius: 34px;
-      }
-
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 12px;
-        width: 12px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        transition: 0.4s;
-        border-radius: 50%;
-      }
-
-      input:checked + .slider {
-        background-color: #4caf50;
-      }
-
-      input:checked + .slider:before {
-        transform: translateX(14px);
       }
 
       .sidebar-item:hover {
@@ -78,11 +35,7 @@
         color: black;
       }
       .sidebar {
-        background-image: linear-gradient(
-          to top,
-          rgb(212, 212, 212),
-          rgb(255, 255, 255)
-        );
+        background: rgb(231, 231, 231);
         border-top-left-radius: 2rem;
         border-bottom-left-radius: 2rem;
       }
@@ -91,6 +44,42 @@
           rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         border-top-right-radius: 2rem;
         border-bottom-right-radius: 2rem;
+      }
+      
+       .slider-2 {
+        /* border: 1px solid grey; */
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f5aeae;
+        transition: 0.4s;
+        border-radius: 30px;
+      }
+      .slider-2::before {
+        position: absolute;
+        content: "";
+        height: var(--size-of-icon, 1.4em);
+        width: var(--size-of-icon, 1.4em);
+        border-radius: 20px;
+        left: var(--slider-offset, 0.3em);
+        top: 50%;
+        transform: translateY(-50%);
+        background: #db3535;
+        transition: 0.4s;
+      }
+      input:checked + .slider-2 {
+        background-color: #9ed99c;
+      }
+     
+      input:checked + .slider-2:before {
+        left: calc(
+          100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em))
+        );
+        border: none;
+       background: linear-gradient(40deg, #379137, #00d0ff 70%);
       }
     </style>
   </head>
@@ -140,39 +129,8 @@
       </div>
       <!-- Main Content -->
       <div class="flex-1 p-8 middel">
-        <div
-          class="flex flex-col md:flex-row items-center justify-between mb-8"
-        >
-          <div class="flex items-center mb-4 md:mb-0">
-            <img
-              alt="User profile picture"
-              class="rounded-full h-10 w-10 mr-3"
-              height="40"
-              src="images/logo/pixelcut-export.png"
-              width="40"
-            />
-            <div>
-              <h2 class="text-lg font-semibold">Jatin Verma</h2>
-              <p class="text-sm text-gray-500">Last edited 11-12-13, 8:13AM</p>
-            </div>
-          </div>
-          <div class="flex items-center space-x-4">
-            <i class="fas fa-pen text-gray-600 icon-hover"></i>
-            <i class="fas fa-trash text-gray-600 icon-hover"></i>
-            <i class="fas fa-user text-gray-600 icon-hover"></i>
-            <i class="fas fa-ellipsis-h text-gray-600 icon-hover"></i>
-          </div>
-        </div>
         <div class="flex items-center justify-between mb-6">
           <h1 class="text-3xl font-bold">Settings</h1>
-          <div class="relative">
-            <input
-              class="border border-gray-300 rounded-lg py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Search..."
-              type="text"
-            />
-            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-          </div>
         </div>
         <div class="bg-white p-6 rounded-lg shadow">
           <h2 class="text-xl font-semibold mb-4">Notification settings</h2>
@@ -183,75 +141,69 @@
             <a class="text-blue-500" href="#">Setproduct dashboard</a>
           </p>
           <div class="mb-6">
-            <h3 class="text-lg font-semibold mb-2">PRIMARY SETTINGS</h3>
+            <h3 class="text-lg font-semibold mb-2">System Settings</h3>
             <div
               class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded-lg mb-4"
             >
               <div class="flex items-center mb-4 md:mb-0">
-                <i class="fas fa-cog text-gray-600 mr-3"></i>
                 <div>
-                  <h4 class="font-semibold">Setting option disabled</h4>
-                  <p class="text-gray-500">Describe here what it is for</p>
+                  <div class="controls flex">
+                    <div class="location-pin flex" title="Detect My Location">
+                      <img
+                        src="icons/location.png"
+                        class="h-7 mr-3"
+                        alt=""
+                        srcset=""
+                      />
+                      <p class="location-display">No location selected yet.</p>
+                      <p class="loading">Fetching location...</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <label class="switch">
-                <input type="checkbox" />
-                <span class="slider round"></span>
-              </label>
             </div>
-            <div
-              class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded-lg"
-            >
-              <div class="flex items-center mb-4 md:mb-0">
-                <i class="fas fa-text-width text-gray-600 mr-3"></i>
-                <div>
-                  <h4 class="font-semibold">Automatically text alignment</h4>
-                  <p class="text-gray-500">
-                    This is unuseful experimental feature
-                  </p>
-                </div>
-              </div>
-              <label class="switch">
-                <input checked="" type="checkbox" />
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold mb-2">SECONDARY OPTIONS</h3>
             <div
               class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded-lg mb-4"
             >
               <div class="flex items-center mb-4 md:mb-0">
-                <i class="fas fa-cog text-gray-600 mr-3"></i>
+                <img
+                  src="icons/dark-mode.png"
+                  class="h-7 mr-3"
+                  alt=""
+                  srcset=""
+                />
                 <div>
-                  <h4 class="font-semibold">Setting option disabled</h4>
-                  <p class="text-gray-500">Here is the onhovered statement</p>
+                  <h4 class="font-semibold">System Mode</h4>
+                  <p class="text-gray-500">Dark/Light</p>
                 </div>
               </div>
               <label class="switch">
-                <input type="checkbox" />
+                <input type="checkbox" id="theme-toggle" />
                 <span class="slider round"></span>
               </label>
             </div>
             <div
-              class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded-lg"
+              class="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-100 rounded-lg mb-4"
             >
               <div class="flex items-center mb-4 md:mb-0">
-                <i class="fas fa-trash text-gray-600 mr-3"></i>
+                <img
+                  src="icons/notification.png"
+                  class="h-7 mr-3"
+                  alt=""
+                  srcset=""
+                />
                 <div>
-                  <h4 class="font-semibold">Automatically delete items</h4>
-                  <p class="text-gray-500">
-                    Get rid of sh*t and keep working hard
-                  </p>
+                  <h4 class="font-semibold">Notification</h4>
+                  <p class="text-gray-500">On/Off</p>
                 </div>
               </div>
               <label class="switch">
-                <input type="checkbox" />
-                <span class="slider round"></span>
+                <input type="checkbox" id="notification-toggle"/>
+                <span class="slider-2 round"></span>
               </label>
             </div>
           </div>
+
           <div class="mt-6">
             <button class="bg-green-500 text-white px-6 py-2 rounded-lg">
               Save changes
@@ -261,4 +213,8 @@
       </div>
     </div>
   </body>
+
+  <script src="location.js"></script>
+  <script src="switchMode/switchMode.js"></script>
+  <script src="notificationMessage.js"></script>
 </html>
