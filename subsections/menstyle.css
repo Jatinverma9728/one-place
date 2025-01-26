@@ -34,9 +34,11 @@ body {
   border-bottom-left-radius: 22px;
 }
 
-.logo-text {
-  font-size: 39px;
-  font-family: var(--syne-font);
+.logo {
+  height: 40px;
+}
+.logo img {
+  height: 40px;
 }
 
 #nav-items-for-small-screen {
