@@ -23,4 +23,6 @@
 
 Give a ⭐️ if this project helped you!
 
+
+i stope this project deu to heavy code i made this in react js or other new technologies for now i stope this but it is live
 <!-- make this type of redme file by  using this command in you project root directory  npx readme-md-generator -->
