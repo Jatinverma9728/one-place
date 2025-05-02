@@ -15,7 +15,7 @@
 
 👤 **Jatin Verma**
 
-* Website: https://jatinverma9728.github.io/portfolio/
+* Website: https://jatinverma.vercel.app/
 * Github: [@Jatinverma9728](https://github.com/Jatinverma9728)
 * LinkedIn: [@www.linkedin.com\/in\/jatinverma9728](https://linkedin.com/in/www.linkedin.com\/in\/jatinverma9728)
 
